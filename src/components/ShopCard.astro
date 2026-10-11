@@ -1,0 +1,40 @@
+---
+import Thumb from './Thumb.astro';
+import { BUDGET_LABEL, budgetOf, latestVideo, thumb, type Shop } from '../lib/data';
+interface Props { shop: Shop }
+const { shop } = Astro.props;
+const b = budgetOf(shop);
+const short = shop.city || shop.pref;
+---
+<a href={`/shops/${shop.id}`} class="card" data-shop-id={shop.id}>
+  <div class="media">
+    <Thumb src={thumb(latestVideo(shop))} label={shop.genre} ratio="16 / 10" />
+    <span class="visited-badge">行った！</span>
+    {shop.visits.length > 1 && <span class="revisit">{shop.visits.length}回訪問</span>}
+  </div>
+  <div class="meta">
+    <span class="area">{short}<i>・</i>{shop.genre}</span>
+    <h3>{shop.name}</h3>
+    <div class="tags">
+      {b && <span class="tag">{BUDGET_LABEL[b]}</span>}
+      {shop.solo === 3 && <span class="tag shu">ひとり歓迎</span>}
+      {shop.closed && <span class="tag closed">閉店</span>}
+    </div>
+  </div>
+</a>
+<style>
+  .card { display: flex; flex-direction: column; height: 100%; background: var(--card); border-radius: var(--radius); padding: 8px 8px 14px; box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(46,52,66,.06), 0 14px 32px rgba(46,52,66,.12); }
+  .media { position: relative; }
+  .visited-badge, .revisit { position: absolute; top: 8px; font-family: var(--round); font-weight: 700; font-size: 11px; padding: 2px 10px; border-radius: 99px; }
+  .visited-badge { left: 8px; display: none; background: var(--yellow); color: #2e3442; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+  .revisit { right: 8px; background: rgba(46,52,66,.78); color: #fff; }
+  :global(.card.is-visited) .visited-badge { display: inline-block; }
+  .meta { padding: 10px 6px 0; }
+  .area { font-size: 11px; font-weight: 500; color: var(--shu); }
+  .area i { font-style: normal; color: var(--line); }
+  h3 { font-size: 16px; margin: 2px 0 8px; line-height: 1.4; }
+  .card:hover h3 { color: var(--shu); }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  @media (max-width: 560px) { .card { padding: 6px 6px 12px; border-radius: 14px; } .meta { padding: 8px 4px 0; } }
+</style>

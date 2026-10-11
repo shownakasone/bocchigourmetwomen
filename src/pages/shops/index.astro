@@ -1,0 +1,186 @@
+---
+import Base from '../../layouts/Base.astro';
+import ShopCard from '../../components/ShopCard.astro';
+import ShopMap from '../../components/ShopMap.astro';
+import { getShops, getVideo, BUDGET_LABEL, budgetOf, countBy, isMorning, lastDate, PREF_ORDER, type Budget } from '../../lib/data';
+
+const shops = getShops();
+const prefs = countBy(shops, (s) => s.pref).sort((a, b) => PREF_ORDER.indexOf(a[0]) - PREF_ORDER.indexOf(b[0]));
+const cities = countBy(shops, (s) => `${s.pref}|${s.city}`).filter(([k]) => !k.endsWith('|'));
+const genres = countBy(shops, (s) => s.genre);
+const budgets = Object.keys(BUDGET_LABEL) as Budget[];
+---
+<Base title="お店をさがす">
+  <section class="wrap head">
+    <p class="eyebrow">Search</p>
+    <h1>お店をさがす</h1>
+    <p class="lead">動画で訪れた {shops.length} 軒のお店を、まち・ジャンル・予算で絞り込めます。</p>
+  </section>
+
+  <form class="wrap filters" id="filters" onsubmit="return false">
+    <input type="search" name="q" placeholder="店名・メニュー・まちで検索（例：味噌ラーメン、浪岡）" aria-label="キーワード" />
+    <div class="selects">
+      <select name="pref" aria-label="県"><option value="">県</option>{prefs.map(([p, n]) => <option value={p}>{p}（{n}）</option>)}</select>
+      <select name="city" aria-label="市町村">
+        <option value="">市町村</option>
+        {cities.map(([k, n]) => { const [p, c] = k.split('|'); return <option value={c} data-pref={p}>{c}（{n}）</option>; })}
+      </select>
+      <select name="genre" aria-label="ジャンル"><option value="">ジャンル</option>{genres.map(([g, n]) => <option value={g}>{g}（{n}）</option>)}</select>
+      <select name="budget" aria-label="予算"><option value="">予算</option>{budgets.map((b) => <option value={b}>{BUDGET_LABEL[b]}</option>)}</select>
+    </div>
+    <div class="row">
+      <label class="check"><input type="checkbox" name="morning" value="1" /> 朝から食べられる</label>
+      <label class="check"><input type="checkbox" name="hideClosed" checked /> 閉店したお店を隠す</label>
+      <label class="check"><input type="checkbox" name="unvisited" /> まだ行ってない店だけ</label>
+      <select name="sort" aria-label="並び順" class="sort">
+        <option value="">新しい動画順</option>
+        <option value="visits">訪問回数が多い順</option>
+      </select>
+      <button type="button" class="reset" id="reset">条件をクリア</button>
+    </div>
+  </form>
+
+  <div class="wrap toolbar">
+    <p id="count" aria-live="polite"></p>
+    <div class="view" role="tablist">
+      <button type="button" role="tab" data-view="list" aria-selected="true">リスト</button>
+      <button type="button" role="tab" data-view="map" aria-selected="false">地図</button>
+    </div>
+  </div>
+
+  <section class="wrap">
+    <div id="map-pane" hidden>
+      <ShopMap shops={shops} height="min(70vh, 600px)" />
+      <p class="map-note">白い点線のピンは、住所が分からず市町村の中心に置いているお店です。</p>
+    </div>
+    <div id="list-pane" class="grid">
+      {shops.map((s, i) => (
+        <div class="item" data-shop={JSON.stringify({
+          id: s.id, pref: s.pref, city: s.city, genre: s.genre, budget: budgetOf(s) ?? '', closed: !!s.closed,
+          morning: isMorning(s), visits: s.visits.length, order: i,
+          text: [s.name, s.pref, s.city, s.genre, s.address ?? '', ...s.visits.flatMap((v) => [getVideo(v.videoId)?.title ?? '', v.note ?? '', ...(v.menu ?? []).map((m) => m.name)])].join(' ').toLowerCase(),
+        })}>
+          <ShopCard shop={s} />
+        </div>
+      ))}
+    </div>
+    <p id="empty" class="empty" hidden>条件に合うお店が見つかりませんでした。条件をゆるめてみてください。</p>
+    <div class="more-wrap"><button type="button" class="btn" id="more" hidden>もっと見る</button></div>
+  </section>
+</Base>
+<script>
+  import { load, markCards } from '../../lib/mylog';
+
+  type Item = { id: string; pref: string; city: string; genre: string; budget: string; closed: boolean; morning: boolean; visits: number; order: number; text: string };
+  const PAGE = 48;
+  const form = document.getElementById('filters') as HTMLFormElement;
+  const list = document.getElementById('list-pane')!;
+  const items = [...document.querySelectorAll<HTMLElement>('.item')].map((el) => ({ el, d: JSON.parse(el.dataset.shop!) as Item }));
+  const count = document.getElementById('count')!;
+  const empty = document.getElementById('empty')!;
+  const more = document.getElementById('more') as HTMLButtonElement;
+  const citySel = form.elements.namedItem('city') as HTMLSelectElement;
+  let limit = PAGE;
+
+  // URL のクエリから初期値を入れる（トップからの導線用）
+  const params = new URLSearchParams(location.search);
+  for (const [k, v] of params) {
+    const f = form.elements.namedItem(k) as HTMLInputElement | HTMLSelectElement | null;
+    if (!f) continue;
+    if (f instanceof HTMLInputElement && f.type === 'checkbox') f.checked = v === '1';
+    else f.value = v;
+  }
+  if (params.get('city') && !params.get('pref')) {
+    const opt = [...citySel.options].find((o) => o.value === params.get('city'));
+    if (opt?.dataset.pref) (form.elements.namedItem('pref') as HTMLSelectElement).value = opt.dataset.pref;
+  }
+
+  // 県を選んだら、その県の市町村だけを選択肢に出す（Safari は option の hidden が効かないので作り直す）
+  const allCities = [...citySel.options];
+  let lastPref: string | null = null;
+  function syncCities() {
+    const pref = (form.elements.namedItem('pref') as HTMLSelectElement).value;
+    if (pref === lastPref) return;
+    lastPref = pref;
+    const cur = citySel.value;
+    citySel.replaceChildren(...allCities.filter((o) => !o.dataset.pref || !pref || o.dataset.pref === pref));
+    citySel.value = [...citySel.options].some((o) => o.value === cur) ? cur : '';
+  }
+
+  function apply(resetLimit = true) {
+    if (resetLimit) limit = PAGE;
+    syncCities();
+    const fd = new FormData(form);
+    const q = String(fd.get('q') || '').trim().toLowerCase();
+    const get = (k: string) => String(fd.get(k) || '');
+    const visited = new Set(load().visited);
+    const hits = items.filter(({ d }) =>
+      (!q || q.split(/\s+/).every((w) => d.text.includes(w)))
+      && (!get('pref') || d.pref === get('pref')) && (!get('city') || d.city === get('city'))
+      && (!get('genre') || d.genre === get('genre')) && (!get('budget') || d.budget === get('budget'))
+      && (!fd.has('morning') || d.morning) && (!fd.has('hideClosed') || !d.closed) && (!fd.has('unvisited') || !visited.has(d.id)));
+    if (get('sort') === 'visits') hits.sort((a, b) => b.d.visits - a.d.visits || a.d.order - b.d.order);
+    else hits.sort((a, b) => a.d.order - b.d.order);
+
+    const shown = new Set(hits.slice(0, limit).map((h) => h.d.id));
+    for (const { el, d } of items) el.hidden = !shown.has(d.id);
+    for (const h of hits.slice(0, limit)) list.appendChild(h.el);
+    count.textContent = `${hits.length} 軒のお店`;
+    empty.hidden = hits.length > 0;
+    more.hidden = hits.length <= limit;
+    more.textContent = `もっと見る（残り ${hits.length - limit} 軒）`;
+    window.dispatchEvent(new CustomEvent('shops:filtered', { detail: hits.map((h) => h.d.id) }));
+
+    const url = new URL(location.href);
+    url.search = '';
+    for (const k of ['q', 'pref', 'city', 'genre', 'budget', 'sort']) if (get(k)) url.searchParams.set(k, get(k));
+    if (fd.has('morning')) url.searchParams.set('morning', '1');
+    history.replaceState(null, '', url);
+  }
+
+  form.addEventListener('input', () => apply());
+  more.addEventListener('click', () => { limit += PAGE; apply(false); });
+  document.getElementById('reset')!.addEventListener('click', () => { form.reset(); apply(); });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((b) => b.addEventListener('click', () => {
+    const map = b.dataset.view === 'map';
+    document.querySelectorAll('[data-view]').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+    document.getElementById('map-pane')!.hidden = !map;
+    list.hidden = map;
+    document.querySelector<HTMLElement>('.more-wrap')!.hidden = map;
+    if (map) { window.dispatchEvent(new Event('shops:map-shown')); apply(false); }
+  }));
+
+  markCards();
+  apply();
+</script>
+<style>
+  .head { padding-top: 40px; }
+  .head h1 { font-size: clamp(26px, 4vw, 34px); margin-top: 4px; }
+  .lead { color: var(--ink-2); margin: 8px 0 24px; }
+  .filters { display: grid; gap: 12px; }
+  input[type="search"], select {
+    font: inherit; font-size: 14px; width: 100%; padding: 10px 14px; color: var(--ink);
+    background: var(--card); border: 1.5px solid var(--line); border-radius: 12px; appearance: none;
+  }
+  select { background-image: linear-gradient(45deg, transparent 50%, var(--ink-2) 50%), linear-gradient(135deg, var(--ink-2) 50%, transparent 50%);
+    background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 30px; }
+  input:focus, select:focus { outline: 2px solid var(--shu); outline-offset: -1px; }
+  .selects { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  @media (max-width: 640px) { .selects { grid-template-columns: repeat(2, 1fr); } }
+  .row { display: flex; gap: 8px 20px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .check { display: inline-flex; gap: 6px; align-items: center; color: var(--ink-2); cursor: pointer; }
+  .check input { accent-color: var(--shu); }
+  .sort { width: auto; font-size: 13px; padding: 6px 30px 6px 12px; }
+  .reset { margin-left: auto; font: inherit; font-size: 12px; background: none; border: 0; color: var(--ink-2); text-decoration: underline; cursor: pointer; }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; margin: 28px auto 16px; }
+  #count { margin: 0; font-family: var(--round); font-weight: 700; font-size: 16px; }
+  .view { display: inline-flex; background: var(--card); box-shadow: var(--shadow); border-radius: 99px; overflow: hidden; padding: 4px; gap: 2px; }
+  .view button { font: inherit; font-size: 13px; padding: 6px 16px; background: none; border: 0; color: var(--ink); cursor: pointer; }
+  .view button { border-radius: 99px; font-weight: 700; }
+  .view button[aria-selected="true"] { background: var(--yellow); color: #2e3442; }
+  .item[hidden], #list-pane[hidden], .more-wrap[hidden] { display: none; }
+  .map-note { font-size: 12px; color: var(--ink-2); }
+  .empty { text-align: center; color: var(--ink-2); padding: 48px 0; }
+  .more-wrap { text-align: center; padding: 32px 0 0; }
+</style>

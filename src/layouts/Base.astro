@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+import { getShops, getVideos, CHANNEL_URL, INSTAGRAM_URL } from '../lib/data';
+interface Props { title?: string; description?: string }
+const { title, description = 'YouTube「ぼっちグルメウーマン」で訪れた青森・岩手・秋田のお店を、まち・ジャンル・予算から探せる公式アーカイブ。' } = Astro.props;
+const fullTitle = title ? `${title}｜ぼっちグルメ手帖` : 'ぼっちグルメ手帖｜ぼっちグルメウーマン公式アーカイブ';
+const isSample = getVideos().some((v) => v.sample) || getShops().some((s) => s.sample);
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/shops', label: 'さがす', icon: 'M11 4a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 11 4Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z' },
+  { href: '/videos', label: '動画', icon: 'M4 6h16v12H4zM10 9v6l5-3z' },
+  { href: '/mylog', label: 'わたしの記録', icon: 'M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z' },
+  { href: '/about', label: 'About', icon: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-1 7h2v7h-2zm0-3h2v2h-2z' },
+];
+---
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="/brand/avatar.jpg" />
+  <meta name="theme-color" content="#f5b82e" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Yellowtail&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet" />
+  <slot name="head" />
+</head>
+<body>
+  {isSample && <div class="sample-note">※ 現在は試作用のサンプルデータを表示しています</div>}
+  <header class="site-header">
+    <div class="wrap bar">
+      <a href="/" class="logo" aria-label="ぼっちグルメ手帖 トップへ">
+        <img src="/brand/logo.jpg" alt="" width="48" height="46" />
+        <span class="logo-text">
+          <span class="logo-main">ぼっちグルメ手帖</span>
+          <span class="logo-sub">Bocchi Gourmet Archive</span>
+        </span>
+      </a>
+      <nav>
+        {nav.map((n) => (
+          <a href={n.href} class:list={{ active: path.startsWith(n.href) }}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d={n.icon} /></svg><span>{n.label}</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+  </header>
+  <main><slot /></main>
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <img class="chara" src="/brand/character.jpg" alt="ぼっちグルメウーマン" width="120" height="120" loading="lazy" />
+      <div>
+        <p class="f-logo">ぼっちグルメ手帖</p>
+        <p>YouTube「<a href={CHANNEL_URL} target="_blank" rel="noopener">ぼっちグルメウーマン</a>」公式アーカイブ</p>
+        <p class="schedule">毎週 火曜日・金曜日 18時更新</p>
+        <div class="f-links">
+          <a class="btn primary" href={CHANNEL_URL} target="_blank" rel="noopener">チャンネル登録</a>
+          {INSTAGRAM_URL && <a class="btn" href={INSTAGRAM_URL} target="_blank" rel="noopener">Instagram</a>}
+        </div>
+        <p class="small">掲載の価格・営業情報は撮影時点のものです。お出かけ前に各店の最新情報をご確認ください。</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+<style>
+  .site-header { background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo img { width: 48px; height: auto; border-radius: 50%; mix-blend-mode: multiply; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .logo-main { font-family: var(--round); font-weight: 900; font-size: 19px; letter-spacing: .06em; }
+  .logo-sub { font-family: var(--script); font-size: 15px; color: var(--shu); }
+  nav { display: flex; gap: 4px; font-size: 13px; }
+  nav a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 99px; color: var(--ink-2); font-weight: 500; white-space: nowrap; transition: background .15s; }
+  nav svg { width: 16px; height: 16px; fill: currentColor; }
+  nav a:hover { background: var(--paper-2); color: var(--ink); }
+  nav a.active { background: var(--yellow); color: #2e3442; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo img { mix-blend-mode: normal; } }
+
+  /* スマホは下にタブバー */
+  @media (max-width: 720px) {
+    .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--paper); }
+    .bar { height: 56px; }
+    .logo img { width: 38px; }
+    .logo-main { font-size: 16px; }
+    nav { position: fixed; left: 0; right: 0; bottom: 0; justify-content: space-around; gap: 0; padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+      background: var(--card); border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(46,52,66,.06); z-index: 1000; }
+    nav a { flex-direction: column; gap: 2px; padding: 4px 8px; font-size: 10px; border-radius: 12px; }
+    nav svg { width: 22px; height: 22px; }
+    nav a.active { background: var(--yellow-soft); color: var(--ink); }
+    :global(body) { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  }
+
+  .site-footer { margin-top: 64px; background: var(--pink-soft); padding: 48px 0 56px; color: var(--ink-2); font-size: 13px; }
+  .foot { display: flex; gap: 28px; align-items: flex-start; }
+  .chara { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; border: 6px solid var(--pink); flex: none; }
+  .site-footer p { margin: 4px 0; }
+  .f-logo { font-family: var(--round); font-weight: 900; font-size: 18px; color: var(--ink); letter-spacing: .06em; }
+  .site-footer a:not(.btn) { color: var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 3px; text-underline-offset: 3px; }
+  .schedule { display: inline-block; background: var(--card); color: var(--ink); font-weight: 700; padding: 2px 12px; border-radius: 99px; margin: 8px 0 !important; }
+  .f-links { display: flex; gap: 8px; margin: 10px 0 14px; }
+  .f-links .btn { padding: 7px 18px; font-size: 13px; }
+  .small { font-size: 11px; }
+  @media (max-width: 560px) { .foot { flex-direction: column; align-items: center; text-align: center; } .f-links { justify-content: center; } }
+</style>

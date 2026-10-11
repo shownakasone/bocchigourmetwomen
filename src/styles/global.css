@@ -1,0 +1,78 @@
+/* ぼっちグルメウーマンのロゴ（ネイビーのお皿の輪 × マスタードイエロー）とバナー（ピンク）に合わせた配色 */
+:root {
+  --paper: #fbf7ef;        /* 生成り。お皿のまわりのテーブルクロス */
+  --paper-2: #f4ecdd;
+  --card: #ffffff;
+  --ink: #2e3442;          /* ロゴのネイビー */
+  --ink-2: #6a6f7c;
+  --line: #e6dccb;
+  --yellow: #f5b82e;       /* ロゴのお皿 */
+  --yellow-soft: #fdf0c9;
+  --pink: #f3c8ef;         /* バナーのピンク */
+  --pink-soft: #fbe9f8;
+  --shu: #c8508a;          /* 小さな文字用の濃いピンク */
+  --shu-soft: #fbe3ef;
+  --round: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  --serif: var(--round);
+  --sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+  --script: 'Yellowtail', cursive;
+  --radius: 18px;
+  --shadow: 0 1px 2px rgba(46,52,66,.06), 0 6px 20px rgba(46,52,66,.07);
+  --gutter: clamp(16px, 4vw, 40px);
+  --max: 1160px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1f27; --paper-2: #242833; --card: #2a2f3b; --ink: #f1ece2; --ink-2: #a9adb8;
+    --line: #3a3f4c; --yellow: #f5b82e; --yellow-soft: #3b3322; --pink: #6b4566; --pink-soft: #3a2a39;
+    --shu: #f09ac4; --shu-soft: #3d2834; --shadow: 0 6px 20px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--sans); font-size: 15px; line-height: 1.85; letter-spacing: .02em;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--round); font-weight: 700; line-height: 1.45; margin: 0; letter-spacing: .03em; }
+.wrap { max-width: var(--max); margin-left: auto; margin-right: auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+
+/* 見出しの上の小さな英字：ロゴと同じ筆記体 */
+.eyebrow { font-family: var(--script); font-size: 22px; line-height: 1.1; color: var(--shu); letter-spacing: .02em; margin: 0; }
+.section { padding-top: 64px; padding-bottom: 32px; }
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+.section-head h2 { font-size: clamp(22px, 3vw, 28px); position: relative; display: inline-block; }
+.section-head h2::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 8px; background: var(--yellow); opacity: .45; z-index: -1; border-radius: 4px; }
+.section-head h2 { z-index: 0; }
+.more { font-size: 13px; font-weight: 500; white-space: nowrap; padding: 6px 14px; border-radius: 99px; background: var(--card); box-shadow: var(--shadow); }
+.more::after { content: ' →'; }
+.more:hover { background: var(--yellow); }
+
+.tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 10px; border-radius: 99px; background: var(--paper-2); color: var(--ink-2); white-space: nowrap; }
+.tag.shu { background: var(--yellow-soft); color: #8a5a00; }
+.tag.closed { background: var(--ink-2); color: var(--paper); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tag.shu { color: var(--yellow); } }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; font: inherit; font-size: 14px; font-weight: 700;
+  font-family: var(--round); padding: 11px 22px; border-radius: 99px; border: 2px solid var(--ink);
+  background: transparent; color: var(--ink); cursor: pointer; transition: transform .15s ease, background .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: var(--yellow); border-color: var(--yellow); color: #2e3442; }
+.btn.primary:hover { background: #ffc63f; }
+.btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.btn[data-kind="want"][aria-pressed="true"] { background: var(--shu); border-color: var(--shu); color: #fff; }
+
+.grid { display: grid; gap: 28px 22px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.sample-note { background: var(--pink-soft); color: var(--ink); font-size: 12px; text-align: center; padding: 6px var(--gutter); }
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  .grid h3 { font-size: 14px !important; }
+  .eyebrow { font-size: 19px; }
+}

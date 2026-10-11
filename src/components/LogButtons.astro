@@ -1,0 +1,22 @@
+---
+interface Props { id: string }
+const { id } = Astro.props;
+---
+<div class="log-buttons" data-id={id}>
+  <button class="btn" data-kind="visited" aria-pressed="false">行った！</button>
+  <button class="btn" data-kind="want" aria-pressed="false">行きたい</button>
+</div>
+<script>
+  import { has, toggle, type Kind } from '../lib/mylog';
+  document.querySelectorAll<HTMLElement>('.log-buttons').forEach((box) => {
+    const id = box.dataset.id!;
+    box.querySelectorAll<HTMLButtonElement>('button').forEach((b) => {
+      const kind = b.dataset.kind as Kind;
+      b.setAttribute('aria-pressed', String(has(kind, id)));
+      b.addEventListener('click', () => b.setAttribute('aria-pressed', String(toggle(kind, id))));
+    });
+  });
+</script>
+<style>
+  .log-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+</style>

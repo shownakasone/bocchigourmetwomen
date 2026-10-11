@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { CHANNEL_URL, INSTAGRAM_URL, getShops, getVideos } from '../lib/data';
+const shops = getShops().length;
+const videos = getVideos().length;
+---
+<Base title="About">
+  <article class="wrap narrow">
+    <p class="eyebrow">About</p>
+    <h1>ひとりごはんは、<br />いちばん自由なごちそう。</h1>
+    <p>「ぼっちグルメ手帖」は、YouTubeチャンネル「ぼっちグルメウーマン」で訪れたお店をまとめた公式アーカイブです。青森・岩手・秋田を中心に、これまで{videos}本の動画で{shops}軒のお店を訪れてきました。</p>
+    <p>動画を見て「ここ行ってみたい」と思ったとき、すぐにお店の場所や、何を頼めばいいかが分かるように作りました。気になるお店は「行きたい」に、行ったお店は「行った！」に。あなただけのひとりごはん手帖として使ってください。</p>
+
+    <h2>チャンネル</h2>
+    <div class="links">
+      <a class="btn primary" href={CHANNEL_URL} target="_blank" rel="noopener">YouTube @bocchi-g-women</a>
+      {INSTAGRAM_URL && <a class="btn" href={INSTAGRAM_URL} target="_blank" rel="noopener">Instagram</a>}
+    </div>
+
+    <h2>ご利用にあたって</h2>
+    <ul>
+      <li>掲載の価格・メニュー・営業情報は撮影時点のものです。お出かけ前に各店の最新情報をご確認ください。</li>
+      <li>お店の情報は動画の概要欄などから整理しています。住所が分からないお店は、地図上で市町村のおおよその位置に表示しています。</li>
+      <li>動画に関するお問い合わせを、お店へするのはご遠慮ください。</li>
+      <li>「行った」「行きたい」の記録はお使いのブラウザにのみ保存され、運営側には送信されません。</li>
+      <li>閉店・移転などの情報があれば、動画のコメント欄で教えていただけるとうれしいです。</li>
+    </ul>
+  </article>
+</Base>
+<style>
+  .narrow { max-width: 720px; padding-top: 48px; }
+  h1 { font-size: clamp(26px, 4.5vw, 38px); margin: 8px 0 28px; }
+  h2 { font-size: 18px; margin: 40px 0 12px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .links { display: flex; gap: 10px; flex-wrap: wrap; }
+  ul { padding-left: 1.2em; }
+  li { margin: 6px 0; }
+</style>

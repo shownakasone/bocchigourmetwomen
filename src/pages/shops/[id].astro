@@ -1,0 +1,157 @@
+---
+import Base from '../../layouts/Base.astro';
+import ShopMap from '../../components/ShopMap.astro';
+import ShopCard from '../../components/ShopCard.astro';
+import LogButtons from '../../components/LogButtons.astro';
+import { getShops, getVideo, GENRE_EN, BUDGET_LABEL, SOLO_LABEL, budgetOf, isMorning, mapsUrl, watchUrl, fmtDate, yen, type Shop } from '../../lib/data';
+
+export function getStaticPaths() {
+  return getShops().map((shop) => ({ params: { id: shop.id }, props: { shop } }));
+}
+const { shop } = Astro.props as { shop: Shop };
+const first = shop.visits[0];
+const firstVideo = getVideo(first.videoId)!;
+const budget = budgetOf(shop);
+const note = shop.visits.find((v) => v.note)?.note;
+const all = getShops();
+const sameEpisode = all.filter((s) => s.id !== shop.id && s.visits.some((v) => shop.visits.some((w) => w.videoId === v.videoId)));
+const nearby = all.filter((s) => s.id !== shop.id && !s.closed && s.city && s.city === shop.city && !sameEpisode.includes(s)).slice(0, 4);
+const sameGenreNear = nearby.length < 4 ? all.filter((s) => s.id !== shop.id && !s.closed && s.pref === shop.pref && s.genre === shop.genre && !nearby.includes(s) && !sameEpisode.includes(s)).slice(0, 4 - nearby.length) : [];
+const where = [shop.pref, shop.city].filter(Boolean).join(' ');
+---
+<Base title={shop.name} description={`${where}・${shop.genre}「${shop.name}」。${note ?? ''}`}>
+  <article class="wrap">
+    <nav class="crumbs">
+      <a href="/shops">さがす</a> / <a href={`/shops?pref=${encodeURIComponent(shop.pref)}`}>{shop.pref}</a>
+      {shop.city && <> / <a href={`/shops?city=${encodeURIComponent(shop.city)}`}>{shop.city}</a></>} / {shop.name}
+    </nav>
+
+    <header class="head">
+      <p class="eyebrow">{GENRE_EN[shop.genre] ?? "Gourmet"}</p><p class="where">{where}｜{shop.genre}</p>
+      <h1>{shop.name}</h1>
+      <div class="tags">
+        {budget && <span class="tag">{BUDGET_LABEL[budget]}</span>}
+        {isMorning(shop) && <span class="tag shu">朝から食べられる</span>}
+        {shop.solo && <span class:list={['tag', { shu: shop.solo === 3 }]}>{SOLO_LABEL[shop.solo]}</span>}
+        {shop.visits.length > 1 && <span class="tag">{shop.visits.length}回訪問</span>}
+        {shop.closed && <span class="tag closed">閉店しました</span>}
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="main">
+        <div class="player">
+          <iframe src={`https://www.youtube-nocookie.com/embed/${first.videoId}${first.timestamp ? `?start=${first.timestamp}` : ''}`} title={firstVideo.title}
+            loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        {note && (
+          <blockquote class="memo">
+            <p>{note}</p>
+            <cite>— 動画・概要欄より</cite>
+          </blockquote>
+        )}
+
+        <section class="block">
+          <h2>{shop.visits.length > 1 ? `訪問の記録（${shop.visits.length}回）` : 'この日いただいたもの'}</h2>
+          <ol class="visits">
+            {shop.visits.map((v) => {
+              const video = getVideo(v.videoId)!;
+              const menu = v.menu ?? [];
+              const total = menu.reduce((a, m) => a + (m.price ?? 0), 0);
+              return (
+                <li>
+                  <a class="scene" href={watchUrl(v.videoId, v.timestamp)} target="_blank" rel="noopener">
+                    <span class="play">▶</span>
+                    <span><small>{fmtDate(video.publishedAt)}</small>{video.title}</span>
+                  </a>
+                  {menu.length > 0 && (
+                    <table class="menu">
+                      {menu.map((m) => <tr><td>{m.name}</td><td>{m.price ? yen(m.price) : '—'}</td></tr>)}
+                      {menu.filter((m) => m.price).length > 1 && <tr class="sum"><td>合計</td><td>{yen(total)}</td></tr>}
+                    </table>
+                  )}
+                  {shop.visits.length > 1 && v.note && v.note !== note && <p class="vnote">{v.note}</p>}
+                </li>
+              );
+            })}
+          </ol>
+          <p class="note">価格・メニュー・営業情報は撮影時点のものです。お出かけ前にお店の最新情報をご確認ください。</p>
+        </section>
+      </div>
+
+      <aside class="side">
+        {shop.lat != null && <ShopMap shops={[shop]} height="240px" zoom={16} />}
+        {shop.approx && <p class="approx">※ 住所が分からないため、地図は{shop.city || shop.pref}のおおよその位置です。</p>}
+        <dl class="info">
+          {shop.address && <><dt>住所</dt><dd>{shop.address}</dd></>}
+          <dt>エリア</dt><dd>{where}</dd>
+          <dt>ジャンル</dt><dd>{shop.genre}</dd>
+          {budget && <><dt>予算</dt><dd>{BUDGET_LABEL[budget]}</dd></>}
+        </dl>
+        <div class="links">
+          <a class="btn" href={mapsUrl(shop)} target="_blank" rel="noopener">Googleマップで探す</a>
+        </div>
+        <div class="log"><p>あなたの記録</p><LogButtons id={shop.id} /></div>
+      </aside>
+    </div>
+
+    {sameEpisode.length > 0 && (
+      <section class="section">
+        <div class="section-head"><div><p class="eyebrow">Same Episode</p><h2>同じ回で行ったお店</h2></div></div>
+        <div class="grid">{sameEpisode.slice(0, 8).map((s) => <ShopCard shop={s} />)}</div>
+      </section>
+    )}
+    {nearby.length + sameGenreNear.length > 0 && (
+      <section class="section">
+        <div class="section-head">
+          <div><p class="eyebrow">Nearby</p><h2>{nearby.length ? `${shop.city}のほかのお店` : `${shop.pref}の${shop.genre}`}</h2></div>
+          {shop.city && <a class="more" href={`/shops?city=${encodeURIComponent(shop.city)}`}>もっと見る</a>}
+        </div>
+        <div class="grid">{[...nearby, ...sameGenreNear].map((s) => <ShopCard shop={s} />)}</div>
+      </section>
+    )}
+  </article>
+</Base>
+<script>
+  import { markCards } from '../../lib/mylog';
+  markCards();
+</script>
+<style>
+  .crumbs { font-size: 12px; color: var(--ink-2); padding: 20px 0 0; }
+  .crumbs a:hover { color: var(--shu); }
+  .head { padding: 20px 0 28px; margin-bottom: 8px; }
+  .head h1 { font-size: clamp(28px, 4.8vw, 44px); font-weight: 900; margin: 6px 0 14px; }
+  .where { margin: 0; font-size: 13px; font-weight: 500; color: var(--ink-2); }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
+  @media (max-width: 820px) { .layout { grid-template-columns: 1fr; } }
+  .player { aspect-ratio: 16 / 9; background: var(--paper-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .player iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .memo { margin: 28px 0; padding: 20px 24px; background: var(--pink-soft); border-radius: var(--radius); position: relative; }
+  .memo p { font-family: var(--serif); font-size: clamp(16px, 2vw, 19px); line-height: 1.9; margin: 0; }
+  .memo cite { display: block; font-style: normal; font-size: 12px; color: var(--ink-2); margin-top: 8px; }
+  .block { margin-top: 36px; }
+  .block h2 { font-size: 18px; margin-bottom: 8px; }
+  .visits { list-style: none; padding: 0; margin: 0; }
+  .visits > li { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .scene { display: flex; gap: 14px; align-items: center; padding: 14px 0 8px; }
+  .scene small { display: block; color: var(--shu); font-size: 12px; }
+  .scene:hover { color: var(--shu); }
+  .play { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--yellow); color: #2e3442; display: grid; place-items: center; font-size: 11px; padding-left: 2px; }
+  .menu { width: 100%; border-collapse: collapse; margin-left: 48px; width: calc(100% - 48px); }
+  .menu td { padding: 7px 0; border-bottom: 1px dotted var(--line); font-size: 14px; }
+  .menu td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  .menu .sum td { border-bottom: 0; border-top: 1px solid var(--ink); font-weight: 500; }
+  .vnote { margin: 6px 0 0 48px; font-size: 13px; color: var(--ink-2); }
+  .note { font-size: 11px; color: var(--ink-2); }
+  .side { position: sticky; top: 88px; display: grid; gap: 16px; }
+  @media (max-width: 820px) { .side { position: static; } }
+  .approx { font-size: 12px; color: var(--ink-2); margin: -8px 0 0; }
+  .info { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; font-size: 14px; }
+  .info dt { color: var(--ink-2); font-size: 12px; padding-top: 2px; }
+  .info dd { margin: 0; }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .log { background: var(--yellow-soft); border-radius: var(--radius); padding: 18px; }
+  .log p { margin: 0 0 10px; font-family: var(--serif); }
+</style>

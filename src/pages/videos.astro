@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import Thumb from '../components/Thumb.astro';
+import { getVideos, shopsOfVideo, thumb, fmtDate, watchUrl } from '../lib/data';
+
+const videos = getVideos();
+const groups = new Map<string, typeof videos>();
+for (const v of videos) {
+  const d = new Date(v.publishedAt);
+  const key = `${d.getFullYear()}年${d.getMonth() + 1}月`;
+  groups.set(key, [...(groups.get(key) ?? []), v]);
+}
+const years = [...new Set(videos.map((v) => new Date(v.publishedAt).getFullYear()))];
+---
+<Base title="動画アーカイブ">
+  <section class="wrap head">
+    <p class="eyebrow">Archive</p>
+    <h1>動画アーカイブ</h1>
+    <p class="lead">これまでの全{videos.length}本。動画に出てきたお店のページへ移動できます。</p>
+    <div class="tools">
+      <input type="search" id="vq" placeholder="動画タイトルで検索（例：朝ラー、盛岡）" aria-label="動画を検索" />
+      <nav class="years">{years.map((y) => <a href={`#y${y}`}>{y}</a>)}</nav>
+    </div>
+    <p id="vcount" class="vcount" aria-live="polite"></p>
+  </section>
+  <div class="wrap">
+    {[...groups].map(([month, list], gi) => {
+      const y = month.slice(0, 4);
+      const firstOfYear = gi === 0 || ![...groups.keys()][gi - 1].startsWith(y);
+      return (
+        <section class="month" id={firstOfYear ? `y${y}` : undefined}>
+          <h2>{month}</h2>
+          {list.map((v) => {
+            const shops = shopsOfVideo(v.videoId);
+            return (
+              <article class="ep" id={v.videoId} data-text={(v.title + ' ' + shops.map((s) => s.name).join(' ')).toLowerCase()}>
+                <a href={watchUrl(v.videoId)} target="_blank" rel="noopener" class="ep-media"><Thumb src={thumb(v)} label={fmtDate(v.publishedAt)} /></a>
+                <div>
+                  <p class="date">{fmtDate(v.publishedAt)}</p>
+                  <h3><a href={watchUrl(v.videoId)} target="_blank" rel="noopener">{v.title}</a></h3>
+                  {shops.length > 0 && (
+                    <ul class="ep-shops">
+                      {shops.map((s) => (
+                        <li>
+                          <a href={`/shops/${s.id}`}>{s.name}</a>
+                          <span class="tag">{s.genre}</span>
+                          {s.closed && <span class="tag closed">閉店</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </section>
+      );
+    })}
+  </div>
+</Base>
+<script>
+  const input = document.getElementById('vq') as HTMLInputElement;
+  const eps = [...document.querySelectorAll<HTMLElement>('.ep')];
+  const months = [...document.querySelectorAll<HTMLElement>('.month')];
+  const count = document.getElementById('vcount')!;
+  input.addEventListener('input', () => {
+    const words = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let n = 0;
+    for (const el of eps) { const ok = words.every((w) => el.dataset.text!.includes(w)); el.hidden = !ok; if (ok) n++; }
+    for (const m of months) m.hidden = !m.querySelector('.ep:not([hidden])');
+    count.textContent = words.length ? `${n} 本の動画` : '';
+  });
+</script>
+<style>
+  .head { padding-top: 40px; }
+  .head h1 { font-size: clamp(26px, 4vw, 34px); margin-top: 4px; }
+  .lead { color: var(--ink-2); margin: 8px 0 20px; }
+  .tools { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .tools input { flex: 1 1 280px; font: inherit; font-size: 14px; padding: 10px 14px; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 2px; }
+  .tools input:focus { outline: 2px solid var(--shu); outline-offset: -1px; }
+  .years { display: flex; gap: 6px; flex-wrap: wrap; }
+  .years a { font-family: var(--serif); font-size: 14px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 99px; }
+  .years a:hover { border-color: var(--shu); color: var(--shu); }
+  .vcount { font-family: var(--serif); margin: 12px 0 0; min-height: 1em; }
+  .month { margin-top: 32px; scroll-margin-top: 90px; }
+  .month[hidden], .ep[hidden] { display: none; }
+  .month h2 { font-size: 15px; letter-spacing: .2em; color: var(--ink-2); padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
+  .ep { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
+  .ep:target { background: var(--shu-soft); }
+  @media (max-width: 640px) { .ep { grid-template-columns: 120px 1fr; gap: 12px; } .ep h3 { font-size: 14px !important; } }
+  .date { font-size: 12px; color: var(--ink-2); margin: 0; }
+  h3 { font-size: 16px; margin: 2px 0 10px; }
+  h3 a:hover { color: var(--shu); }
+  .ep-shops { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+  .ep-shops li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+  .ep-shops a { border-bottom: 1px solid var(--line); }
+  .ep-shops a:hover { color: var(--shu); border-color: var(--shu); }
+</style>

@@ -1,0 +1,21 @@
+{
+  "name": "bocchi-gourmet-archive",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "fetch": "node scripts/fetch-videos.mjs",
+    "extract": "node scripts/extract-shops.mjs",
+    "geocode": "node scripts/geocode.mjs",
+    "update": "npm run fetch && npm run extract && npm run geocode"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "astro": "^5.18.2",
+    "js-yaml": "^5.4.3",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3"
+  }
+}

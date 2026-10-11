@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import ShopCard from '../components/ShopCard.astro';
+import { getShops } from '../lib/data';
+const shops = getShops();
+const total = shops.filter((s) => !s.closed).length;
+---
+<Base title="わたしの記録">
+  <section class="wrap head">
+    <p class="eyebrow">My Log</p>
+    <h1>わたしの記録</h1>
+    <p class="lead">お店のページで「行った！」「行きたい」を押すと、ここにたまっていきます。<br />記録はこの端末のブラウザにだけ保存されます。</p>
+    <div class="progress">
+      <p data-total={total}><b id="n">0</b> / {total} 軒 制覇</p>
+      <div class="bar"><span id="bar"></span></div>
+    </div>
+  </section>
+  <section class="section wrap">
+    <div class="section-head"><h2>行ったお店</h2></div>
+    <div class="grid" data-list="visited"></div>
+    <p class="empty" data-empty="visited">まだありません。<a href="/shops">お店をさがす →</a></p>
+  </section>
+  <section class="section wrap">
+    <div class="section-head"><h2>行きたいお店</h2></div>
+    <div class="grid" data-list="want"></div>
+    <p class="empty" data-empty="want">気になるお店に「行きたい」を付けておくと、お出かけのときに便利です。</p>
+  </section>
+  <template id="pool">{shops.map((s) => <div class="slot" data-id={s.id}><ShopCard shop={s} /></div>)}</template>
+</Base>
+<script>
+  import { load, markCards, type Kind } from '../lib/mylog';
+  const log = load();
+  const pool = new Map(
+    [...(document.getElementById('pool') as HTMLTemplateElement).content.querySelectorAll<HTMLElement>('.slot')].map((el) => [el.dataset.id!, el]),
+  );
+  (['visited', 'want'] as Kind[]).forEach((k) => {
+    const grid = document.querySelector(`[data-list="${k}"]`)!;
+    const ids = [...log[k]].reverse().filter((id) => pool.has(id)); // 新しく付けた順
+    for (const id of ids) grid.appendChild(pool.get(id)!.cloneNode(true));
+    (document.querySelector(`[data-empty="${k}"]`) as HTMLElement).hidden = ids.length > 0;
+  });
+  const total = Number(document.querySelector<HTMLElement>('[data-total]')!.dataset.total);
+  const visitedCount = log.visited.filter((id) => pool.has(id)).length;
+  document.getElementById('n')!.textContent = String(visitedCount);
+  (document.getElementById('bar') as HTMLElement).style.width = `${Math.min(100, (visitedCount / Math.max(1, total)) * 100)}%`;
+  markCards();
+</script>
+<style>
+  .head { padding-top: 40px; }
+  .head h1 { font-size: clamp(26px, 4vw, 34px); margin-top: 4px; }
+  .lead { color: var(--ink-2); margin: 8px 0 24px; }
+  .progress p { font-family: var(--serif); margin: 0 0 8px; }
+  .progress b { font-size: 36px; color: var(--shu); font-weight: 600; }
+  .bar { height: 4px; background: var(--line); max-width: 480px; }
+  .bar span { display: block; height: 100%; background: var(--shu); width: 0; transition: width .6s ease; }
+  .empty[hidden] { display: none; }
+  .empty { color: var(--ink-2); }
+  .empty a { color: var(--shu); }
+</style>
