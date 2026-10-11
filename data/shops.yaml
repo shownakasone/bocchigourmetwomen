@@ -14,13 +14,13 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市古川１丁目１０−９−１
   lat: 40.82492
   lng: 140.73582
   visits:
     - videoId: YeTdd__osl4
       menu: [{name: かけラーメン（細麺）, price: 500}]
       note: 10/1より朝営業（7:00〜9:00）がスタート！無料の漬物＆揚げ玉も最高でした。
-  address: 青森県青森市古川１丁目１０−９−１
 - id: 30927c82
   name: 珈琲舎
   pref: 青森県
@@ -48,6 +48,7 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市田園５丁目１−１
   lat: 40.60916
   lng: 140.50554
   visits:
@@ -56,7 +57,6 @@
     - videoId: dtYzLCAVM64
       menu: [{name: 味噌ラーメン}]
       note: 弘前三大味噌ラーメンの店のひとつ。
-  address: 青森県弘前市田園５丁目１−１
 - id: 3983aba2
   name: 古民家カフェ つくしん坊
   pref: 青森県
@@ -74,18 +74,19 @@
   pref: 青森県
   city: つがる市
   genre: 中華・町中華
+  address: 青森県つがる市柏上古川八重崎３７−２２
   lat: 40.80501
   lng: 140.41394
   visits:
     - videoId: njjT2Lpl208
       menu: [{name: ラーメン・チャーハンセット, price: 1450}]
       note: ボリュームと具材の豪華さに大納得！
-  address: 青森県つがる市柏上古川八重崎３７−２２
 - id: a0368905
   name: 煮干結社 麺や 西ゼットン
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市石江岡部６１−４
   lat: 40.82786
   lng: 140.7079
   closed: true
@@ -93,55 +94,54 @@
     - videoId: 2HkYMSlLnaA
       menu: [{name: 爆ニボシスペシャル, price: 1300}]
       note: 2026年10月25日閉店。アメリカンレトロな内装の名店。
-  address: 青森県青森市石江岡部６１−４
 - id: 64a39d7a
   name: 中野珈琲店
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市八幡町２丁目5−５
   lat: 40.61623
   lng: 140.48224
   visits:
     - videoId: 6v7DukBTELk
       menu: [{name: ランチ（ポークソテー）, price: 700}]
       note: 物価高のこの時代に、なんとランチが700円…！
-  address: 青森県弘前市八幡町２丁目5−５
 - id: 11f0c36b
   name: お山の花彩食堂 龍の憩
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市百沢高田８０
   lat: 40.61918
   lng: 140.34336
   visits:
     - videoId: dCphQQsBH4Q
       menu: [{name: あっさり煮干し中華そば}, {name: 津軽の桃スムージー}]
       note: 津軽の中華そばらしく、煮干しが効いたほっこりする中華そば。
-  address: 青森県弘前市百沢高田８０
 - id: 245649c1
   name: のへじ活き活き常夜燈市場
   pref: 青森県
   city: 野辺地町
   genre: 海鮮
+  address: 青森県上北郡野辺地町野辺地５６７
   lat: 40.87152
   lng: 141.11974
   visits:
     - videoId: GirvnzC1XKs
       menu: [{name: ほたて海鮮丼}]
       note: とっても甘くて新鮮！値段もリーズナブルでした。
-  address: 青森県上北郡野辺地町野辺地５６７
 - id: ed605358
   name: CAFE BLE（カフェ ブレ）
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市土手町１２６ 弘前パークホテル 3F
   lat: 40.59875
   lng: 140.47534
   visits:
     - videoId: TleoyYbMTDI
       menu: [{name: ガレット}]
       note: 朝8時から営業。青森県産の食材にこだわったガレット。
-  address: 青森県弘前市土手町１２６ 弘前パークホテル 3F
 - id: b72743c1
   name: ラーメンショップ 平川店
   pref: 青森県
@@ -174,37 +174,37 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 B1F フードコート内
   lat: 40.59963
   lng: 140.48065
   visits:
     - videoId: WQ00MDngDjs
       menu: [{name: ブラック（平日14〜17時レディースタイム）, price: 500}]
       note: 平日限定レディースタイムで500円ぽっきり。
-  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 B1F フードコート内
 - id: 1547fe44
   name: 地蔵茶屋
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市百沢裾野
   lat: 40.6186
   lng: 140.28451
   visits:
     - videoId: Wa9jHZKCOkg
       menu: [{name: お蕎麦とミニカレーのセット, price: 980}]
       note: 嶽きみ直売所のお隣。飾らない素朴な家庭の味。
-  address: 青森県弘前市百沢裾野
 - id: 5f5f5752
   name: 喫茶 けや木
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市桜ケ丘２丁目３−２
   lat: 40.5745
   lng: 140.44999
   visits:
     - videoId: -b6N8FeFqPQ
       menu: [{name: 夏野菜のトマトソースパスタランチ}]
       note: 色とりどりの野菜がいっぱい。
-  address: 青森県弘前市桜ケ丘２丁目３−２
 - id: e63e8290
   name: そば真
   pref: 岩手県
@@ -220,61 +220,61 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市稲田２丁目1−１
   lat: 40.6023
   lng: 140.48881
   visits:
     - videoId: pDhfVpskQWM
       menu: [{name: 濃口煮干し}]
       note: 濃厚煮干しなのに、まろやかでほんのり甘み。クセになる味わい。
-  address: 青森県弘前市稲田２丁目1−１
 - id: 83ebaa3a
   name: CAFEカブハウス
   pref: 青森県
   city: 田舎館村
   genre: カフェ・喫茶
+  address: 青森県南津軽郡田舎館村高樋八幡１８ 道の駅いなかだて内
   lat: 40.63412
   lng: 140.57733
   visits:
     - videoId: h7kZUCALHaI
       menu: [{name: タコライス}]
       note: 道の駅いなかだて弥生の里内。県内初の「カブの駅」。
-  address: 青森県南津軽郡田舎館村高樋八幡１８ 道の駅いなかだて内
 - id: a5b9a000
   name: 丸大食堂
   pref: 青森県
   city: 鶴田町
   genre: 食堂・定食
+  address: 青森県北津軽郡鶴田町鶴田前田４１−１８
   lat: 40.7587
   lng: 140.43428
   visits:
     - videoId: 3Yfsf8t5Lc4
       menu: [{name: ラーメン, price: 500}]
       note: 手書きのメニューが壁いっぱいの、昭和の雰囲気満載の店内。
-  address: 青森県北津軽郡鶴田町鶴田前田４１−１８
 - id: 13e49894
   name: 朝元喜
   pref: 青森県
   city: 平川市
   genre: ラーメン
+  address: 青森県平川市大坊前田８１−６
   lat: 40.57091
   lng: 140.54296
   visits:
     - videoId: Dz6cd3whU-s
       menu: [{name: 中華そば, price: 600}]
       note: 大坊温泉の隣。津軽三味線が流れる骨董品屋さんのような店内。
-  address: 青森県平川市大坊前田８１−６
 - id: 6a00526d
   name: お食事処 和乃菜
   pref: 青森県
   city: 平川市
   genre: 食堂・定食
+  address: 青森県平川市柏木町藤山25−９ ザ・シティービル 205号
   lat: 40.58479
   lng: 140.56639
   visits:
     - videoId: df3r6MwkppA
       menu: [{name: 日替わりランチ, price: 1000}]
       note: 市役所向かい。曜日でメニューが決まっている贅沢ランチ。
-  address: 青森県平川市柏木町藤山25−９ ザ・シティービル 205号
 - id: d4a1d90d
   name: レストランもみじ
   pref: 青森県
@@ -293,6 +293,7 @@
   pref: 青森県
   city: 藤崎町
   genre: ラーメン
+  address: 青森県南津軽郡藤崎町榊和田65−１
   lat: 40.67592
   lng: 140.52947
   closed: true
@@ -307,19 +308,18 @@
     - videoId: 1AbLqz-WDv4
     - videoId: WmvgaGV3q5k
       menu: [{name: 味噌ラーメン}]
-  address: 青森県南津軽郡藤崎町榊和田65−１
 - id: 0abcc27b
   name: そうま食堂
   pref: 青森県
   city: むつ市
   genre: 食堂・定食
+  address: 青森県むつ市金谷２丁目１１−２２
   lat: 41.29176
   lng: 141.1922
   visits:
     - videoId: wtT1f6KR2qU
       menu: [{name: 唐揚げセット, price: 1000}]
       note: お腹がはち切れるかと思うほどの凄まじいボリューム！
-  address: 青森県むつ市金谷２丁目１１−２２
 - id: bb088ec2
   name: 熱烈歓迎中華 回
   pref: 青森県
@@ -338,13 +338,13 @@
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市春日町３６−１２ プレシャスガーデン D号
   lat: 40.61498
   lng: 140.46627
   visits:
     - videoId: LdxoPwJmdHw
       menu: [{name: 糀ごはんランチ}]
       note: 完全予約制。木の箱に入った発酵食品たっぷりのランチ。
-  address: 青森県弘前市春日町３６−１２ プレシャスガーデン D号
 - id: cf3f7295
   name: 立ち喰い肉煮干しそば にぼ節
   pref: 青森県
@@ -414,6 +414,7 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市市ノ町２番地１ 横町交流館内
   lat: 40.64408
   lng: 140.59431
   visits:
@@ -423,7 +424,6 @@
     - videoId: I7mOAKyBX70
       menu: [{name: 作りたて弁当}]
       note: 新しい市役所の敷地内。
-  address: 青森県黒石市市ノ町２番地１ 横町交流館内
 - id: c75bdaf0
   name: 発酵カフェRRr
   pref: 青森県
@@ -488,37 +488,37 @@
   pref: 青森県
   city: 深浦町
   genre: 海鮮
+  address: 青森県西津軽郡深浦町松神下浜松１４−１４
   lat: 40.5566
   lng: 139.94645
   visits:
     - videoId: 0W4A7KicwiI
       menu: [{name: 深浦マグロ丼}]
       note: アオーネ白神十二湖内。新鮮なマグロに一口目から大感動。
-  address: 青森県西津軽郡深浦町松神下浜松１４−１４
 - id: 7d134ee1
   name: 黒石こみせ通り（つゆ焼きそば）
   pref: 青森県
   city: 黒石市
   genre: ご当地グルメ
+  address: 青森県黒石市
   lat: 40.64479
   lng: 140.59658
   visits:
     - videoId: AjCJrK4I-KQ
       menu: [{name: つゆ焼きそば}]
       note: 黒石名物「つゆ焼きそば」。
-  address: 青森県黒石市
 - id: d25a6384
   name: そば処 義平
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市本町６３
   lat: 40.80871
   lng: 140.44388
   visits:
     - videoId: Fq0SfCE0zr8
       menu: [{name: 竹鼻ラーメン}, {name: 鮭おにぎり}]
       note: 創業140年以上の竹鼻製麺所のお店。じんわり沁みる優しい味。
-  address: 青森県五所川原市本町６３
 - id: 094ffec4
   name: らぁ麺ひら山 弘前店
   pref: 青森県
@@ -536,13 +536,13 @@
   pref: 青森県
   city: 青森市
   genre: アジア・エスニック
+  address: 青森県青森市古川１丁目１−３ KOUICHI BLD
   lat: 40.82662
   lng: 140.73438
   visits:
     - videoId: POv_fmquv2A
       menu: [{name: ルーロー飯}, {name: 台湾カステラ}, {name: 黒糖タピオカミルクティー}]
       note: 本格的な味で、かなり台湾気分を味わえました！
-  address: 青森県青森市古川１丁目１−３ KOUICHI BLD
 - id: 715bda48
   name: 風の谷
   pref: 青森県
@@ -599,13 +599,13 @@
   pref: 青森県
   city: 弘前市
   genre: スイーツ
+  address: 青森県弘前市土手町１３２−２ 1F
   lat: 40.59835
   lng: 140.47541
   visits:
     - videoId: XEs-WHmRmrY
       menu: [{name: ミールパンケーキ}]
       note: 口に入れた瞬間なくなるレベルのふわふわパンケーキ。
-  address: 青森県弘前市土手町１３２−２ 1F
 - id: b60adb6d
   name: 珈琲詩人
   pref: 青森県
@@ -625,13 +625,13 @@
   pref: 青森県
   city: むつ市
   genre: 食堂・定食
+  address: 青森県むつ市大平町１−１１
   lat: 41.28456
   lng: 141.17568
   visits:
     - videoId: G79bvD-3WEw
       menu: [{name: カツ丼, price: 650}, {name: ラーメン, price: 450}]
       note: 年配のお母さんがワンオペ。提供はゆっくりなので時間に余裕を。
-  address: 青森県むつ市大平町１−１１
 - id: a0a7b843
   name: つじい（海つじい・山つじい）
   pref: 青森県
@@ -647,6 +647,7 @@
   pref: 青森県
   city: 弘前市
   genre: スイーツ
+  address: 青森県弘前市宮地川添７７−４ 直売所野市里内
   lat: 40.61655
   lng: 140.3956
   visits:
@@ -655,7 +656,6 @@
       note: 岩木山周辺。温泉とあわせて癒しの一日に。
     - videoId: 1DgC6cp4dTA
       note: 直売所 野市里内。岩木山が綺麗に見えるカウンター。
-  address: 青森県弘前市宮地川添７７−４ 直売所野市里内
 - id: fb696d8a
   name: 津軽屋食堂
   pref: 北海道
@@ -672,13 +672,13 @@
   pref: 北海道
   city: 函館市
   genre: 中華・町中華
+  address: 北海道函館市宮前町２７−１１
   lat: 41.79091
   lng: 140.7383
   visits:
     - videoId: __SewpJ4sE0
       menu: [{name: 塩ラーメン}, {name: 鶏南蛮}]
       note: 透明スープが美しい塩ラーメン。
-  address: 北海道函館市宮前町２７−１１
 - id: 907c7701
   name: ラッキーピエロ 人見店
   pref: 北海道
@@ -695,12 +695,12 @@
   pref: 青森県
   city: 青森市
   genre: ファストフード
+  address: 青森県青森市新町１丁目７−１
   lat: 40.82598
   lng: 140.73777
   visits:
     - videoId: Wj6BwZfSQZk
       note: 青森初上陸（3/27オープン）。
-  address: 青森県青森市新町１丁目７−１
 - id: 5cdaafc7
   name: らーめん大地
   pref: 青森県
@@ -728,126 +728,126 @@
   genre: カフェ・喫茶
   lat: 40.80874
   lng: 140.38019
+  approx: true
   visits:
     - videoId: QjX6GDCQNWQ
       menu: [{name: ランチ（チキンカツ・目玉焼き・カレー）, price: 700}]
       note: 喫茶店なのにスパイスがしっかり効いた本格カレー。食後はサイフォンコーヒー。
-  approx: true
 - id: 1e243d02
   name: 煮干し中華 あさり
   pref: 秋田県
   city: 大館市
   genre: ラーメン
+  address: 秋田県大館市川口大人沢１５８−１
   lat: 40.27741
   lng: 140.47152
   visits:
     - videoId: X5whpLwzGfY
       menu: [{name: 濃厚煮干し中華}]
       note: 朝ラー。ガツンと煮干しが美味い！
-  address: 秋田県大館市川口大人沢１５８−１
 - id: 415d4ea1
   name: らあめん花月 弘前安原店
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市泉野１丁目４−４
   lat: 40.57624
   lng: 140.49116
   visits:
     - videoId: yWX6FvNOGJs
       menu: [{name: 黒マー油ラーメン（期間限定）}]
-  address: 青森県弘前市泉野１丁目４−４
 - id: 963129cd
   name: Cream D 弘前店
   pref: 青森県
   city: 弘前市
   genre: スイーツ
+  address: 青森県弘前市石川春仕内１００−１
   lat: 40.55608
   lng: 140.54571
   visits:
     - videoId: yWX6FvNOGJs
       menu: [{name: 生ドーナツ}]
       note: 生ドーナツ専門店。
-  address: 青森県弘前市石川春仕内１００−１
 - id: 55f59323
   name: 食事処とんかつ しげ作
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市桶屋町６５
   lat: 40.59904
   lng: 140.46925
   visits:
     - videoId: zJ3on71aHOc
       menu: [{name: とんかつ定食（ランチ）}]
       note: 豚さんゼリーが可愛い。
-  address: 青森県弘前市桶屋町６５
 - id: 76344faa
   name: グリル谷
   pref: 青森県
   city: つがる市
   genre: ラーメン
+  address: 青森県つがる市木造藤田１６−５
   lat: 40.81825
   lng: 140.38525
   visits:
     - videoId: kGnkH8q43Xw
       menu: [{name: 朝ラーメン}]
-  address: 青森県つがる市木造藤田１６−５
 - id: 8294e870
   name: ボンジュカフェ
   pref: 青森県
   city: 青森市
   genre: カフェ・喫茶
+  address: 青森県青森市浪岡大字高屋敷野尻1−２４
   lat: 40.74355
   lng: 140.58201
   visits:
     - videoId: Ar4ZqpGd8EI
       note: 浪岡の味噌工場のカフェ。
-  address: 青森県青森市浪岡大字高屋敷野尻1−２４
 - id: 169d78c2
   name: 寿司割烹 味新
   pref: 青森県
   city: 弘前市
   genre: 和食
+  address: 青森県弘前市宮川３丁目４−３
   lat: 40.6161
   lng: 140.48727
   visits:
     - videoId: aG2NybMx-7g
       menu: [{name: 和風だしカレーライス（生活応援フェア）}]
       note: 夜限定のお得なセット。
-  address: 青森県弘前市宮川３丁目４−３
 - id: 777f1416
   name: 青森魚菜センター本店
   pref: 青森県
   city: 青森市
   genre: 海鮮
+  address: 青森県青森市古川１丁目１１−１６
   lat: 40.8259
   lng: 140.73591
   visits:
     - videoId: tmgesIrS3ps
       menu: [{name: のっけ丼}]
       note: 初めてののっけ丼。
-  address: 青森県青森市古川１丁目１１−１６
 - id: 2ce3c041
   name: 清水野茶屋
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市清水森下川原36−６
   lat: 40.56827
   lng: 140.49682
   visits:
     - videoId: ZzigL4itXHM
       menu: [{name: ラーメンセット}]
-  address: 青森県弘前市清水森下川原36−６
 - id: eca9752a
   name: たけ屋
   pref: 青森県
   city: 五所川原市
   genre: 食堂・定食
+  address: 青森県五所川原市小曲豊里５−２
   lat: 40.81056
   lng: 140.42932
   visits:
     - videoId: CX7rHxt0jPs
       note: 2026年2月6日再オープン。
-  address: 青森県五所川原市小曲豊里５−２
 - id: d15cb0b5
   name: 食べ処 みちのく
   pref: 青森県
@@ -874,21 +874,21 @@
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市市ノ町１０−１
   lat: 40.64308
   lng: 140.59532
   visits:
     - videoId: DVldL-z2kBQ
-  address: 青森県黒石市市ノ町１０−１
 - id: 9c43906d
   name: グッテ
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市袋井３丁目４３−２
   lat: 40.64187
   lng: 140.58796
   visits:
     - videoId: DVldL-z2kBQ
-  address: 青森県黒石市袋井３丁目４３−２
 - id: 4aa2eecc
   name: そばの矢車
   pref: 青森県
@@ -910,6 +910,7 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市上白銀町３−８
   lat: 40.60353
   lng: 140.46205
   visits:
@@ -917,12 +918,12 @@
       note: 弘前雪灯籠まつりとあわせて。
     - videoId: bCWFuHV-ZJA
       note: 2024年11月オープン。
-  address: 青森県弘前市上白銀町３−８
 - id: 0191203d
   name: らぁ麺 ひら山（浪岡）
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市浪岡福田３丁目２−２
   lat: 40.72179
   lng: 140.58775
   visits:
@@ -930,19 +931,18 @@
       menu: [{name: 醤油らぁ麺}, {name: 味噌らぁ麺}]
     - videoId: RLYzjWsN4r0
       note: 2023年2月オープン。
-  address: 青森県青森市浪岡福田３丁目２−２
 - id: c2c2f7c8
   name: カフェ 季紗羅
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市追子野木２丁目１０８−１
   lat: 40.63843
   lng: 140.5865
   visits:
     - videoId: 8gN5ZWgjZXg
       menu: [{name: 日替わり定食}]
       note: コスパ最高の日替わり定食。
-  address: 青森県黒石市追子野木２丁目１０８−１
 - id: 371686f1
   name: サンライズ食堂
   pref: 青森県
@@ -965,13 +965,13 @@
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市下湯口村元４４−１
   lat: 40.58757
   lng: 140.42132
   visits:
     - videoId: VsPwCQhshoM
       menu: [{name: ラーメンセット（冬期限定）, price: 880}]
       note: 冬期間しか食べられないセット。
-  address: 青森県弘前市下湯口村元４４−１
 - id: d282823e
   name: スープカレーのお店（藤崎町）
   pref: 青森県
@@ -989,13 +989,13 @@
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市鍛冶町２６
   lat: 40.60097
   lng: 140.46998
   visits:
     - videoId: 3YJF6XipOM8
       menu: [{name: 天中華}]
       note: お蕎麦屋さんの珍しい中華そば。
-  address: 青森県弘前市鍛冶町２６
 - id: c37e441c
   name: 中華飯店 幡龍 藤崎店
   pref: 青森県
@@ -1019,39 +1019,40 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市野内小笹１４−１
   lat: 40.84619
   lng: 140.83504
   visits:
     - videoId: F1rFVshcGno
       note: 朝ラー。
-  address: 青森県青森市野内小笹１４−１
 - id: b908979a
   name: にこまる
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市土手町３１ ごちそうプラザ 1F
   lat: 40.60204
   lng: 140.47143
   visits:
     - videoId: 6GCUUbmZkI4
       menu: [{name: にこまるプレート}]
       note: 体が喜ぶプレート。
-  address: 青森県弘前市土手町３１ ごちそうプラザ 1F
 - id: f55cb81c
   name: ポークカレー専門店 アカフジ
   pref: 青森県
   city: 青森市
   genre: カレー
+  address: 青森県青森市大野鳴滝６４−２７４
   lat: 40.80562
   lng: 140.72433
   visits:
     - videoId: en9CJGo3oac
-  address: 青森県青森市大野鳴滝６４−２７４
 - id: 8d198e05
   name: 中みそ ヒロロ店
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
   lat: 40.59731
   lng: 140.48151
   visits:
@@ -1060,7 +1061,6 @@
       note: ヒロロ内。
     - videoId: rOWZcgfSuXE
       note: ソウルフード中みそがヒロロで復活。
-  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
 - id: b190a969
   name: 中華そば ふぶ
   pref: 青森県
@@ -1074,6 +1074,7 @@
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市宮川３丁目３−３
   lat: 40.61645
   lng: 140.48612
   visits:
@@ -1081,18 +1082,17 @@
       menu: [{name: 鍋焼きうどん}]
       note: 豪華鍋焼きうどん。
     - videoId: j-7HQpyAcDM
-  address: 青森県弘前市宮川３丁目３−３
 - id: 552acfdb
   name: ソババル チリエージョ
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市元長町１１−３
   lat: 40.60169
   lng: 140.46838
   visits:
     - videoId: DteF3k7a3_E
       note: 新感覚そば。
-  address: 青森県弘前市元長町１１−３
 - id: 3c6e5b1c
   name: 峠の茶屋
   pref: 青森県
@@ -1112,6 +1112,7 @@
   pref: 青森県
   city: 平川市
   genre: ラーメン
+  address: 青森県平川市尾上栄松８２−５
   lat: 40.61448
   lng: 140.57826
   visits:
@@ -1119,7 +1120,6 @@
       note: 年末年始も営業。
     - videoId: SGLVP70XrJU
       note: 津軽尾上駅近く。
-  address: 青森県平川市尾上栄松８２−５
 - id: c61d85a1
   name: かんとの中華そば
   pref: 青森県
@@ -1138,21 +1138,21 @@
   genre: ラーメン
   lat: 40.27169
   lng: 140.56525
+  approx: true
   visits:
     - videoId: UywY-7cWl0w
       note: 朝ラー。
-  approx: true
 - id: cd82d693
   name: あさねぼう
   pref: 青森県
   city: つがる市
   genre: 洋食
+  address: 青森県つがる市木造桜川１４−２
   lat: 40.80665
   lng: 140.38616
   visits:
     - videoId: dWwMRYk-oVc
       menu: [{name: オムライス}]
-  address: 青森県つがる市木造桜川１４−２
 - id: c2fa3224
   name: 麺屋 長門
   pref: 青森県
@@ -1185,6 +1185,7 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市浪岡大字浪岡山元
   lat: 40.72145
   lng: 140.58218
   visits:
@@ -1192,42 +1193,41 @@
       note: 土日限定朝ラー。
     - videoId: gK25vkiNUHI
       note: 2024年2月3日オープン。
-  address: 青森県青森市浪岡大字浪岡山元
 - id: 297bb8fe
   name: 喫茶ムーミン
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市五代早稲田５０８−１５
   lat: 40.61643
   lng: 140.41265
   visits:
     - videoId: d2ZyHYaTFlU
       menu: [{name: エビドリア}]
       note: 安くて美味しい喫茶店。
-  address: 青森県弘前市五代早稲田５０８−１５
 - id: e861bc6f
   name: まんぷく亭
   pref: 青森県
   city: 藤崎町
   genre: 食堂・定食
+  address: 青森県南津軽郡藤崎町常盤一西田１２−１８
   lat: 40.67093
   lng: 140.5465
   visits:
     - videoId: 2PlA9-lWDIU
       note: セットが激安。
-  address: 青森県南津軽郡藤崎町常盤一西田１２−１８
 - id: a42da667
   name: STAGE 山・野・草
   pref: 青森県
   city: 弘前市
   genre: 和食
+  address: 青森県弘前市城東北３丁目１０−１０−１ さくら野百貨店弘前店
   lat: 40.60635
   lng: 140.496
   visits:
     - videoId: FIiN4I-N6L4
       menu: [{name: 御膳}]
       note: ご褒美飯。
-  address: 青森県弘前市城東北３丁目１０−１０−１ さくら野百貨店弘前店
 - id: 95c6e31d
   name: ココス 弘前高田店
   pref: 青森県
@@ -1254,6 +1254,7 @@
   pref: 青森県
   city: 平川市
   genre: ラーメン
+  address: 青森県平川市八幡崎松橋２２−１
   lat: 40.62112
   lng: 140.53872
   visits:
@@ -1263,7 +1264,6 @@
     - videoId: fdYxtEPhCPI
       menu: [{name: ラーメン, price: 500}]
       note: ワンコインラーメン。
-  address: 青森県平川市八幡崎松橋２２−１
 - id: c017aa4c
   name: キッチンもぐもぐ
   pref: 青森県
@@ -1311,12 +1311,12 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市富士見１０３
   lat: 40.66633
   lng: 140.60151
   visits:
     - videoId: SifUskB7JFk
       note: 2025年11月12日オープン。
-  address: 青森県黒石市富士見１０３
 - id: e08a15e9
   name: 道草庵
   pref: 青森県
@@ -1340,24 +1340,24 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市土手町３８ スカイパークビル 1階
   lat: 40.60243
   lng: 140.47214
   visits:
     - videoId: VSqA23CfOeM
       note: 2025年11月1日オープン。
-  address: 青森県弘前市土手町３８ スカイパークビル 1階
 - id: f246c9a1
   name: 喫茶店 アダム&イブ
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市外崎２丁目４−１
   lat: 40.5981
   lng: 140.49749
   visits:
     - videoId: 4JtlCF9WkD0
       menu: [{name: ハンバーグ}]
       note: 蔵を改装した和モダンな喫茶店。
-  address: 青森県弘前市外崎２丁目４−１
 - id: 965f7433
   name: 焼肉きんぐ 弘前店
   pref: 青森県
@@ -1373,17 +1373,18 @@
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市土手町１３２−２ 2F
   lat: 40.59827
   lng: 140.47509
   visits:
     - videoId: 8cHcaunAeUQ
       note: 10月21日にリニューアルオープンした喫茶店。
-  address: 青森県弘前市土手町１３２−２ 2F
 - id: 97eae045
   name: つけ蕎麦 津桜
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市向外瀬豊田２３０−５
   lat: 40.62766
   lng: 140.47898
   visits:
@@ -1394,30 +1395,29 @@
       note: とても美しくて美味しかった。
     - videoId: yh8yTsMGIws
       menu: [{name: 濃厚魚介豚骨つけ蕎麦}]
-  address: 青森県弘前市向外瀬豊田２３０−５
 - id: 2a8e085a
   name: 魚市場の活き活き寿司 本店
   pref: 青森県
   city: 五所川原市
   genre: 海鮮
+  address: 青森県五所川原市大字広田字柳沼1091
   lat: 40.78694
   lng: 140.46165
   visits:
     - videoId: I2J7uzfUcTw
       menu: [{name: 平日限定寿司ランチ}]
       note: 新鮮、お得で美味しい平日限定の寿司ランチ。
-  address: 青森県五所川原市大字広田字柳沼1091
 - id: 46b9827d
   name: 限界を超えろ弘前
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市本町８５−１ 明治屋グランドビル 102
   lat: 40.60088
   lng: 140.46924
   visits:
     - videoId: XAny_HxnQuM
       menu: [{name: ラーメン（300g）}]
-  address: 青森県弘前市本町８５−１ 明治屋グランドビル 102
 - id: 06fa188e
   name: PIZZERIA MIA
   pref: 青森県
@@ -1454,24 +1454,24 @@
   pref: 青森県
   city: 平川市
   genre: ラーメン
+  address: 青森県平川市原上原1−１
   lat: 40.61672
   lng: 140.57586
   visits:
     - videoId: 72l1Yxd3xU8
       menu: [{name: チャーシュー麺}]
-  address: 青森県平川市原上原1−１
 - id: '6208e092'
   name: 中国料理 菜香
   pref: 青森県
   city: 黒石市
   genre: 中華・町中華
+  address: 青森県黒石市前町１８−８
   lat: 40.64169
   lng: 140.59486
   visits:
     - videoId: ZqWlV8tHhQI
       menu: [{name: ランチ}]
       note: お得で美味しいランチ。
-  address: 青森県黒石市前町１８−８
 - id: a689e1a8
   name: 津軽百年食堂 そば処 亀乃屋
   pref: 青森県
@@ -1503,17 +1503,18 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市豊田３丁目１−１
   lat: 40.59603
   lng: 140.49971
   visits:
     - videoId: SnI1GKlfIOY
       note: 土日限定朝ラー。
-  address: 青森県弘前市豊田３丁目１−１
 - id: de3b7b23
   name: 焼肉厨房いっしん
   pref: 青森県
   city: 弘前市
   genre: 焼肉
+  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 地下1F フードコート内
   lat: 40.59964
   lng: 140.48069
   visits:
@@ -1521,7 +1522,6 @@
       note: シーナシーナ地下1Fフードコート。
     - videoId: RfhcSoBytjg
       menu: [{name: 温玉カルビ丼}]
-  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 地下1F フードコート内
 - id: 8202026b
   name: 岩木食堂
   pref: 青森県
@@ -1546,23 +1546,23 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市早稲田４丁目5−５
   lat: 40.603
   lng: 140.51686
   visits:
     - videoId: 6kqRptXWTU0
       note: 8月14日にリニューアルオープン。
-  address: 青森県弘前市早稲田４丁目5−５
 - id: 6a69da32
   name: 元祖家系油そば 佐藤家
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市中野１丁目１３−４５ 西弘会館 １F
   lat: 40.58292
   lng: 140.47093
   visits:
     - videoId: otWQ18U5BRw
       menu: [{name: 油そば}]
-  address: 青森県弘前市中野１丁目１３−４５ 西弘会館 １F
 - id: 3e3c9597
   name: フランス食堂 シェ・モア
   pref: 青森県
@@ -1578,6 +1578,7 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市北美町２丁目７６−３
   lat: 40.65522
   lng: 140.60564
   visits:
@@ -1585,7 +1586,6 @@
     - videoId: fxcmNpuL6UM
       menu: [{name: ラーメン, price: 500}]
       note: あっさり煮干し。麺の量も多くチャーシュー3枚。
-  address: 青森県黒石市北美町２丁目７６−３
 - id: 114dc62c
   name: 華丸ラーメン
   pref: 青森県
@@ -1646,12 +1646,12 @@
   pref: 青森県
   city: 鶴田町
   genre: ラーメン
+  address: 青森県北津軽郡鶴田町鶴田相原３９０
   lat: 40.76403
   lng: 140.43359
   visits:
     - videoId: nxV90FmdFgA
       note: 8月18日オープン。
-  address: 青森県北津軽郡鶴田町鶴田相原３９０
 - id: f3ddd397
   name: 青森大勝軒
   pref: 青森県
@@ -1659,6 +1659,7 @@
   genre: ラーメン
   lat: 40.82264
   lng: 140.74696
+  approx: true
   visits:
     - videoId: n4bbuu2Lc7M
       note: お得に朝ラー。
@@ -1666,18 +1667,17 @@
       note: 朝ラー。
     - videoId: uTqlLxmZD_g
       note: 朝ラー。
-  approx: true
 - id: e9b363bc
   name: 池内食堂
   pref: 秋田県
   city: 大館市
   genre: 食堂・定食
+  address: 秋田県大館市池内大出３８５
   lat: 40.24123
   lng: 140.57539
   visits:
     - videoId: 4W2_V_LfCwQ
       menu: [{name: デカ盛り唐揚げ}]
-  address: 秋田県大館市池内大出３８５
 - id: a91b9f4e
   name: 岩木神社食堂部 そば処凧
   pref: 青森県
@@ -1717,45 +1717,45 @@
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市広田柳沼６５−１０
   lat: 40.78596
   lng: 140.46064
   visits:
     - videoId: ql6st5bk0Jc
       note: 朝ラー。
-  address: 青森県五所川原市広田柳沼６５−１０
 - id: 1d7a47d1
   name: 力丸食堂
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市本町７２−１
   lat: 40.60045
   lng: 140.46822
   visits:
     - videoId: trj_cG6WQhM
       menu: [{name: かつカレー}]
       note: とても厚みがあるかつカレー。
-  address: 青森県弘前市本町７２−１
 - id: d87a762d
   name: かなや食堂
   pref: 青森県
   city: 平川市
   genre: 食堂・定食
+  address: 青森県平川市上松元78−１
   lat: 40.60895
   lng: 140.60489
   visits:
     - videoId: VKrVahijgQg
-  address: 青森県平川市上松元78−１
 - id: 4401a586
   name: 中華そば まるつる
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市鎌谷町１５−６
   lat: 40.80546
   lng: 140.44645
   visits:
     - videoId: piH5lOh58Tw
       note: 朝ラー。
-  address: 青森県五所川原市鎌谷町１５−６
 - id: 34419f75
   name: 味助
   pref: 青森県
@@ -1770,11 +1770,11 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市新町１丁目８−５
   lat: 40.82685
   lng: 140.73719
   visits:
     - videoId: qnxLDEhH5I8
-  address: 青森県青森市新町１丁目８−５
 - id: 16a32b9a
   name: 手打ちそば むらかみ
   pref: 青森県
@@ -1789,58 +1789,58 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市高田４丁目３−３
   lat: 40.59923
   lng: 140.5076
   visits:
     - videoId: do1ubNu4JIg
       note: 屋台のラーメン。
-  address: 青森県弘前市高田４丁目３−３
 - id: a8589443
   name: とりごはん いちじん
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市上白銀町１−１０ クランベリー上白銀 2階
   lat: 40.60257
   lng: 140.46436
   visits:
     - videoId: Tt2q625rVFY
       menu: [{name: ランチ}]
-  address: 青森県弘前市上白銀町１−１０ クランベリー上白銀 2階
 - id: f5633a3e
   name: ロイヤルインドカレーハウス（ヒロロキッチン）
   pref: 青森県
   city: 弘前市
   genre: カレー
+  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
   lat: 40.59724
   lng: 140.48161
   visits:
     - videoId: Xt5R8IOL004
       menu: [{name: バターチキンカレー}]
-  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
 - id: 68ea8f8f
   name: 中華そば 純
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市一番町１４２−１
   lat: 40.64882
   lng: 140.59409
   visits:
     - videoId: V9X3rLQr3XI
       menu: [{name: チャーハン（ラーメン注文時）, price: 60}]
       note: テレビで見た時よりさらに安かった60円チャーハン。
-  address: 青森県黒石市一番町１４２−１
 - id: 42b593e0
   name: 丸亀製麺 弘前店
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市高田1丁目2-3
   lat: 40.59654
   lng: 140.50122
   visits:
     - videoId: RXa_pcD6EUY
       menu: [{name: 釜揚げうどん}]
       note: ワンコインでお釣りが来る。
-  address: 青森県弘前市高田1丁目2-3
 - id: 656367c0
   name: 食事処 すその
   pref: 青森県
@@ -1856,23 +1856,23 @@
   pref: 青森県
   city: 青森市
   genre: カフェ・喫茶
+  address: 青森県青森市浪岡福田２丁目１−９
   lat: 40.72044
   lng: 140.58861
   visits:
     - videoId: B7PKyCsZeLk
       note: 浪岡の昭和レトロ喫茶店。
-  address: 青森県青森市浪岡福田２丁目１−９
 - id: 8c5bda1f
   name: 大黒屋
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市七ツ館虫流１００−７
   lat: 40.77709
   lng: 140.48251
   visits:
     - videoId: vLpPRZc1znY
       menu: [{name: あっさりラーメン}]
-  address: 青森県五所川原市七ツ館虫流１００−７
 - id: a3bc2da6
   name: 藤翔製麺
   pref: 青森県
@@ -1909,23 +1909,23 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市春日町９６−２
   lat: 40.64776
   lng: 140.60417
   visits:
     - videoId: cXDroEPFN7s
       menu: [{name: 冷やし豆乳担々麺}]
-  address: 青森県黒石市春日町９６−２
 - id: bed43d62
   name: 喫茶 ラズベリー
   pref: 青森県
   city: 平川市
   genre: カフェ・喫茶
+  address: 青森県平川市猿賀南野１−２０
   lat: 40.61444
   lng: 140.57596
   visits:
     - videoId: FPSJ35Quwo0
       note: 尾上駅のそばの喫茶店。
-  address: 青森県平川市猿賀南野１−２０
 - id: dba57ba6
   name: ガスト イオンタウン樋ノ口店
   pref: 青森県
@@ -1966,36 +1966,36 @@
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市西ケ丘７６−１
   lat: 40.64694
   lng: 140.58542
   visits:
     - videoId: cBSJmKf9fkA
       menu: [{name: ランチ}]
       note: 野菜たっぷりのランチ。
-  address: 青森県黒石市西ケ丘７６−１
 - id: b11a9ca7
   name: ブラッスリー すず音
   pref: 青森県
   city: 田舎館村
   genre: 洋食
+  address: 青森県南津軽郡田舎館村田舎舘中辻２４９−３
   lat: 40.63249
   lng: 140.55495
   visits:
     - videoId: R1cCM7YvLGc
       menu: [{name: ランチ}]
       note: 品数が多く、どのお料理もすごく美味しい贅沢なランチ。
-  address: 青森県南津軽郡田舎館村田舎舘中辻２４９−３
 - id: a61fbde0
   name: 王道家直伝 青森野呂家 弘前店
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市松ケ枝３丁目1−４
   lat: 40.60482
   lng: 140.48669
   visits:
     - videoId: ljrkOILub3k
       menu: [{name: 家の郎}]
-  address: 青森県弘前市松ケ枝３丁目1−４
 - id: 51c87022
   name: 鮨覚 城東店
   pref: 青森県
@@ -2014,13 +2014,13 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市橋本１丁目５−１６ 103
   lat: 40.82406
   lng: 140.75181
   visits:
     - videoId: _VLzFHnGIrM
       menu: [{name: 超濃厚煮干しラーメン}]
       note: レンゲが立つ超濃厚煮干し。朝ラー。
-  address: 青森県青森市橋本１丁目５−１６ 103
 - id: 8045f14f
   name: おぐら食堂
   pref: 青森県
@@ -2044,42 +2044,42 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市富士見１０３−３ アクロスプラザ黒石 内
   lat: 40.66637
   lng: 140.60148
   visits:
     - videoId: vb41DzQzrl0
-  address: 青森県黒石市富士見１０３−３ アクロスプラザ黒石 内
 - id: 7d76696c
   name: 喰いしん坊
   pref: 青森県
   city: 鶴田町
   genre: 食堂・定食
+  address: 青森県北津軽郡鶴田町鶴田前田６２−３
   lat: 40.75625
   lng: 140.43356
   visits:
     - videoId: H8kg2rPPKyQ
-  address: 青森県北津軽郡鶴田町鶴田前田６２−３
 - id: cadce584
   name: レッツゴーカレー さくら野百貨店弘前店
   pref: 青森県
   city: 弘前市
   genre: カレー
+  address: 青森県弘前市城東北３丁目１０−１
   lat: 40.60659
   lng: 140.4955
   visits:
     - videoId: 0-qNU0Ydzx0
     - videoId: 4eEHfQ_BLiI
-  address: 青森県弘前市城東北３丁目１０−１
 - id: b6023d53
   name: フォレストキッチン
   pref: 青森県
   city: 五所川原市
   genre: 洋食
+  address: 青森県五所川原市旭町５９
   lat: 40.81016
   lng: 140.44744
   visits:
     - videoId: jd3PJvtVXpE
-  address: 青森県五所川原市旭町５９
 - id: 4b57512d
   name: 文ちゃんラーメン
   pref: 青森県
@@ -2097,35 +2097,35 @@
   pref: 青森県
   city: 弘前市
   genre: 洋食
+  address: 青森県弘前市樹木１丁目３−４ グレース626ビル 1F
   lat: 40.59261
   lng: 140.45667
   visits:
     - videoId: jbFg49_NBls
       note: 最勝院五重塔とあわせて。
-  address: 青森県弘前市樹木１丁目３−４ グレース626ビル 1F
 - id: 2d1c0325
   name: マリオンクレープ（ヒロロキッチン）
   pref: 青森県
   city: 弘前市
   genre: スイーツ
+  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
   lat: 40.59713
   lng: 140.4818
   visits:
     - videoId: e3sxxWG6IC8
       menu: [{name: クレープ}]
-  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
 - id: 7e6b59b1
   name: 岩の茶屋
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市百沢裾野番外地
   lat: 40.61487
   lng: 140.3162
   visits:
     - videoId: evlAHN37AZw
       menu: [{name: お蕎麦}]
       note: 岩木山の近く。
-  address: 青森県弘前市百沢裾野番外地
 - id: 7eed5420
   name: つくみ屋 イオンタウン平賀店
   pref: 青森県
@@ -2141,24 +2141,24 @@
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市石川外坪７７
   lat: 40.56298
   lng: 140.52831
   visits:
     - videoId: VLQvOje9llA
       menu: [{name: とんかつ定食}]
       note: 分厚くて柔らかなとんかつ。
-  address: 青森県弘前市石川外坪７７
 - id: da921afa
   name: 喫茶 ルミエ
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市城東１丁目１−２
   lat: 40.59828
   lng: 140.48742
   visits:
     - videoId: 91uxEOynpck
       menu: [{name: ナポリタン}]
-  address: 青森県弘前市城東１丁目１−２
 - id: a2db5724
   name: 麺道舎 ぜくう
   pref: 青森県
@@ -2185,11 +2185,11 @@
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市横町２５−４
   lat: 40.64444
   lng: 140.59384
   visits:
     - videoId: aYh8-kJPFZE
-  address: 青森県黒石市横町２５−４
 - id: ff1b1b22
   name: おとも苑食堂
   pref: 秋田県
@@ -2227,22 +2227,22 @@
   pref: 青森県
   city: 藤崎町
   genre: 居酒屋
+  address: 青森県南津軽郡藤崎町榊亀田２−１１
   lat: 40.6721
   lng: 140.532
   visits:
     - videoId: u-NL-DMrCgs
       menu: [{name: とんかつ定食}]
-  address: 青森県南津軽郡藤崎町榊亀田２−１１
 - id: c86256c0
   name: 中華食堂酒屋 豚珍館
   pref: 青森県
   city: 弘前市
   genre: 中華・町中華
+  address: 青森県弘前市大字田町５丁目５−４
   lat: 40.61407
   lng: 140.48347
   visits:
     - videoId: O_23m_FcY2Q
-  address: 青森県弘前市大字田町５丁目５−４
 - id: d413f1f1
   name: 中華そば つしま 青森
   pref: 青森県
@@ -2263,13 +2263,13 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市南横町３３−１
   lat: 40.60452
   lng: 140.47662
   visits:
     - videoId: nx8sPlW3S98
       menu: [{name: なひゃんずラーメン}]
       note: ボリューム満点。
-  address: 青森県弘前市南横町３３−１
 - id: 97219e3a
   name: 外ヶ浜町総合交流促進センター かぶと
   pref: 青森県
@@ -2285,53 +2285,53 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市追子野木３丁目４７０−１
   lat: 40.63558
   lng: 140.58173
   visits:
     - videoId: 6Pju1YAQyKQ
       menu: [{name: ラーメン, price: 500}]
       note: ワンコインラーメン。
-  address: 青森県黒石市追子野木３丁目４７０−１
 - id: a5a79a51
   name: 創作イタリアン pietanza
   pref: 青森県
   city: 弘前市
   genre: 洋食
+  address: 青森県弘前市末広５丁目５−３
   lat: 40.60994
   lng: 140.50491
   visits:
     - videoId: waSAjpt9XLw
-  address: 青森県弘前市末広５丁目５−３
 - id: 7b238c54
   name: 名曲&珈琲 ひまわり
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市坂本町２
   lat: 40.60097
   lng: 140.47432
   visits:
     - videoId: rgfrVH8aF0Q
-  address: 青森県弘前市坂本町２
 - id: 14bd1f16
   name: 高増食堂
   pref: 青森県
   city: 板柳町
   genre: 食堂・定食
+  address: 青森県北津軽郡板柳町大俵富永７１−１
   lat: 40.7219
   lng: 140.48646
   visits:
     - videoId: DzWWMnF9S_4
-  address: 青森県北津軽郡板柳町大俵富永７１−１
 - id: d48971fe
   name: やすた食堂
   pref: 青森県
   city: 鶴田町
   genre: 食堂・定食
+  address: 青森県北津軽郡鶴田町鶴田早瀬１９９
   lat: 40.75834
   lng: 140.43032
   visits:
     - videoId: ljgM704fSlY
-  address: 青森県北津軽郡鶴田町鶴田早瀬１９９
 - id: e9bbffcf
   name: いちのへ菓子舗
   pref: 青森県
@@ -2356,55 +2356,55 @@
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市鍛冶町４
   lat: 40.60177
   lng: 140.4706
   visits:
     - videoId: PfBMrnn7cQs
-  address: 青森県弘前市鍛冶町４
 - id: 194a7749
   name: クルックー
   pref: 青森県
   city: 弘前市
   genre: スイーツ
+  address: 青森県弘前市土手町６５
   lat: 40.60104
   lng: 140.47346
   visits:
     - videoId: PfBMrnn7cQs
       menu: [{name: クレープ}]
       note: 土手町のクレープ屋さん。
-  address: 青森県弘前市土手町６５
 - id: 4ddb58d5
   name: ラーメン 竈
   pref: 青森県
   city: つがる市
   genre: ラーメン
+  address: 青森県つがる市柏広須志野田１９４−２
   lat: 40.80113
   lng: 140.39922
   visits:
     - videoId: YYLSZv1f3cI
-  address: 青森県つがる市柏広須志野田１９４−２
 - id: b7cf1825
   name: たいま菓子店
   pref: 青森県
   city: つがる市
   genre: スイーツ
+  address: 青森県つがる市木造照日２８−３
   lat: 40.80613
   lng: 140.39093
   visits:
     - videoId: YYLSZv1f3cI
-  address: 青森県つがる市木造照日２８−３
 - id: 27812b6d
   name: つがるの食彩 野田
   pref: 青森県
   city: 黒石市
   genre: そば・うどん
+  address: 青森県黒石市浜町２６−１
   lat: 40.6474
   lng: 140.59866
   visits:
     - videoId: uxi6_ICtSnU
       menu: [{name: お蕎麦}]
       note: 打ち立ての美味しいお蕎麦。
-  address: 青森県黒石市浜町２６−１
 - id: bc0b048a
   name: 宝来軒
   pref: 青森県
@@ -2423,34 +2423,34 @@
   pref: 岩手県
   city: 奥州市
   genre: 食堂・定食
+  address: 岩手県奥州市江刺杉ノ町１−２
   lat: 39.1854
   lng: 141.17548
   visits:
     - videoId: zQZBwv6g6Pc
       menu: [{name: ロースカツ定食}]
-  address: 岩手県奥州市江刺杉ノ町１−２
 - id: 02486d4f
   name: 黒毛和牛と銀シャリ 肉の匠
   pref: 青森県
   city: 弘前市
   genre: 洋食
+  address: 青森県弘前市本町８０−１
   lat: 40.60048
   lng: 140.46915
   visits:
     - videoId: 8u5iv5PMFTw
       menu: [{name: ハンバーグランチ}]
-  address: 青森県弘前市本町８０−１
 - id: 96caac52
   name: 焼きそば かどっこ
   pref: 青森県
   city: 黒石市
   genre: ご当地グルメ
+  address: 青森県黒石市大町２丁目１２０−１
   lat: 40.6469
   lng: 140.59102
   visits:
     - videoId: Pi0Bx6H5abo
       menu: [{name: 焼きそば}]
-  address: 青森県黒石市大町２丁目１２０−１
 - id: d0fefbf2
   name: 兼平焼きそば店
   pref: 青森県
@@ -2468,92 +2468,92 @@
   pref: 青森県
   city: 田舎館村
   genre: ラーメン
+  address: 青森県南津軽郡田舎館村前田屋敷東中野５６−３６
   lat: 40.64933
   lng: 140.55467
   visits:
     - videoId: J1Uu9Jda8b4
       menu: [{name: 山忠ラーメン元祖 ラーメン}]
-  address: 青森県南津軽郡田舎館村前田屋敷東中野５６−３６
 - id: 532f18d0
   name: 炭火焼き うしまる
   pref: 青森県
   city: 弘前市
   genre: 焼肉
+  address: 青森県弘前市駅前町１０−１
   lat: 40.59824
   lng: 140.48145
   visits:
     - videoId: VGT3FEfkLNY
       menu: [{name: 味噌ラーメン（ランチ営業）}]
-  address: 青森県弘前市駅前町１０−１
 - id: 75f58be3
   name: お食事と喫茶 サムスィング
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市北横町６９
   lat: 40.60872
   lng: 140.47825
   visits:
     - videoId: vvz1lRK1quM
       menu: [{name: カレーセット}]
-  address: 青森県弘前市北横町６９
 - id: 8d4978fb
   name: ふくふく亭
   pref: 青森県
   city: 板柳町
   genre: ラーメン
+  address: 青森県北津軽郡板柳町三千石木賊６７−６
   lat: 40.70539
   lng: 140.46494
   visits:
     - videoId: vt7nK6f4SIs
       menu: [{name: ラーメン}, {name: チャーハン}]
       note: 激安ラーメンと激ウマチャーハン！
-  address: 青森県北津軽郡板柳町三千石木賊６７−６
 - id: acb6a690
   name: みちのくの味処 山ざと
   pref: 青森県
   city: 青森市
   genre: 和食
+  address: 青森県青森市新町１丁目９−８
   lat: 40.8276
   lng: 140.73816
   visits:
     - videoId: Q31uHY4yCM4
       menu: [{name: 倉石牛のお寿司ランチ}]
       note: ホテルサンルート青森の地下。
-  address: 青森県青森市新町１丁目９−８
 - id: 54891b92
   name: 居酒屋 儀
   pref: 青森県
   city: 五所川原市
   genre: 居酒屋
+  address: 青森県五所川原市本町２７−１
   lat: 40.8098
   lng: 140.44213
   visits:
     - videoId: ShqlJosn0dc
       menu: [{name: 中みその元祖 味噌ラーメン}]
-  address: 青森県五所川原市本町２７−１
 - id: 706d6097
   name: 山忠 大町
   pref: 青森県
   city: 弘前市
   genre: 中華・町中華
+  address: 青森県弘前市大町１丁目６−７ 102
   lat: 40.59693
   lng: 140.48401
   visits:
     - videoId: A2LKkLgtdzo
       menu: [{name: チャーハンセット}]
       note: 2月4日オープン。
-  address: 青森県弘前市大町１丁目６−７ 102
 - id: 3f10a2fe
   name: 自家製うどん たいら
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市和泉１丁目１６−３
   lat: 40.60865
   lng: 140.48997
   visits:
     - videoId: EcyqGOmE0MM
       note: 1月7日オープン。
-  address: 青森県弘前市和泉１丁目１６−３
 - id: 28af0062
   name: 千石食堂
   pref: 青森県
@@ -2580,23 +2580,23 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市問屋町２丁目１０−３
   lat: 40.78828
   lng: 140.75989
   visits:
     - videoId: zIEXJrWAsKU
       note: 朝ラー。
-  address: 青森県青森市問屋町２丁目１０−３
 - id: d39941e2
   name: 創作そば処 菊富士 シーナシーナ弘前店
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 地下1階
   lat: 40.59937
   lng: 140.4808
   visits:
     - videoId: v1HcuclTrV8
       note: シーナシーナ弘前地下1F。
-  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 地下1階
 - id: 57e46f38
   name: らーめん のぶ
   pref: 青森県
@@ -2617,36 +2617,36 @@
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市鎌谷町１５０−１０
   lat: 40.80495
   lng: 140.45301
   visits:
     - videoId: c4zk19blrKs
       menu: [{name: 味噌ラーメン}]
       note: とっても美味しい味噌ラーメン。
-  address: 青森県五所川原市鎌谷町１５０−１０
 - id: f1d21874
   name: 喫茶 チビ
   pref: 青森県
   city: 青森市
   genre: カフェ・喫茶
+  address: 青森県青森市浪岡大字浪岡稲村１８６−１
   lat: 40.71068
   lng: 140.5946
   visits:
     - videoId: 8DTlA7HUs0U
       menu: [{name: コーヒー}, {name: ナポリタン}]
       note: 浪岡。楽しいおしゃべりで癒された。
-  address: 青森県青森市浪岡大字浪岡稲村１８６−１
 - id: 78feeb5b
   name: 山忠 やまや
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市大町２丁目６０
   lat: 40.64779
   lng: 140.59151
   visits:
     - videoId: 7bSuxKrHC0M
       menu: [{name: 煮干しラーメン}]
-  address: 青森県黒石市大町２丁目６０
 - id: 9929ff90
   name: 麺屋 謝
   pref: 青森県
@@ -2672,12 +2672,12 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市一番町１４２−１
   lat: 40.64882
   lng: 140.59409
   visits:
     - videoId: 4pB9MEF-_cc
       note: 2025年1月2日オープン。
-  address: 青森県黒石市一番町１４２−１
 - id: de4433e2
   name: 中華そば 純 浪岡店
   pref: 青森県
@@ -2698,34 +2698,34 @@
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市早稲田２丁目７−６
   lat: 40.60387
   lng: 140.51231
   visits:
     - videoId: zS8z2MJQg0o
       note: 新店舗。
-  address: 青森県弘前市早稲田２丁目７−６
 - id: a7ed3f70
   name: ラグノオささき イオンタウン樋の口店
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市樋の口２丁目9−６ イオンタウン樋の口店フードコート
   lat: 40.6023
   lng: 140.44382
   visits:
     - videoId: 3lg-sWds6_8
       menu: [{name: カレーランチプレート}]
-  address: 青森県弘前市樋の口２丁目9−６ イオンタウン樋の口店フードコート
 - id: 25a27187
   name: 麺屋 想
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市布屋町５８−２
   lat: 40.80593
   lng: 140.44593
   visits:
     - videoId: 9C3mosSVqpg
       menu: [{name: 鶏ガララーメン}]
-  address: 青森県五所川原市布屋町５８−２
 - id: 92e4947a
   name: 海坊厨
   pref: 青森県
@@ -2764,36 +2764,36 @@
   pref: 秋田県
   city: 秋田市
   genre: ラーメン
+  address: 秋田県秋田市卸町２丁目２−１
   lat: 39.70103
   lng: 140.10965
   visits:
     - videoId: pM41sxPmokA
       menu: [{name: みそちゃんぽん}]
       note: 秋田名物。
-  address: 秋田県秋田市卸町２丁目２−１
 - id: 0b2ed1f9
   name: 麺屋 独虎
   pref: 青森県
   city: つがる市
   genre: ラーメン
+  address: 青森県つがる市柏下古川絹森１−４
   lat: 40.80621
   lng: 140.42064
   visits:
     - videoId: AA8RF2ArAHA
       menu: [{name: 濃厚豚骨ラーメン}]
-  address: 青森県つがる市柏下古川絹森１−４
 - id: 1daa72e3
   name: 伊路里
   pref: 青森県
   city: 板柳町
   genre: 中華・町中華
+  address: 青森県北津軽郡板柳町福野田実田１１−７１
   lat: 40.69826
   lng: 140.46283
   visits:
     - videoId: GBckMX8Qplk
       menu: [{name: 半チャーハンラーメンセット}]
       note: 激安サービスランチ。
-  address: 青森県北津軽郡板柳町福野田実田１１−７１
 - id: 4fa41955
   name: 来々軒
   pref: 青森県
@@ -2810,12 +2810,12 @@
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市中央４丁目１１０
   lat: 40.79649
   lng: 140.45064
   visits:
     - videoId: PGkhgTQLuYw
       menu: [{name: ネギ味噌ラーメン}]
-  address: 青森県五所川原市中央４丁目１１０
 - id: 89b012db
   name: 煮干しラーメン 山岡家 弘前店
   pref: 青森県
@@ -2831,13 +2831,13 @@
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市温湯長漕７−４
   lat: 40.60898
   lng: 140.66763
   visits:
     - videoId: KWYM1nJOL7Q
       menu: [{name: ラーメンとカツ丼セット}]
       note: 昔の味のラーメン。
-  address: 青森県黒石市温湯長漕７−４
 - id: 0116c5f2
   name: たかみ屋
   pref: 岩手県
@@ -2855,23 +2855,23 @@
   pref: 青森県
   city: 十和田市
   genre: アジア・エスニック
+  address: 青森県十和田市東十二番町１２−４０
   lat: 40.62023
   lng: 141.22253
   visits:
     - videoId: ZuQbMKxlJOs
       note: 美味しい沖縄料理。
-  address: 青森県十和田市東十二番町１２−４０
 - id: a9d2e472
   name: らーめん おっぺしゃん 盛岡駅前店
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市盛岡駅前通８−１３
   lat: 39.70189
   lng: 141.13795
   visits:
     - videoId: Ssk2Vvqb0L8
       menu: [{name: 熊本ラーメン}]
-  address: 岩手県盛岡市盛岡駅前通８−１３
 - id: '56834821'
   name: とんかつ 喜多八
   pref: 青森県
@@ -2899,23 +2899,23 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市末広１丁目２−１
   lat: 40.60771
   lng: 140.50044
   visits:
     - videoId: YICjZWSTLGk
       note: 市場で朝ラー。
-  address: 青森県弘前市末広１丁目２−１
 - id: 1b25159a
   name: えんとつ
   pref: 秋田県
   city: 大館市
   genre: 食堂・定食
+  address: 秋田県大館市餌釣大杉２９
   lat: 40.24411
   lng: 140.57396
   visits:
     - videoId: iS3EXK_wdr8
       menu: [{name: ランチ}]
-  address: 秋田県大館市餌釣大杉２９
 - id: f92ff6be
   name: レストラン あっぷるひる
   pref: 青森県
@@ -2923,22 +2923,22 @@
   genre: 食堂・定食
   lat: 40.82264
   lng: 140.74696
+  approx: true
   visits:
     - videoId: xIfI625Ut4U
       note: 道の駅なみおかアップルヒル。
-  approx: true
 - id: e8bb0e01
   name: 我が家
   pref: 青森県
   city: 藤崎町
   genre: ラーメン
+  address: 青森県南津軽郡藤崎町大字水木字古舘４−３
   lat: 40.68067
   lng: 140.53646
   visits:
     - videoId: sm7PYUP_mQs
       menu: [{name: 味噌ラーメン}]
       note: 私好みの味噌ラーメン。
-  address: 青森県南津軽郡藤崎町大字水木字古舘４−３
 - id: 5476dc24
   name: 麺道 一休
   pref: 青森県
@@ -2965,33 +2965,33 @@
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市浜町２８−２
   lat: 40.64773
   lng: 140.59878
   visits:
     - videoId: VfeyKcrn2Bw
       menu: [{name: スタミナらーめん}]
-  address: 青森県黒石市浜町２８−２
 - id: 81887f42
   name: 東山飯店
   pref: 岩手県
   city: 盛岡市
   genre: 中華・町中華
+  address: 岩手県盛岡市西青山２丁目１８−４６
   lat: 39.72865
   lng: 141.10873
   visits:
     - videoId: MHPjq-VnIhY
       menu: [{name: セット}]
-  address: 岩手県盛岡市西青山２丁目１８−４６
 - id: ecde3c70
   name: 中華そば ふぶ
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市取上２丁目1−１５
   lat: 40.58903
   lng: 140.48366
   visits:
     - videoId: vOzggVe2AL8
-  address: 青森県弘前市取上２丁目1−１５
 - id: f36691c3
   name: やよい寿司
   pref: 青森県
@@ -3030,24 +3030,24 @@
   pref: 青森県
   city: 板柳町
   genre: 食堂・定食
+  address: 青森県北津軽郡板柳町福野田実田２２−５９
   lat: 40.69834
   lng: 140.46221
   visits:
     - videoId: P-CA5ILI5GM
       menu: [{name: いちふじ定食}]
       note: 激安。
-  address: 青森県北津軽郡板柳町福野田実田２２−５９
 - id: a6fc0c01
   name: 麺屋 とろも
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市第二問屋町２丁目１−２３
   lat: 40.79482
   lng: 140.75763
   visits:
     - videoId: piJ-u_Gx-w0
       note: 体にいいけど激うまなラーメン。
-  address: 青森県青森市第二問屋町２丁目１−２３
 - id: e9a2b240
   name: 平和軒
   pref: 秋田県
@@ -3064,34 +3064,34 @@
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市追子野木１丁目１０５−２
   lat: 40.63864
   lng: 140.58905
   visits:
     - videoId: T7sck9xVU_I
       menu: [{name: 健康ランチ}]
-  address: 青森県黒石市追子野木１丁目１０５−２
 - id: badc572d
   name: ラーメン びいどろ
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市青山１丁目１４−７
   lat: 39.72161
   lng: 141.11513
   visits:
     - videoId: nuOKnU2dFus
       note: 盛岡市青山。昭和レトロ過ぎるラーメン屋。
-  address: 岩手県盛岡市青山１丁目１４−７
 - id: b8cee976
   name: ランチとおそうざいの店 なでしこ
   pref: 青森県
   city: 大鰐町
   genre: 食堂・定食
+  address: 青森県南津軽郡大鰐町大鰐前田６３−４
   lat: 40.52113
   lng: 140.56788
   visits:
     - videoId: 38ADHlkLMxM
       menu: [{name: ランチ}]
-  address: 青森県南津軽郡大鰐町大鰐前田６３−４
 - id: f12909de
   name: 立ち喰い蕎麦 長尾
   pref: 青森県
@@ -3108,22 +3108,22 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市駒込桐ノ沢８−１
   lat: 40.79834
   lng: 140.78081
   visits:
     - videoId: 9DVHsD2-LTU
       note: 朝ラー。
-  address: 青森県青森市駒込桐ノ沢８−１
 - id: 7c3412d5
   name: ラーメン☆ビリー 盛岡駅地下店
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市盛岡駅前通１−４４ おでんせ館 ホーム 1 めんこい横丁（区画
   lat: 39.70172
   lng: 141.13675
   visits:
     - videoId: NBv6RKQtNyY
-  address: 岩手県盛岡市盛岡駅前通１−４４ おでんせ館 ホーム 1 めんこい横丁（区画
 - id: ec707777
   name: 喫茶室 バトン
   pref: 青森県
@@ -3140,22 +3140,22 @@
   pref: 青森県
   city: 弘前市
   genre: カレー
+  address: 青森県弘前市駅前１丁目１−１ 東横イン弘前駅前 1F
   lat: 40.59971
   lng: 140.48418
   visits:
     - videoId: qeiTfm3YYmQ
-  address: 青森県弘前市駅前１丁目１−１ 東横イン弘前駅前 1F
 - id: bac4d785
   name: 麺屋 あら関
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市筒井桜川８９−１１
   lat: 40.80292
   lng: 140.77538
   visits:
     - videoId: oUF7Ohe1iYg
       note: 朝ラー。
-  address: 青森県青森市筒井桜川８９−１１
 - id: 0c783135
   name: 天下一品 大曲店
   pref: 秋田県
@@ -3172,9 +3172,9 @@
   genre: ラーメン
   lat: 40.21579
   lng: 140.78854
+  approx: true
   visits:
     - videoId: _4TxnCOVYRo
-  approx: true
 - id: c8b1f2aa
   name: 眠眠 みんみん
   pref: 青森県
@@ -3192,6 +3192,7 @@
   pref: 青森県
   city: 鶴田町
   genre: 食堂・定食
+  address: 青森県北津軽郡鶴田町鶴田中泉２４５−１
   lat: 40.76387
   lng: 140.44121
   visits:
@@ -3199,7 +3200,6 @@
       menu: [{name: 1キロカレー}]
     - videoId: GMOYWSd94vA
       menu: [{name: 味噌ラーメン, price: 380}]
-  address: 青森県北津軽郡鶴田町鶴田中泉２４５−１
 - id: 948bf3ba
   name: 丸正 滝本商店
   pref: 青森県
@@ -3215,34 +3215,34 @@
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市高松２丁目２−４０
   lat: 39.72234
   lng: 141.1389
   visits:
     - videoId: ajLZ0avy1Cw
       menu: [{name: カツカレー}]
       note: 激うま！激安！
-  address: 岩手県盛岡市高松２丁目２−４０
 - id: 20d6a9a6
   name: Luana cafe do
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市北川端町２７−１ 三上ビルA 2F
   lat: 40.5999
   lng: 140.4723
   visits:
     - videoId: z9GLFBcpWGg
       menu: [{name: モーニング}]
-  address: 青森県弘前市北川端町２７−１ 三上ビルA 2F
 - id: 0bae2d7d
   name: 道の駅ひろさき サンフェスタ 食堂
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市石川泉田６２−１
   lat: 40.55499
   lng: 140.54884
   visits:
     - videoId: XYJ4tF1sjkE
-  address: 青森県弘前市石川泉田６２−１
 - id: b5db1db5
   name: マルミツ食堂
   pref: 青森県
@@ -3267,6 +3267,7 @@
   pref: 青森県
   city: 鶴田町
   genre: 食堂・定食
+  address: 青森県北津軽郡鶴田町境里見１７６−１
   lat: 40.73683
   lng: 140.44292
   visits:
@@ -3274,19 +3275,18 @@
       menu: [{name: 油淋鶏定食}]
       note: ドデカパンとスイカも。
     - videoId: A0aD2yeG7hU
-  address: 青森県北津軽郡鶴田町境里見１７６−１
 - id: 4344d69c
   name: 喫茶 めるしー
   pref: 青森県
   city: つがる市
   genre: カフェ・喫茶
+  address: 青森県つがる市柏上古川八重崎３５−１７
   lat: 40.80494
   lng: 140.4139
   visits:
     - videoId: rmCuFZtWe1I
       menu: [{name: 本日のランチ（チキンカツカレー）}]
       note: 超お得。
-  address: 青森県つがる市柏上古川八重崎３５−１７
 - id: acb378d6
   name: 中華そば 山ちゃん
   pref: 青森県
@@ -3303,35 +3303,35 @@
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市駅前３丁目２−１ 弘前バスターミナル4番のりば付近
   lat: 40.59942
   lng: 140.48096
   closed: true
   visits:
     - videoId: QZ7800plaX4
       note: 2024年8月31日閉店。
-  address: 青森県弘前市駅前３丁目２−１ 弘前バスターミナル4番のりば付近
 - id: a8635910
   name: ラーメン 糸
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市中央１丁目２−２
   lat: 40.82162
   lng: 140.74536
   visits:
     - videoId: M_AJwif1xro
       note: 朝ラー。
-  address: 青森県青森市中央１丁目２−２
 - id: 13ece8fb
   name: 軽食喫茶 シーハイル
   pref: 青森県
   city: 大鰐町
   genre: カフェ・喫茶
+  address: 青森県南津軽郡大鰐町大鰐前田２３−２５
   lat: 40.52316
   lng: 140.56897
   visits:
     - videoId: cejqnDgNTPA
       menu: [{name: ランチ}]
-  address: 青森県南津軽郡大鰐町大鰐前田２３−２５
 - id: 515444ee
   name: 熊さん
   pref: 岩手県
@@ -3348,35 +3348,35 @@
   pref: 青森県
   city: 弘前市
   genre: 中華・町中華
+  address: 青森県弘前市末広４丁目１−５
   lat: 40.60804
   lng: 140.50234
   visits:
     - videoId: ub8sFTsWai8
       menu: [{name: 担々麺と油淋鶏のセット}]
-  address: 青森県弘前市末広４丁目１−５
 - id: 06c9352f
   name: 三忠食堂 本店
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市和徳町１６４
   lat: 40.60713
   lng: 140.48262
   visits:
     - videoId: gnhLBCbNvhc
       note: 津軽百年食堂。
-  address: 青森県弘前市和徳町１６４
 - id: 868f4956
   name: 旬夏秋冬
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市乙徳兵衛町３
   lat: 40.64543
   lng: 140.5938
   visits:
     - videoId: bMhdktVwySY
       menu: [{name: ランチ}]
       note: 激安ランチ。
-  address: 青森県黒石市乙徳兵衛町３
 - id: 1e33e361
   name: 中華そば いってん
   pref: 青森県
@@ -3394,11 +3394,11 @@
   pref: 秋田県
   city: 鹿角市
   genre: 食堂・定食
+  address: 秋田県鹿角市花輪 下夕町１６４−１
   lat: 40.19926
   lng: 140.7929
   visits:
     - videoId: 8-FdcPtbJrA
-  address: 秋田県鹿角市花輪 下夕町１６４−１
 - id: 64c43cf3
   name: 天丼てんや 弘前店
   pref: 青森県
@@ -3414,6 +3414,7 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市一町田浅井４７１−３
   lat: 40.60971
   lng: 140.42112
   visits:
@@ -3421,42 +3422,41 @@
       menu: [{name: 冷やし味噌}]
     - videoId: 5glZrEhcWzg
       menu: [{name: コラーゲンラーメン}]
-  address: 青森県弘前市一町田浅井４７１−３
 - id: e1f9bcd0
   name: 都南ファミリー
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市津志田中央３丁目１８−２６
   lat: 39.66012
   lng: 141.15279
   visits:
     - videoId: 2dj5ecaFM-U
       menu: [{name: カツカレー}]
-  address: 岩手県盛岡市津志田中央３丁目１８−２６
 - id: b9ed90de
   name: キッチン忠
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市和泉１丁目３−１ 1F
   lat: 40.60942
   lng: 140.49214
   visits:
     - videoId: ObF_BpsCgTg
       menu: [{name: 健康ランチ}]
       note: 激安で健康ランチ。
-  address: 青森県弘前市和泉１丁目３−１ 1F
 - id: 0acddb4e
   name: ごはん処 ゆうづき
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市横町２５−１
   lat: 40.64486
   lng: 140.59406
   visits:
     - videoId: 0mXZx8Gld2A
       menu: [{name: ランチ}]
       note: 激安激うまランチ。
-  address: 青森県黒石市横町２５−１
 - id: 765e2ebd
   name: 山崎食堂
   pref: 青森県
@@ -3471,44 +3471,44 @@
   pref: 秋田県
   city: 鹿角市
   genre: 中華・町中華
+  address: 秋田県鹿角市花輪鎌倉平１−３
   lat: 40.22016
   lng: 140.78746
   visits:
     - videoId: 7HM4JyDb-o0
       menu: [{name: 日替わり弁当, price: 600}]
-  address: 秋田県鹿角市花輪鎌倉平１−３
 - id: cab18034
   name: 四季彩喰処 華かるこ
   pref: 青森県
   city: つがる市
   genre: 食堂・定食
+  address: 青森県つがる市木造若緑５９−１
   lat: 40.80914
   lng: 140.38085
   visits:
     - videoId: fxHgzaSlMxU
       menu: [{name: 日替わりランチ, price: 680}]
-  address: 青森県つがる市木造若緑５９−１
 - id: eb505f3f
   name: 神製麺所
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市新里東里見１１２−３
   lat: 40.5929
   lng: 140.51941
   visits:
     - videoId: h1sw6N9cLDc
       note: 弘前のうまいうどん屋さん。
-  address: 青森県弘前市新里東里見１１２−３
 - id: 2b491772
   name: 中国料理 新雅飯店
   pref: 青森県
   city: 弘前市
   genre: 中華・町中華
+  address: 青森県弘前市城東北３丁目１０−３１
   lat: 40.60859
   lng: 140.49653
   visits:
     - videoId: MUWzpMkSPLg
-  address: 青森県弘前市城東北３丁目１０−３１
 - id: '77210223'
   name: 焼肉冷麺 盛岡食堂
   pref: 岩手県
@@ -3535,11 +3535,11 @@
   pref: 青森県
   city: 五所川原市
   genre: 和食
+  address: 青森県五所川原市一ツ谷５０７−５ 和風食事処波仁
   lat: 40.80923
   lng: 140.45201
   visits:
     - videoId: 8d5bmJpJpSA
-  address: 青森県五所川原市一ツ谷５０７−５ 和風食事処波仁
 - id: 8c7c2c05
   name: アキモト製麺（虹のマート）
   pref: 青森県
@@ -3554,33 +3554,33 @@
   pref: 青森県
   city: 弘前市
   genre: 海鮮
+  address: 青森県弘前市石川泉田６２−１ 2F 道の駅ひろさき
   lat: 40.55476
   lng: 140.5487
   visits:
     - videoId: rErxBY7JvkE
       menu: [{name: 刺身定食}]
       note: 道の駅ひろさき いしかわサンフェスタ内。豪華！安い！
-  address: 青森県弘前市石川泉田６２−１ 2F 道の駅ひろさき
 - id: 25eef3ac
   name: 立ち食いそば専門店 にぼ節
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市新町１丁目３−２２
   lat: 40.82645
   lng: 140.73561
   visits:
     - videoId: p3-QTeoB-cY
-  address: 青森県青森市新町１丁目３−２２
 - id: 946352d6
   name: 市場食堂（盛岡市中央卸売市場）
   pref: 岩手県
   city: 盛岡市
   genre: 海鮮
+  address: 岩手県盛岡市羽場１０地割
   lat: 39.65195
   lng: 141.13041
   visits:
     - videoId: Vah7VHRfmno
-  address: 岩手県盛岡市羽場１０地割
 - id: c64a32b8
   name: そば処 北の翔
   pref: 青森県
@@ -3595,12 +3595,12 @@
   pref: 青森県
   city: 平川市
   genre: 食堂・定食
+  address: 青森県平川市碇ヶ関７１
   lat: 40.47274
   lng: 140.62953
   visits:
     - videoId: exNB-fc1KAA
       note: 碇ヶ関。
-  address: 青森県平川市碇ヶ関７１
 - id: 149e97d9
   name: バーミヤン 弘前城東店
   pref: 青森県
@@ -3657,54 +3657,54 @@
   pref: 青森県
   city: 青森市
   genre: 食堂・定食
+  address: 青森県青森市浜田玉川２４６−１９
   lat: 40.79541
   lng: 140.76069
   visits:
     - videoId: 8DEff5CULHc
       menu: [{name: カツカレー}]
       note: 濃厚！美味しい！
-  address: 青森県青森市浜田玉川２４６−１９
 - id: 580c289b
   name: 三浦食堂
   pref: 青森県
   city: つがる市
   genre: 食堂・定食
+  address: 青森県つがる市木造有楽町３３−１
   lat: 40.81085
   lng: 140.38333
   visits:
     - videoId: O2XjH6t3ii8
       note: 孤独のグルメの作者・久住さんも来店したお店。
-  address: 青森県つがる市木造有楽町３３−１
 - id: 80c890a7
   name: 自家製麺の店 マルヨ食堂
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市石川庄司川添９１−１
   lat: 40.55202
   lng: 140.55023
   visits:
     - videoId: yT4Wio8rFD0
-  address: 青森県弘前市石川庄司川添９１−１
 - id: d9c7a003
   name: 中華料理 SAKURA
   pref: 岩手県
   city: 盛岡市
   genre: 中華・町中華
+  address: 岩手県盛岡市月が丘３丁目２９−１
   lat: 39.7354
   lng: 141.11177
   visits:
     - videoId: DOJKA1e8H3A
-  address: 岩手県盛岡市月が丘３丁目２９−１
 - id: d36085a3
   name: ごはんや あっちゃん
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市上田１丁目１１−２８
   lat: 39.71323
   lng: 141.14383
   visits:
     - videoId: DOJKA1e8H3A
-  address: 岩手県盛岡市上田１丁目１１−２８
 - id: ff5018f6
   name: お食事処 味喜
   pref: 青森県
@@ -3731,12 +3731,12 @@
   pref: 青森県
   city: 大鰐町
   genre: 食堂・定食
+  address: 青森県南津軽郡大鰐町蔵館村岡４６
   lat: 40.52144
   lng: 140.57557
   visits:
     - videoId: SHi16pCzBRo
       menu: [{name: 大鰐温泉もやしラーメン}]
-  address: 青森県南津軽郡大鰐町蔵館村岡４６
 - id: b6c7b44a
   name: 札幌館
   pref: 青森県
@@ -3785,22 +3785,22 @@
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市永井２２地割２９番地４
   lat: 39.65458
   lng: 141.15422
   visits:
     - videoId: Ek6jDQp43aU
       note: 朝ラー。盛岡神子田朝市とあわせて。
-  address: 岩手県盛岡市永井２２地割２９番地４
 - id: c2fea9ea
   name: レストラン 汝惚里（なぽり）
   pref: 青森県
   city: 青森市
   genre: 洋食
+  address: 青森県青森市花園２丁目９−３０ マンション甲田 102
   lat: 40.82235
   lng: 140.77256
   visits:
     - videoId: _g-L8VqoMoY
-  address: 青森県青森市花園２丁目９−３０ マンション甲田 102
 - id: 08431cf1
   name: 焼肉 蓬春
   pref: 青森県
@@ -3817,36 +3817,36 @@
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市南大通１丁目７−１４ ７ 番１４号
   lat: 39.69803
   lng: 141.15616
   visits:
     - videoId: VzS5UAK0FQI
       menu: [{name: 豚汁}]
       note: 豚汁専門店。
-  address: 岩手県盛岡市南大通１丁目７−１４ ７ 番１４号
 - id: de58ddf1
   name: めん処 藤幸
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市楢木用田１８２−１
   lat: 40.68926
   lng: 140.42107
   visits:
     - videoId: BJIxOUF5pWk
       menu: [{name: カツのせ味噌ラーメン}]
-  address: 青森県弘前市楢木用田１８２−１
 - id: 4df85978
   name: nutrithon cafe 328
   pref: 青森県
   city: 藤崎町
   genre: カフェ・喫茶
+  address: 青森県南津軽郡藤崎町常盤一西田１４−１
   lat: 40.67237
   lng: 140.54625
   visits:
     - videoId: PRY8yM_0Wt0
       menu: [{name: 健康ランチ}]
       note: 栄養満点のお料理。
-  address: 青森県南津軽郡藤崎町常盤一西田１４−１
 - id: 598630fd
   name: 函太郎 弘前店
   pref: 青森県
@@ -3873,44 +3873,44 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市筒井八ツ橋５１−２ エスコート八ツ橋
   lat: 40.79577
   lng: 140.76902
   visits:
     - videoId: a7Sb72AxJ5Q
       menu: [{name: 味噌ラーメン}]
-  address: 青森県青森市筒井八ツ橋５１−２ エスコート八ツ橋
 - id: 00afce8b
   name: グリル カマタ
   pref: 青森県
   city: つがる市
   genre: 洋食
+  address: 青森県つがる市柏稲盛岡本15−３
   lat: 40.80565
   lng: 140.41995
   visits:
     - videoId: B7akfoIOR8I
-  address: 青森県つがる市柏稲盛岡本15−３
 - id: 72f7e149
   name: 和牛と中華そば 浜蝶
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市稲田２丁目1−１３
   lat: 40.60234
   lng: 140.48907
   visits:
     - videoId: A-s44BoRgeA
       note: 人気ラーメン店。
-  address: 青森県弘前市稲田２丁目1−１３
 - id: ac1f70fe
   name: 麺屋 いおり
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市中央通１丁目１０−６
   lat: 39.70397
   lng: 141.14685
   visits:
     - videoId: h9hAebPyhyg
       menu: [{name: 濃厚煮干しラーメン}]
-  address: 岩手県盛岡市中央通１丁目１０−６
 - id: e01bbbdd
   name: らぁ麺 くろ田
   pref: 青森県
@@ -3926,34 +3926,34 @@
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市上町６１
   lat: 40.64467
   lng: 140.59374
   visits:
     - videoId: cdEpHYyPOLw
       note: 昭和レトロな喫茶店。
-  address: 青森県黒石市上町６１
 - id: 859c9957
   name: あーるど製麺
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市漆川鍋懸１５０−３
   lat: 40.81702
   lng: 140.46083
   visits:
     - videoId: FVaeVLlXnAQ
       note: もちもちぷりぷり麺と煮干しスープ。
-  address: 青森県五所川原市漆川鍋懸１５０−３
 - id: 911fe7d8
   name: 奈良岡屋
   pref: 秋田県
   city: 小坂町
   genre: ご当地グルメ
+  address: 秋田県鹿角郡小坂町小坂鉱山栗平１９−５
   lat: 40.3305
   lng: 140.73981
   visits:
     - videoId: UhxSvbTsHSs
       note: ご当地グルメ発祥の店。
-  address: 秋田県鹿角郡小坂町小坂鉱山栗平１９−５
 - id: 52e1bf13
   name: 虹のマート
   pref: 青森県
@@ -3975,78 +3975,78 @@
   genre: ラーメン
   lat: 40.6031
   lng: 140.46404
+  approx: true
   visits:
     - videoId: 7mUVTZWo21o
       note: 2024年4月23日オープン。
-  approx: true
 - id: 6f50265b
   name: 拉麺 七輪
   pref: 青森県
   city: 板柳町
   genre: ラーメン
+  address: 青森県北津軽郡板柳町高増前田５１−１
   lat: 40.72102
   lng: 140.48931
   visits:
     - videoId: IPZojkTxJVE
       menu: [{name: 甘うま味噌ラーメン}]
       note: 隠れ家のようなお店。
-  address: 青森県北津軽郡板柳町高増前田５１−１
 - id: a567d7a9
   name: ラーメン 華心
   pref: 青森県
   city: 弘前市
   genre: 中華・町中華
+  address: 青森県弘前市中野１丁目１２−１２
   lat: 40.58489
   lng: 140.47072
   visits:
     - videoId: pTcsHIJN9eo
       menu: [{name: デカ盛り油淋鶏定食}]
-  address: 青森県弘前市中野１丁目１２−１２
 - id: 57bea6a0
   name: 中華そば マル真
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市石渡４丁目１６−１６−１
   lat: 40.62938
   lng: 140.45968
   visits:
     - videoId: gzVYr3FbV2A
       note: 優しい味わい。
-  address: 青森県弘前市石渡４丁目１６−１６−１
 - id: 6f285359
   name: めん処 はすの屋
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市紺屋町２−２０
   lat: 39.70218
   lng: 141.15652
   visits:
     - videoId: y-gaK4AXvD4
       note: 真っ黒いラーメンにびっくり！
-  address: 岩手県盛岡市紺屋町２−２０
 - id: fdb202b4
   name: コレコウジツ
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市八幡町１３−１
   lat: 39.69573
   lng: 141.16268
   visits:
     - videoId: iJm_Z8O90pg
       note: 盛岡八幡宮の境内。無化調ラーメン。
-  address: 岩手県盛岡市八幡町１３−１
 - id: ad35dc2b
   name: 丸海 鳴海 中華そば
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市篠田２丁目２７−１６
   lat: 40.82999
   lng: 140.72775
   visits:
     - videoId: z_rVLoI2OU4
       menu: [{name: 中華そば}]
       note: 130年以上続く名店の味を引き継いだラーメン。
-  address: 青森県青森市篠田２丁目２７−１６
 - id: 059a5525
   name: ふじや からあげ店 弘前店
   pref: 青森県
@@ -4091,91 +4091,91 @@
   pref: 秋田県
   city: 鹿角市
   genre: 食堂・定食
+  address: 秋田県鹿角市花輪諏訪野２７−２
   lat: 40.24014
   lng: 140.77848
   visits:
     - videoId: 1sSF14qSwi4
       menu: [{name: 味噌ラーメン}]
       note: にんにくパワー。
-  address: 秋田県鹿角市花輪諏訪野２７−２
 - id: eda71599
   name: 喫茶 蔵
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市前町５２
   lat: 40.64333
   lng: 140.5962
   visits:
     - videoId: sQn8fIw2TDk
       note: こみせ通り。
-  address: 青森県黒石市前町５２
 - id: '23598813'
   name: 握・創菜 はせ川
   pref: 青森県
   city: 青森市
   genre: 和食
+  address: 青森県青森市浪岡大字浪岡細田9−２ ヒロプラザ 2号 1階
   lat: 40.71134
   lng: 140.58974
   visits:
     - videoId: YkzWwWGH25s
       note: 浪岡。
-  address: 青森県青森市浪岡大字浪岡細田9−２ ヒロプラザ 2号 1階
 - id: 1a9558bb
   name: 手焼きコーヒーの店 新湖月
   pref: 岩手県
   city: 盛岡市
   genre: カフェ・喫茶
+  address: 岩手県盛岡市南大通１丁目３−４
   lat: 39.69866
   lng: 141.15719
   visits:
     - videoId: 23rP6tzeOK8
       menu: [{name: カレー}, {name: パスタ}]
       note: 雰囲気最高。
-  address: 岩手県盛岡市南大通１丁目３−４
 - id: f69d9fdc
   name: 横浜家系ラーメン 壱角家 弘前店
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市末広２丁目２−８
   lat: 40.6015
   lng: 140.50106
   visits:
     - videoId: D-QmNrW4Hqk
-  address: 青森県弘前市末広２丁目２−８
 - id: 6a4613e7
   name: NABERA 吾麺亭
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市浜の町北２丁目４−１
   lat: 40.6289
   lng: 140.46082
   visits:
     - videoId: E_lx3aZMOJQ
       menu: [{name: 鍋味噌ラーメン}]
       note: 濃厚で甘めの味噌ラーメン。
-  address: 青森県弘前市浜の町北２丁目４−１
 - id: 841f2e58
   name: 麺処 中むら
   pref: 青森県
   city: 平川市
   genre: ラーメン
+  address: 青森県平川市柏木町東田３１３−３
   lat: 40.57574
   lng: 140.56802
   visits:
     - videoId: -V_eZtGY9G8
       note: とっても丁寧に作られた美味しいラーメン。
-  address: 青森県平川市柏木町東田３１３−３
 - id: d9149ce5
   name: 八幡平ドライブイン
   pref: 秋田県
   city: 鹿角市
   genre: 食堂・定食
+  address: 秋田県鹿角市八幡平赤渕２５７
   lat: 40.16764
   lng: 140.78962
   visits:
     - videoId: bjh1VXe84gQ
       note: 激安メニューがたくさん。
-  address: 秋田県鹿角市八幡平赤渕２５７
 - id: 57f443e1
   name: 煉瓦亭
   pref: 青森県
@@ -4191,12 +4191,12 @@
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市上田４丁目１８−１ 旧くすりの健康堂跡地
   lat: 39.72152
   lng: 141.13532
   visits:
     - videoId: KKE8_clp7DE
       menu: [{name: 油そば}]
-  address: 岩手県盛岡市上田４丁目１８−１ 旧くすりの健康堂跡地
 - id: 63e0efbc
   name: 麺屋 幡 弘前店
   pref: 青森県
@@ -4216,12 +4216,12 @@
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市上町６１−５
   lat: 40.64461
   lng: 140.59371
   visits:
     - videoId: CRR_r7fMVA4
       menu: [{name: 豚南蛮味噌ラーメン}]
-  address: 青森県黒石市上町６１−５
 - id: 7e852999
   name: 麺房 十兵衛
   pref: 青森県
@@ -4240,36 +4240,36 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市豊田３丁目１−１
   lat: 40.59603
   lng: 140.49971
   visits:
     - videoId: BwoeR2BtzuY
       note: イカゴロの出汁が激うま。弘前市豊田。
     - videoId: VzFeDg1Zk-8
-  address: 青森県弘前市豊田３丁目１−１
 - id: 0428bab4
   name: 風穴ドライブイン
   pref: 秋田県
   city: 大館市
   genre: 食堂・定食
+  address: 秋田県大館市長走字長走７５
   lat: 40.38085
   lng: 140.6032
   visits:
     - videoId: goaXJFBqtxY
       menu: [{name: ラーメンセット}]
       note: 激安。
-  address: 秋田県大館市長走字長走７５
 - id: 36a52205
   name: らーめん くまちゃん
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市田園２丁目３−６
   lat: 40.60179
   lng: 140.50632
   visits:
     - videoId: FRnLWE2Ii0c
       menu: [{name: 辛ネギらーめん}]
-  address: 青森県弘前市田園２丁目３−６
 - id: 170619da
   name: 弘前いちろ
   pref: 青森県
@@ -4287,13 +4287,13 @@
   pref: 秋田県
   city: 三種町
   genre: 食堂・定食
+  address: 秋田県山本郡三種町鹿渡高石野１２６−１
   lat: 40.02095
   lng: 140.08071
   visits:
     - videoId: pndveI7QzJQ
       menu: [{name: 餃子定食}]
       note: 道の駅ことおか。
-  address: 秋田県山本郡三種町鹿渡高石野１２６−１
 - id: 2f845584
   name: 御食事処 彩里
   pref: 青森県
@@ -4345,12 +4345,12 @@
   pref: 青森県
   city: 西目屋村
   genre: 食堂・定食
+  address: 青森県中津軽郡西目屋村田代神田
   lat: 40.5779
   lng: 140.30058
   visits:
     - videoId: qAtnwL70EoU
       menu: [{name: 味噌ラーメン}]
-  address: 青森県中津軽郡西目屋村田代神田
 - id: 75c766c0
   name: 海鮮鮨和食 鈴徳
   pref: 岩手県
@@ -4366,36 +4366,36 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
   lat: 40.59731
   lng: 140.48151
   visits:
     - videoId: lcWcmouR6lA
       menu: [{name: 辛みそラーメン}]
-  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
 - id: ee8cf45d
   name: 海老そば 金行
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市富士見町１６−１４ 弘前ハイツ 1F
   lat: 40.59207
   lng: 140.47011
   visits:
     - videoId: L3_GaUy0kQo
       menu: [{name: 海老ラーメン}]
       note: 青森では珍しい海老出汁。
-  address: 青森県弘前市富士見町１６−１４ 弘前ハイツ 1F
 - id: 42ba553c
   name: 御食事処 花りんご
   pref: 青森県
   city: 大鰐町
   genre: 食堂・定食
+  address: 青森県南津軽郡大鰐町大鰐川辺１１−１１ 鰐come内
   lat: 40.52086
   lng: 140.56503
   visits:
     - videoId: gXmwGmExmh8
       menu: [{name: 温泉もやし担々麺}]
       note: 鰐come内。
-  address: 青森県南津軽郡大鰐町大鰐川辺１１−１１ 鰐come内
 - id: 2044cf3f
   name: ドライブイン 両国
   pref: 秋田県
@@ -4411,6 +4411,7 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市大清水３丁目７−３
   lat: 40.5798
   lng: 140.49535
   visits:
@@ -4419,30 +4420,29 @@
     - videoId: 9G3oe7ciwcM
       menu: [{name: 白味噌ラーメン}]
       note: 行列のできる人気店。
-  address: 青森県弘前市大清水３丁目７−３
 - id: ceebc246
   name: 大衆食堂 半田屋
   pref: 青森県
   city: 鶴田町
   genre: 食堂・定食
+  address: 青森県北津軽郡鶴田町鶴田中泉２４５−１
   lat: 40.76387
   lng: 140.44121
   visits:
     - videoId: u1PWhH9Tzbo
       note: 家計応援！激安グルメ。
-  address: 青森県北津軽郡鶴田町鶴田中泉２４５−１
 - id: afd3f07f
   name: 中華そば クド
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市大町２丁目２−１２
   lat: 40.59504
   lng: 140.48124
   visits:
     - videoId: OjNAUTJ6xuc
       menu: [{name: 塩中華そば}]
       note: 出汁が最高に美味い。
-  address: 青森県弘前市大町２丁目２−１２
 - id: 57170a73
   name: 青森野呂家 弘前店
   pref: 青森県
@@ -4470,45 +4470,45 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市小比内１丁目１−２２
   lat: 40.59372
   lng: 140.4939
   visits:
     - videoId: T8VMQe9R5sY
       menu: [{name: 濃厚煮干しそば}]
-  address: 青森県弘前市小比内１丁目１−２２
 - id: '77616301'
   name: きそば 一力
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市富田３丁目２−１７
   lat: 40.59318
   lng: 140.47425
   visits:
     - videoId: u1WZ48B12Ak
-  address: 青森県弘前市富田３丁目２−１７
 - id: 5745a7fb
   name: 中華そば まる美
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市門外４丁目６−９
   lat: 40.57813
   lng: 140.50507
   visits:
     - videoId: ZosfXAbn5CI
       menu: [{name: あっさり煮干し中華}]
-  address: 青森県弘前市門外４丁目６−９
 - id: e65948dd
   name: 神戸屋食堂
   pref: 青森県
   city: 青森市
   genre: 食堂・定食
+  address: 青森県青森市浪岡大字浪岡細田１９５−２
   lat: 40.71287
   lng: 140.59121
   visits:
     - videoId: hwOjJO-zPTo
       menu: [{name: セット}]
       note: 浪岡。激安！激うま！
-  address: 青森県青森市浪岡大字浪岡細田１９５−２
 - id: 7f13d494
   name: 赤城食堂
   pref: 青森県
@@ -4524,12 +4524,12 @@
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市高崎２丁目４−７
   lat: 40.60913
   lng: 140.4934
   visits:
     - videoId: Y1fVtQnNTqk
       menu: [{name: トルコライス}]
-  address: 青森県弘前市高崎２丁目４−７
 - id: a94814e9
   name: 中華そば ひらこ屋
   pref: 青森県
@@ -4537,21 +4537,21 @@
   genre: ラーメン
   lat: 40.82264
   lng: 140.74696
+  approx: true
   visits:
     - videoId: d9Er52PYgpQ
-  approx: true
 - id: '30258929'
   name: 立ち食いそば処 道草庵
   pref: 青森県
   city: 青森市
   genre: そば・うどん
+  address: 青森県青森市浪岡大字女鹿沢野尻２−３
   lat: 40.71766
   lng: 140.57946
   visits:
     - videoId: ePZUyeqm_xI
       menu: [{name: お蕎麦}]
       note: 道の駅なみおか内。
-  address: 青森県青森市浪岡大字女鹿沢野尻２−３
 - id: 1e0339b2
   name: 中華飯店 幡龍 弘前城東店
   pref: 青森県
@@ -4577,35 +4577,35 @@
   pref: 秋田県
   city: 仙北市
   genre: 食堂・定食
+  address: 秋田県仙北市角館町雲然山口６６−１２
   lat: 39.59714
   lng: 140.53643
   visits:
     - videoId: JIgEalZ7v5I
       menu: [{name: カツ丼}, {name: タンメン}]
-  address: 秋田県仙北市角館町雲然山口６６−１２
 - id: 3b0c99c7
   name: りんご亭
   pref: 青森県
   city: 板柳町
   genre: 中華・町中華
+  address: 青森県北津軽郡板柳町小幡柳田５−５
   lat: 40.71841
   lng: 140.43028
   visits:
     - videoId: QePV4kBTVM4
       menu: [{name: ラーメン定食}]
       note: 激安価格にびっくり。
-  address: 青森県北津軽郡板柳町小幡柳田５−５
 - id: 8fe3103c
   name: Farm 36
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市城東北３丁目１０−１
   lat: 40.6069
   lng: 140.49588
   visits:
     - videoId: xDCBijfORlc
       note: さくら野1F。自然食・オーガニック。
-  address: 青森県弘前市城東北３丁目１０−１
 - id: be4fcbf8
   name: サイゼリヤ 弘前店
   pref: 青森県
@@ -4635,57 +4635,57 @@
   pref: 青森県
   city: 青森市
   genre: カフェ・喫茶
+  address: 青森県青森市浪岡大字浪岡細田６１−２０ あぴねす内
   lat: 40.71039
   lng: 140.58125
   visits:
     - videoId: bsnqadFZm_I
       note: 浪岡。
-  address: 青森県青森市浪岡大字浪岡細田６１−２０ あぴねす内
 - id: c95ab734
   name: 美味そば亭
   pref: 青森県
   city: 五所川原市
   genre: そば・うどん
+  address: 青森県五所川原市大町３８−１
   lat: 40.80959
   lng: 140.44741
   visits:
     - videoId: Z4uyHyIF_uE
       note: 五所川原バスセンター。
-  address: 青森県五所川原市大町３８−１
 - id: 7f7f9823
   name: 楽天食堂 つしま
   pref: 青森県
   city: 青森市
   genre: 食堂・定食
+  address: 青森県青森市 八ッ役矢作７５−７
   lat: 40.79581
   lng: 140.75765
   visits:
     - videoId: uaqaUmOnnGE
       menu: [{name: Aランチ}]
       note: 夜も食べれるAランチが美味い。
-  address: 青森県青森市 八ッ役矢作７５−７
 - id: 4bf4e9cd
   name: 麺屋 玉三郎
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市桜林町９−８
   lat: 40.59266
   lng: 140.46785
   visits:
     - videoId: meNWiicQpi8
       menu: [{name: 味噌ラーメン}]
-  address: 青森県弘前市桜林町９−８
 - id: e4c9c946
   name: 匠屋
   pref: 青森県
   city: 深浦町
   genre: 海鮮
+  address: 青森県西津軽郡深浦町関豊田６−６
   lat: 40.73982
   lng: 140.11356
   visits:
     - videoId: 4mULlZDP94M
       menu: [{name: まぐろステーキ丼}]
-  address: 青森県西津軽郡深浦町関豊田６−６
 - id: 9833f420
   name: 壱番館
   pref: 青森県
@@ -4719,44 +4719,44 @@
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市繋山根２２５
   lat: 39.69915
   lng: 141.02603
   visits:
     - videoId: bkCN_TruKgo
-  address: 岩手県盛岡市繋山根２２５
 - id: 33b97262
   name: 青森濃厚タンメン ふたごや
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市造道１丁目１６−１
   lat: 40.83259
   lng: 140.79003
   visits:
     - videoId: mzfaXcJsFIk
       menu: [{name: 濃厚タンメン}]
-  address: 青森県青森市造道１丁目１６−１
 - id: 6ead0376
   name: 松島おさかな市場
   pref: 宮城県
   city: 松島町
   genre: 海鮮
+  address: 宮城県宮城郡松島町松島普賢堂４−１０
   lat: 38.37195
   lng: 141.06517
   visits:
     - videoId: eZqmLof_Hck
       menu: [{name: 海鮮丼}]
-  address: 宮城県宮城郡松島町松島普賢堂４−１０
 - id: 87fbd67f
   name: 味噌ラーメンの店 峰
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市和徳町３３７−４
   lat: 40.61251
   lng: 140.48792
   visits:
     - videoId: ooQPoLe3MZM
       menu: [{name: 味噌ラーメン}]
-  address: 青森県弘前市和徳町３３７−４
 - id: d0a620d3
   name: マルカンビル大食堂
   pref: 岩手県
@@ -4782,13 +4782,13 @@
   pref: 岩手県
   city: 滝沢市
   genre: 和食
+  address: 岩手県滝沢市巣子１８０−２
   lat: 39.79311
   lng: 141.12108
   visits:
     - videoId: D-aXZrlvvgg
       menu: [{name: 豆腐料理}]
       note: 豆腐料理が信じられないくらい美味い。
-  address: 岩手県滝沢市巣子１８０−２
 - id: 78ed5364
   name: 馬子庵
   pref: 青森県
@@ -4824,11 +4824,11 @@
   pref: 宮城県
   city: 仙台市
   genre: ラーメン
+  address: 宮城県仙台市青葉区中央２丁目１−１６ カガヤハピナ名掛丁ビル 1-3F
   lat: 38.26164
   lng: 140.87852
   visits:
     - videoId: Fv2Fg5DtkB4
-  address: 宮城県仙台市青葉区中央２丁目１−１６ カガヤハピナ名掛丁ビル 1-3F
 - id: 76d9b11f
   name: 高島屋
   pref: 岩手県
@@ -4845,12 +4845,12 @@
   pref: 青森県
   city: 藤崎町
   genre: ラーメン
+  address: 青森県南津軽郡藤崎町西豊田１丁目６−７
   lat: 40.6575
   lng: 140.50229
   visits:
     - videoId: U0JfxwNekzM
       note: お得がいっぱい。
-  address: 青森県南津軽郡藤崎町西豊田１丁目６−７
 - id: 2a47bf5a
   name: 切田屋
   pref: 秋田県
@@ -4867,31 +4867,31 @@
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市夕顔瀬町２−１０
   lat: 39.70748
   lng: 141.13329
   visits:
     - videoId: aVAO88EaJeE
-  address: 岩手県盛岡市夕顔瀬町２−１０
 - id: 1bd72d4d
   name: はくちょう亭 奈良屋
   pref: 青森県
   city: 中泊町
   genre: 食堂・定食
+  address: 青森県北津軽郡中泊町今泉唐崎２５５
   lat: 41.03194
   lng: 140.40999
   visits:
     - videoId: vKPWNbWoNC4
-  address: 青森県北津軽郡中泊町今泉唐崎２５５
 - id: 87d43448
   name: ラーメン 森
   pref: 秋田県
   city: 鹿角市
   genre: ラーメン
+  address: 秋田県鹿角市花輪六月田５０
   lat: 40.19808
   lng: 140.79029
   visits:
     - videoId: 5ENgdaowYLk
-  address: 秋田県鹿角市花輪六月田５０
 - id: 2867eb97
   name: ポカラダイニング
   pref: 青森県
@@ -4949,12 +4949,12 @@
   pref: 秋田県
   city: 鹿角市
   genre: 食堂・定食
+  address: 秋田県鹿角市八幡平赤渕１８９−１
   lat: 40.16458
   lng: 140.79102
   visits:
     - videoId: uR5NeR91m-k
       note: あまりの安さにびっくり。
-  address: 秋田県鹿角市八幡平赤渕１８９−１
 - id: 22bcd591
   name: レストラン けやき
   pref: 青森県
@@ -4970,76 +4970,76 @@
   pref: 岩手県
   city: 盛岡市
   genre: カフェ・喫茶
+  address: 岩手県盛岡市青山４丁目４５−５
   lat: 39.73164
   lng: 141.11481
   visits:
     - videoId: Ck790ID7C8c
       menu: [{name: モーニング}]
       note: 盛岡市青山。激安モーニング。
-  address: 岩手県盛岡市青山４丁目４５−５
 - id: 0b21009f
   name: どんぐり食堂
   pref: 青森県
   city: 板柳町
   genre: 食堂・定食
+  address: 青森県北津軽郡板柳町辻福岡６２
   lat: 40.6957
   lng: 140.46353
   visits:
     - videoId: XASsPLqjt9w
-  address: 青森県北津軽郡板柳町辻福岡６２
 - id: 811b5c35
   name: 元祖盛岡タンメン 山本
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市下太田林崎１６６
   lat: 39.68977
   lng: 141.1128
   visits:
     - videoId: O-OIFrMAU4g
       menu: [{name: タンメン}]
-  address: 岩手県盛岡市下太田林崎１６６
 - id: 6f699934
   name: 東奥日報社員食堂 ひまわり
   pref: 青森県
   city: 青森市
   genre: 食堂・定食
+  address: 青森県青森市第二問屋町３丁目１−８９ 2F
   lat: 40.79447
   lng: 140.7481
   visits:
     - videoId: bfsncy-wf3w
-  address: 青森県青森市第二問屋町３丁目１−８９ 2F
 - id: 96238f8e
   name: 北の蕎麦屋
   pref: 岩手県
   city: 八幡平市
   genre: そば・うどん
+  address: 岩手県八幡平市清水９２−１
   lat: 40.10555
   lng: 141.05029
   visits:
     - videoId: wvWQnSHYC6U
-  address: 岩手県八幡平市清水９２−１
 - id: 791d958e
   name: 人力俥
   pref: 岩手県
   city: 盛岡市
   genre: そば・うどん
+  address: 岩手県盛岡市月が丘１丁目２８−３
   lat: 39.73417
   lng: 141.11286
   visits:
     - videoId: uU2v34QXb8E
       menu: [{name: 貝汁旨味そば}]
-  address: 岩手県盛岡市月が丘１丁目２８−３
 - id: b6457442
   name: SUEKI
   pref: 岩手県
   city: 盛岡市
   genre: カフェ・喫茶
+  address: 岩手県盛岡市月が丘１丁目２８−３
   lat: 39.73414
   lng: 141.11278
   visits:
     - videoId: uU2v34QXb8E
       menu: [{name: ベジカツサンド}]
-  address: 岩手県盛岡市月が丘１丁目２８−３
 - id: dc63b69a
   name: 草乃庄
   pref: 青森県
@@ -5075,33 +5075,33 @@
   pref: 岩手県
   city: 盛岡市
   genre: 洋食
+  address: 岩手県盛岡市手代森１４地割２−３ 洋食びって
   lat: 39.65061
   lng: 141.18352
   visits:
     - videoId: -jN9pOsYBzo
       menu: [{name: 厚切りポークソテー}]
-  address: 岩手県盛岡市手代森１４地割２−３ 洋食びって
 - id: 2e9b0ae2
   name: らーめん 大将
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市一番町１７
   lat: 40.64806
   lng: 140.59363
   visits:
     - videoId: iA0HAB_2k-g
-  address: 青森県黒石市一番町１７
 - id: 4d7b840d
   name: てどあーる
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市津志田西１丁目１−５
   lat: 39.66995
   lng: 141.15362
   visits:
     - videoId: b_nBcx4LyqU
       note: デカ盛りにびっくり。
-  address: 岩手県盛岡市津志田西１丁目１−５
 - id: d4b56d6a
   name: たきざわキッチン（ビックリーフ滝沢）
   pref: 岩手県
@@ -5117,54 +5117,54 @@
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市横町15−１ 逢春 1
   lat: 40.64457
   lng: 140.59555
   visits:
     - videoId: N-An8c8v1pM
-  address: 青森県黒石市横町15−１ 逢春 1
 - id: af413c79
   name: 焼肉冷麺 ヤマト 盛岡みたけ店
   pref: 岩手県
   city: 盛岡市
   genre: 焼肉
+  address: 岩手県盛岡市みたけ２丁目１−１２
   lat: 39.73866
   lng: 141.12492
   visits:
     - videoId: MZwN-jwT-5Y
       menu: [{name: 冷麺}]
-  address: 岩手県盛岡市みたけ２丁目１−１２
 - id: a7ea201f
   name: 奥入瀬ろまんパーク
   pref: 青森県
   city: 十和田市
   genre: 食堂・定食
+  address: 青森県十和田市奥瀬堰道３９−１
   lat: 40.5855
   lng: 141.11786
   visits:
     - videoId: 9s_59PwXvrM
-  address: 青森県十和田市奥瀬堰道３９−１
 - id: 84d955e1
   name: ぴょんぴょん舎 稲荷町本店
   pref: 岩手県
   city: 盛岡市
   genre: 焼肉
+  address: 岩手県盛岡市稲荷町１２−５ ぴょんぴょん舎
   lat: 39.70855
   lng: 141.11107
   visits:
     - videoId: nL-y6t1IV-0
       menu: [{name: 盛岡冷麺}]
-  address: 岩手県盛岡市稲荷町１２−５ ぴょんぴょん舎
 - id: 99a8816b
   name: cafe kielo
   pref: 青森県
   city: 田舎館村
   genre: カフェ・喫茶
+  address: 青森県田舎館村41-1大根子松森41-1
   lat: 40.6363
   lng: 140.51867
   visits:
     - videoId: kuobuDaHQCc
       note: 隠れ家的なカフェ。
-  address: 青森県田舎館村41-1大根子松森41-1
 - id: fb84f5a3
   name: 濃厚タンメン ウヲガシ
   pref: 岩手県
@@ -5181,11 +5181,11 @@
   pref: 岩手県
   city: 滝沢市
   genre: 和食
+  address: 岩手県滝沢市巣子１０５−１
   lat: 39.77215
   lng: 141.1295
   visits:
     - videoId: RBlhEpKqOEA
-  address: 岩手県滝沢市巣子１０５−１
 - id: e24bb700
   name: 野呂家
   pref: 青森県
@@ -5201,12 +5201,12 @@
   pref: 岩手県
   city: 盛岡市
   genre: そば・うどん
+  address: 岩手県盛岡市みたけ４丁目２８
   lat: 39.74655
   lng: 141.12102
   visits:
     - videoId: TzG6mJnDncQ
       menu: [{name: 弥太郎そば1丁目}]
-  address: 岩手県盛岡市みたけ４丁目２８
 - id: 19b284ce
   name: 一風堂 盛岡
   pref: 岩手県
@@ -5221,13 +5221,13 @@
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市十三羽黒崎１３３−２２
   lat: 41.0367
   lng: 140.32883
   visits:
     - videoId: len2L5yfsow
       menu: [{name: しじみラーメン}]
       note: しじみエキスたっぷりのあっさりラーメン。
-  address: 青森県五所川原市十三羽黒崎１３３−２２
 - id: a627e61e
   name: 盛岡バスセンターのカレー
   pref: 岩手県
@@ -5243,13 +5243,13 @@
   pref: 青森県
   city: 五所川原市
   genre: 食堂・定食
+  address: 青森県五所川原市金木町朝日山１９５−２ 産直メロス内
   lat: 40.9025
   lng: 140.45469
   visits:
     - videoId: ixl7A6hSmJE
       menu: [{name: 馬味噌ラーメン}]
       note: 太宰治の生家・斜陽館の向かい。
-  address: 青森県五所川原市金木町朝日山１９５−２ 産直メロス内
 - id: e05f2cd2
   name: 月ヶ丘食堂
   pref: 岩手県
@@ -5265,48 +5265,48 @@
   pref: 青森県
   city: 平川市
   genre: 食堂・定食
+  address: 青森県平川市碇ヶ関諏訪平１８−９
   lat: 40.46779
   lng: 140.63363
   visits:
     - videoId: VXOlRRDztrQ
       menu: [{name: 自然薯ラーメン}]
-  address: 青森県平川市碇ヶ関諏訪平１８−９
 - id: e607294e
   name: らあめん サンド
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市西青山２丁目２６−２０
   lat: 39.72941
   lng: 141.10678
   visits:
     - videoId: QqY-mO5fSb0
       menu: [{name: 鶏そば}]
       note: あっさり激うま。
-  address: 岩手県盛岡市西青山２丁目２６−２０
 - id: 931f2b56
   name: 叙々苑 弘前
   pref: 青森県
   city: 弘前市
   genre: 焼肉
+  address: 青森県弘前市城東中央３丁目１−３
   lat: 40.5994
   lng: 140.49229
   visits:
     - videoId: m0x3RssKnLI
       menu: [{name: ランチ}]
       note: リーズナブルなランチ。
-  address: 青森県弘前市城東中央３丁目１−３
 - id: 19da18bd
   name: 更科八
   pref: 岩手県
   city: 滝沢市
   genre: そば・うどん
+  address: 岩手県滝沢市後２６８−１３３９
   lat: 39.85076
   lng: 141.11085
   visits:
     - videoId: 8XSBOByRzgk
       menu: [{name: イカ天そば}]
       note: そばの量も多く、イカゲソもボリュームたっぷり。
-  address: 岩手県滝沢市後２６８−１３３９
 - id: 82fc4523
   name: 中華そば 正太郎
   pref: 岩手県
@@ -5334,21 +5334,21 @@
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市大通２丁目６−１２
   lat: 39.70351
   lng: 141.14506
   visits:
     - videoId: FolX3quRf7g
-  address: 岩手県盛岡市大通２丁目６−１２
 - id: 83d9f736
   name: 極めん
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市城東中央５丁目１−２
   lat: 40.60023
   lng: 140.4981
   visits:
     - videoId: cqZNgPi7C0s
-  address: 青森県弘前市城東中央５丁目１−２
 - id: 36eaab97
   name: 中華そば あらや
   pref: 青森県
@@ -5364,48 +5364,48 @@
   pref: 岩手県
   city: 盛岡市
   genre: カフェ・喫茶
+  address: 岩手県盛岡市安倍館町１８−２８ UPビル 1階
   lat: 39.72127
   lng: 141.12479
   visits:
     - videoId: r9B-gzNScqY
       menu: [{name: 金沢カレー}]
       note: ランチはコーヒー無料。
-  address: 岩手県盛岡市安倍館町１８−２８ UPビル 1階
 - id: 47a7438d
   name: パブロカサルス
   pref: 岩手県
   city: 盛岡市
   genre: 洋食
+  address: 岩手県盛岡市大通１丁目６−１３ 時遊空間TENビル 1F
   lat: 39.70259
   lng: 141.14848
   visits:
     - videoId: dvsNMBVJCTI
       menu: [{name: ディナーセット}]
       note: 超お得。
-  address: 岩手県盛岡市大通１丁目６−１３ 時遊空間TENビル 1F
 - id: 28ee9cc3
   name: 煮干しらーめん 徳兵衛
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市甲徳兵衛町３４
   lat: 40.6455
   lng: 140.59506
   visits:
     - videoId: 8DwMTlSFcL8
       note: 夜間営業。ガッツリ煮干し。
-  address: 青森県黒石市甲徳兵衛町３４
 - id: '48177033'
   name: 安曇野 津志田店
   pref: 岩手県
   city: 盛岡市
   genre: そば・うどん
+  address: 岩手県盛岡市津志田南２丁目５−６
   lat: 39.6575
   lng: 141.1571
   visits:
     - videoId: 5yuZiV47B7I
       menu: [{name: 特天丼}]
       note: 激安、激うまなお蕎麦屋さん。
-  address: 岩手県盛岡市津志田南２丁目５−６
 - id: 5dbdcc80
   name: レストラン ラベンダー
   pref: 青森県
@@ -5422,99 +5422,99 @@
   pref: 岩手県
   city: 滝沢市
   genre: 食堂・定食
+  address: 岩手県滝沢市後２６８−１８０７
   lat: 39.87214
   lng: 141.10251
   visits:
     - videoId: ouosWndHTak
-  address: 岩手県滝沢市後２６８−１８０７
 - id: e3776c37
   name: 麺の極 はなみち
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市前九年２丁目１−７
   lat: 39.71574
   lng: 141.12891
   visits:
     - videoId: oEnk7Sptel8
-  address: 岩手県盛岡市前九年２丁目１−７
 - id: '53480729'
   name: まちいろキッチン
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市上町１５−３
   lat: 40.64397
   lng: 140.59181
   visits:
     - videoId: TU5p4FORDik
       menu: [{name: 健康ランチ}]
       note: 野菜がたっぷり取れる。
-  address: 青森県黒石市上町１５−３
 - id: 3bd26c54
   name: ハンバーグの店 ベル 盛岡大通り店
   pref: 岩手県
   city: 盛岡市
   genre: 洋食
+  address: 岩手県盛岡市大通１丁目４−７
   lat: 39.70206
   lng: 141.14925
   visits:
     - videoId: -K5Fr2ODNIk
       menu: [{name: ハンバーグ}]
       note: びっくりドンキー1号店。
-  address: 岩手県盛岡市大通１丁目４−７
 - id: 09b03261
   name: 寿司 うなぎ 佐嶋
   pref: 青森県
   city: 藤崎町
   genre: 和食
+  address: 青森県南津軽郡藤崎町西豊田２丁目８−１８
   lat: 40.65425
   lng: 140.50512
   visits:
     - videoId: GJ2EdfO7uA8
       menu: [{name: お刺身ランチ}]
-  address: 青森県南津軽郡藤崎町西豊田２丁目８−１８
 - id: 63bebe33
   name: ドライブイン 汐風
   pref: 青森県
   city: 鰺ヶ沢町
   genre: 海鮮
+  address: 青森県西津軽郡鰺ヶ沢町赤石町大和田３８−１
   lat: 40.77202
   lng: 140.17447
   visits:
     - videoId: E3rELaMRuB4
       menu: [{name: ひらめ丼}]
-  address: 青森県西津軽郡鰺ヶ沢町赤石町大和田３８−１
 - id: 629bd1c4
   name: 一風亭
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市高松４丁目１−３６
   lat: 39.72648
   lng: 141.13788
   visits:
     - videoId: p0s4skmmsdo
       note: 盛岡市高松。
-  address: 岩手県盛岡市高松４丁目１−３６
 - id: a0e74dc9
   name: でんでん
   pref: 青森県
   city: 平川市
   genre: ラーメン
+  address: 青森県平川市沖館高田２４−２
   lat: 40.57332
   lng: 140.5815
   visits:
     - videoId: vS7tcZaCsAI
       menu: [{name: 味噌ラーメン}]
-  address: 青森県平川市沖館高田２４−２
 - id: 920e732c
   name: 桜木屋 盛岡店
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市上堂４丁目１３−１１
   lat: 39.7296
   lng: 141.12206
   visits:
     - videoId: PIhKcXa4Dec
-  address: 岩手県盛岡市上堂４丁目１３−１１
 - id: 7e954faa
   name: 駅前食堂
   pref: 青森県
@@ -5562,23 +5562,23 @@
   pref: 岩手県
   city: 盛岡市
   genre: パン
+  address: 岩手県盛岡市上堂３丁目５−１３
   lat: 39.72639
   lng: 141.12502
   visits:
     - videoId: MHuSQUiMPy4
       menu: [{name: ハンバーガー}]
       note: 焼き立てパン。
-  address: 岩手県盛岡市上堂３丁目５−１３
 - id: 9da05fa4
   name: ふるさとセンター レストラン
   pref: 青森県
   city: 板柳町
   genre: 食堂・定食
+  address: 青森県北津軽郡板柳町福野田本泉３４−６
   lat: 40.6872
   lng: 140.46244
   visits:
     - videoId: r-_o6cesnRE
-  address: 青森県北津軽郡板柳町福野田本泉３４−６
 - id: 7bf83b84
   name: 鮨 又三郎
   pref: 岩手県
@@ -5623,13 +5623,13 @@
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市青山２丁目２４−２１
   lat: 39.72698
   lng: 141.11196
   visits:
     - videoId: DfQIqi3VX48
       menu: [{name: 味噌ラーメン}]
       note: 地元民に愛され続ける。
-  address: 岩手県盛岡市青山２丁目２４−２１
 - id: ca7e0a67
   name: 麺屋 あぶさん
   pref: 青森県
@@ -5669,37 +5669,37 @@
   pref: 青森県
   city: 五所川原市
   genre: 食堂・定食
+  address: 青森県五所川原市金木町芦野
   lat: 40.91201
   lng: 140.45181
   visits:
     - videoId: HuyMoAhl7cw
       menu: [{name: ラーメン}, {name: 元祖みそおでん}]
       note: 芦野公園の桜とあわせて。
-  address: 青森県五所川原市金木町芦野
 - id: ae4583bd
   name: 中華そば マル金
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市上白銀町１−１０ クランベリー上白銀 1F
   lat: 40.60253
   lng: 140.4644
   visits:
     - videoId: QpNLDlsBndA
       menu: [{name: 中華そば}]
       note: 優しい味わいの激うまスープ。
-  address: 青森県弘前市上白銀町１−１０ クランベリー上白銀 1F
 - id: d15f5392
   name: モンタン
   pref: 岩手県
   city: 盛岡市
   genre: 洋食
+  address: 岩手県盛岡市内丸６−２
   lat: 39.70214
   lng: 141.15145
   visits:
     - videoId: zBgqr1I84-I
       menu: [{name: スープスパゲティー}]
       note: 盛岡名物。元祖スープスパゲティーの店。
-  address: 岩手県盛岡市内丸６−２
 - id: 6de5313d
   name: 麺や うから家から
   pref: 福島県
@@ -5728,94 +5728,94 @@
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市盛岡駅前通１−４４ フェザン南館地下めんこい横丁
   lat: 39.70175
   lng: 141.13682
   visits:
     - videoId: RnhhTZa32GE
       menu: [{name: 納豆キムチラーメン}]
       note: 盛岡名物。
-  address: 岩手県盛岡市盛岡駅前通１−４４ フェザン南館地下めんこい横丁
 - id: a6ee1eec
   name: 中華そば volare
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市上堂３丁目５−１６
   lat: 39.72611
   lng: 141.12534
   visits:
     - videoId: Ep1yHWwoops
       menu: [{name: ミニ丼}]
       note: あっさりの激うまスープ。
-  address: 岩手県盛岡市上堂３丁目５−１６
 - id: 9ea4e54c
   name: カフェ イリス
   pref: 青森県
   city: 板柳町
   genre: カフェ・喫茶
+  address: 青森県北津軽郡板柳町福野田実田５２−１５
   lat: 40.69922
   lng: 140.46037
   visits:
     - videoId: 9sY7knYoHIw
       note: 教会が隣のおしゃれカフェ。
-  address: 青森県北津軽郡板柳町福野田実田５２−１５
 - id: 6dc4d456
   name: 吾作 秋田山王店
   pref: 秋田県
   city: 秋田市
   genre: ラーメン
+  address: 秋田県秋田市旭北錦町４−５２
   lat: 39.7138
   lng: 140.10882
   visits:
     - videoId: _A8AHCfqSmc
       menu: [{name: 味噌ラーメン}]
       note: チャーシューがたくさん。
-  address: 秋田県秋田市旭北錦町４−５２
 - id: bab68d01
   name: 丸山らーめん
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市唐笠柳藤巻１４４−３
   lat: 40.79722
   lng: 140.45925
   visits:
     - videoId: Rt12kDmP46o
       note: あっさり煮干しの激うまスープと手もみ麺。
-  address: 青森県五所川原市唐笠柳藤巻１４４−３
 - id: dce7178d
   name: アジキュー 青山店
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市月が丘２丁目１−３８
   lat: 39.72966
   lng: 141.10702
   visits:
     - videoId: t0cuF5HyWg4
       note: まろやかパイタンスープ。
-  address: 岩手県盛岡市月が丘２丁目１−３８
 - id: a37b43b4
   name: 上堂食堂
   pref: 岩手県
   city: 盛岡市
   genre: 食堂・定食
+  address: 岩手県盛岡市上堂２丁目１−３０
   lat: 39.72539
   lng: 141.1227
   visits:
     - videoId: PPTWt0VywoQ
       menu: [{name: アジフライ定食}]
       note: とってもリーズナブル。
-  address: 岩手県盛岡市上堂２丁目１−３０
 - id: b7f0e217
   name: 創作料理の店 蔵よし
   pref: 青森県
   city: 黒石市
   genre: 和食
+  address: 青森県黒石市横町１３
   lat: 40.64382
   lng: 140.59545
   visits:
     - videoId: wh0HLJXucpk
       menu: [{name: ローストンカツ}]
       note: 分厚くて柔らかくて激うま。
-  address: 青森県黒石市横町１３
 - id: 516d58ef
   name: 佐野家
   pref: 岩手県
@@ -5831,13 +5831,13 @@
   pref: 青森県
   city: 鶴田町
   genre: 食堂・定食
+  address: 青森県北津軽郡鶴田町木筒西柳川６１−７
   lat: 40.75926
   lng: 140.41525
   visits:
     - videoId: rLeiY6lD2Yg
       menu: [{name: ちりちりラーメン}]
       note: あっさり煮干し。
-  address: 青森県北津軽郡鶴田町木筒西柳川６１−７
 - id: 1c6a5ffb
   name: 白龍 本店
   pref: 岩手県
@@ -5864,36 +5864,36 @@
   pref: 岩手県
   city: 盛岡市
   genre: そば・うどん
+  address: 岩手県盛岡市上田東黒石野５５−１６
   lat: 39.74995
   lng: 141.15231
   visits:
     - videoId: AIMRZtSwtG8
       menu: [{name: 比内地鶏たまごのうどん}]
       note: つるつるの喉越し。
-  address: 岩手県盛岡市上田東黒石野５５−１６
 - id: 3168e48f
   name: 支那そば おぐら
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市川合浅田２７−１
   lat: 40.57902
   lng: 140.51776
   visits:
     - videoId: _qfvyRjkDz4
       menu: [{name: 焼きめし}, {name: 支那そば}]
-  address: 青森県弘前市川合浅田２７−１
 - id: 6c444ddc
   name: 元祖 宝介 本店
   pref: 岩手県
   city: 盛岡市
   genre: ラーメン
+  address: 岩手県盛岡市厨川３丁目９−１
   lat: 39.75326
   lng: 141.134
   visits:
     - videoId: bBx5ybvVNK0
       menu: [{name: 豚骨ラーメン}]
       note: ごく細麺。
-  address: 岩手県盛岡市厨川３丁目９−１
 - id: 38f6ed61
   name: レストラン セーブル
   pref: 青森県
@@ -5910,83 +5910,83 @@
   pref: 岩手県
   city: 八幡平市
   genre: 食堂・定食
+  address: 岩手県八幡平市松尾第１地割２１０−１
   lat: 39.97316
   lng: 141.03582
   visits:
     - videoId: 582MPkBTfkQ
       menu: [{name: カツカレー＋ラーメンセット}]
       note: デカ盛り。コスパ最高。
-  address: 岩手県八幡平市松尾第１地割２１０−１
 - id: ca46f8e4
   name: つぼみ
   pref: 青森県
   city: 平川市
   genre: 洋食
+  address: 青森県平川市本町南柳田４０−８
   lat: 40.58236
   lng: 140.5626
   visits:
     - videoId: RjzlVF5wEl0
       menu: [{name: TUBOMIランチ}]
-  address: 青森県平川市本町南柳田４０−８
 - id: 4cd7b631
   name: みそラーメン くろいし 鉄満堂
   pref: 青森県
   city: 黒石市
   genre: ラーメン
+  address: 青森県黒石市上町６１−５
   lat: 40.64461
   lng: 140.59371
   visits:
     - videoId: 6OH5bYa82fg
       menu: [{name: 味噌ラーメン}]
       note: 鶏白湯スープと津軽味噌。
-  address: 青森県黒石市上町６１−５
 - id: 93fe0886
   name: 純喫茶 みらぼお
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県黒石市市ノ町１８
   lat: 40.64234
   lng: 140.59349
   visits:
     - videoId: uCj9e8JzJAo
       note: 昭和レトロの素敵な喫茶店。
-  address: 青森県黒石市市ノ町１８
 - id: cad139c3
   name: 十文字カフェ
   pref: 青森県
   city: 黒石市
   genre: カフェ・喫茶
+  address: 青森県黒石市中町３３
   lat: 40.64558
   lng: 140.59642
   visits:
     - videoId: Ee6ugtNCV34
       menu: [{name: アジアンランチ}]
       note: 和モダンなお店。
-  address: 青森県黒石市中町３３
 - id: 418fd5c1
   name: ビーンズ
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市高屋福田３０９−８
   lat: 40.61454
   lng: 140.42317
   visits:
     - videoId: EVVeS5q3dqk
       menu: [{name: モーニング}]
       note: 岩木の水から抽出した水出しコーヒー。
-  address: 青森県弘前市高屋福田３０９−８
 - id: a1e47ef1
   name: 煮干し中華蕎麦 なかた屋 神田店
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市神田２丁目６−１
   lat: 40.61758
   lng: 140.48516
   visits:
     - videoId: KvYYz9sSUsc
       menu: [{name: コク煮干し中華そば}]
       note: リーズナブル。
-  address: 青森県弘前市神田２丁目６−１
 - id: 4d0170e8
   name: カレー＆コーヒー かわしま
   pref: 青森県
@@ -6002,57 +6002,57 @@
   pref: 青森県
   city: 大鰐町
   genre: カフェ・喫茶
+  address: 青森県南津軽郡大鰐町大鰐前田８２ 2F
   lat: 40.52069
   lng: 140.57077
   visits:
     - videoId: Ka8bMvYHI00
       menu: [{name: ナポリタン}]
       note: 昭和レトロ。激安。
-  address: 青森県南津軽郡大鰐町大鰐前田８２ 2F
 - id: b321dcab
   name: ホルモン焼き 胡桃
   pref: 青森県
   city: 鶴田町
   genre: 焼肉
+  address: 青森県北津軽郡鶴田町胡桃舘池田３７−６
   lat: 40.73825
   lng: 140.45209
   visits:
     - videoId: BMNCgrWIBZU
       menu: [{name: 味噌ラーメン}, {name: 煮干しやきそば}]
-  address: 青森県北津軽郡鶴田町胡桃舘池田３７−６
 - id: 19bfcb4b
   name: 港町ラーメン 虎屋
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市港町２丁目１０−２８ 2F
   lat: 40.82944
   lng: 140.76281
   visits:
     - videoId: FINXQBjfp0A
       note: 土日限定の朝ラー。
-  address: 青森県青森市港町２丁目１０−２８ 2F
 - id: d8a8d9b4
   name: 秋元食堂
   pref: 青森県
   city: 黒石市
   genre: ご当地グルメ
+  address: 青森県黒石市青山８４−２
   lat: 40.65502
   lng: 140.60988
   visits:
     - videoId: LcROHG1Qras
       menu: [{name: つゆ焼きそば}]
-  address: 青森県黒石市青山８４−２
 - id: 2bebf02c
   name: レストラン ポム
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市大字上白銀町４９−１−１ 市役所市民防災館 4F
   lat: 40.60291
   lng: 140.46337
   visits:
     - videoId: toplig_x5Ao
       note: 弘前市役所内。安心価格。
-  address: 青森県弘前市大字上白銀町４９−１−１ 市役所市民防災館 4F
 - id: d5dd91fe
   name: 麺屋 遊仁
   pref: 青森県
@@ -6069,13 +6069,13 @@
   pref: 青森県
   city: 板柳町
   genre: カフェ・喫茶
+  address: 青森県北津軽郡板柳町福野田実田１１−５５
   lat: 40.69659
   lng: 140.46396
   visits:
     - videoId: 6XxPKp2g3Do
       menu: [{name: モーニングセット}]
       note: サラダが絶品のモーニング。
-  address: 青森県北津軽郡板柳町福野田実田１１−５５
 - id: 6fde08f4
   name: ステーキ食堂 ミートソルジャー
   pref: 青森県
@@ -6093,36 +6093,36 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市境関亥ノ宮３５−１１
   lat: 40.61321
   lng: 140.50558
   visits:
     - videoId: rMaB-OFwYFM
       note: あっさりスープと自家製手打ち麺。
-  address: 青森県弘前市境関亥ノ宮３５−１１
 - id: 8bdcf8bf
   name: 御食事処 千羽
   pref: 青森県
   city: 青森市
   genre: 食堂・定食
+  address: 青森県青森市浪岡大字女鹿沢東種本１２−７
   lat: 40.70955
   lng: 140.58707
   visits:
     - videoId: gqDg93adAYs
       menu: [{name: 唐揚げ定食}]
       note: 浪岡。お袋の味がした。
-  address: 青森県青森市浪岡大字女鹿沢東種本１２−７
 - id: 74e40375
   name: Konkitchen
   pref: 青森県
   city: 青森市
   genre: 洋食
+  address: 青森県青森市幸畑２丁目１−２
   lat: 40.78274
   lng: 140.7805
   visits:
     - videoId: WRKq__SQefQ
       menu: [{name: プリンセスなオムライス}]
       note: 黄身まで白いオムライス。
-  address: 青森県青森市幸畑２丁目１−２
 - id: 0375f58d
   name: 函館国際ホテル
   pref: 北海道
@@ -6138,12 +6138,12 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市泉野２丁目１−７
   lat: 40.57397
   lng: 140.49311
   visits:
     - videoId: B-lOtwMD03o
       menu: [{name: 味噌ラーメン}]
-  address: 青森県弘前市泉野２丁目１−７
 - id: 8951a97d
   name: ボンジュールヴィ
   pref: 青森県
@@ -6171,13 +6171,13 @@
   pref: 青森県
   city: 平川市
   genre: 中華・町中華
+  address: 青森県平川市尾上栄松３２−１
   lat: 40.61605
   lng: 140.58244
   visits:
     - videoId: GOYK-JSxujI
       menu: [{name: チャーハンセット（11〜12時限定）}]
       note: 小鉢までついたお得なセット。
-  address: 青森県平川市尾上栄松３２−１
 - id: 0c6bc5a4
   name: 鯵丸（ショッピングセンター パル）
   pref: 青森県
@@ -6195,25 +6195,25 @@
   pref: 青森県
   city: 弘前市
   genre: 洋食
+  address: 青森県弘前市清水３丁目4−２
   lat: 40.5813
   lng: 140.45211
   visits:
     - videoId: FOzbSj3CptY
       menu: [{name: クリームオムライス}]
       note: お得なランチセット。
-  address: 青森県弘前市清水３丁目4−２
 - id: f8948fcb
   name: レストラン 御幸
   pref: 青森県
   city: 黒石市
   genre: 食堂・定食
+  address: 青森県黒石市中町３６
   lat: 40.64503
   lng: 140.59652
   visits:
     - videoId: eG_lE65oWWo
       menu: [{name: ランチ天丼}]
       note: えび2本とイカが乗ったお得なランチ。
-  address: 青森県黒石市中町３６
 - id: b37f760e
   name: アップル食堂
   pref: 青森県
@@ -6251,12 +6251,12 @@
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市城東北３丁目１０−１
   lat: 40.60682
   lng: 140.49581
   visits:
     - videoId: 4eEHfQ_BLiI
       note: 葛餅入りのドリンク。
-  address: 青森県弘前市城東北３丁目１０−１
 - id: 02cf2b43
   name: 味の札幌 大西
   pref: 青森県
@@ -6273,6 +6273,7 @@
   pref: 青森県
   city: 弘前市
   genre: そば・うどん
+  address: 青森県弘前市駅前３丁目２−１ 弘前バスターミナル4番のりば付近
   lat: 40.59942
   lng: 140.48096
   closed: true
@@ -6280,7 +6281,6 @@
     - videoId: s3CXebexEiI
       menu: [{name: 舞茸天そば}]
       note: 弘前バスターミナル。
-  address: 青森県弘前市駅前３丁目２−１ 弘前バスターミナル4番のりば付近
 - id: 90e675e3
   name: らあ麺 しろがね（五所川原ELM）
   pref: 青森県
@@ -6296,13 +6296,13 @@
   pref: 青森県
   city: 五所川原市
   genre: スイーツ
+  address: 青森県五所川原市唐笠柳藤巻５１７−１
   lat: 40.79907
   lng: 140.4538
   visits:
     - videoId: VznZx801-l4
       menu: [{name: プリンパフェ}]
       note: 五所川原ELM。
-  address: 青森県五所川原市唐笠柳藤巻５１７−１
 - id: b615683a
   name: 食事処 やまなか
   pref: 青森県
@@ -6310,11 +6310,11 @@
   genre: 和食
   lat: 40.6031
   lng: 140.46404
+  approx: true
   closed: true
   visits:
     - videoId: n8_O5t78V6g
       note: 旧イトーヨーカドー弘前店8F。
-  approx: true
 - id: a2fa624f
   name: 支那そば 晃や
   pref: 青森県
@@ -6364,12 +6364,12 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市高崎２丁目４−３
   lat: 40.60899
   lng: 140.49311
   visits:
     - videoId: -joCY3dTxJE
       note: コスパ最高、ボリューム満点。
-  address: 青森県弘前市高崎２丁目４−３
 - id: 434f7fa8
   name: みかみ食堂
   pref: 青森県
@@ -6409,33 +6409,33 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市泉野５丁目５−１５
   lat: 40.57227
   lng: 140.49451
   visits:
     - videoId: K3IoXrUpdM4
-  address: 青森県弘前市泉野５丁目５−１５
 - id: 84fe583f
   name: ペッパーランチ ヒロロ店
   pref: 青森県
   city: 弘前市
   genre: ファミレス・チェーン
+  address: 青森県弘前市駅前町９−２０ HIRORO 4F フードコート
   lat: 40.59712
   lng: 140.48175
   visits:
     - videoId: og_MZPbQOIM
       menu: [{name: ペッパーライス}]
-  address: 青森県弘前市駅前町９−２０ HIRORO 4F フードコート
 - id: ea6710b2
   name: チャイナ食堂 彩菜房
   pref: 青森県
   city: 黒石市
   genre: 中華・町中華
+  address: 青森県黒石市中川篠村４３−１
   lat: 40.63266
   lng: 140.59503
   visits:
     - videoId: VcYhum1srW0
       menu: [{name: Bセット（麻婆豆腐と油淋鶏）, price: 850}]
-  address: 青森県黒石市中川篠村４３−１
 - id: 8d4e8ed1
   name: 喫茶 羅針盤
   pref: 青森県
@@ -6467,25 +6467,25 @@
   pref: 青森県
   city: 五所川原市
   genre: 海鮮
+  address: 青森県五所川原市唐笠柳藤巻５１７−１
   lat: 40.7989
   lng: 140.45402
   visits:
     - videoId: rSonAFpbK_E
       menu: [{name: 玉手箱}]
       note: 小さな丼に色んな具材が選べる。
-  address: 青森県五所川原市唐笠柳藤巻５１７−１
 - id: 817ccf0c
   name: つけそば なりや
   pref: 青森県
   city: 五所川原市
   genre: ラーメン
+  address: 青森県五所川原市広田柳沼６５−１０
   lat: 40.78596
   lng: 140.46064
   visits:
     - videoId: bCXKvLi5XOw
       menu: [{name: つけそば}]
       note: 朝7時から営業。月曜定休。
-  address: 青森県五所川原市広田柳沼６５−１０
 - id: 9e8b7afc
   name: かつや 弘前店
   pref: 青森県
@@ -6501,12 +6501,12 @@
   pref: 青森県
   city: 藤崎町
   genre: カフェ・喫茶
+  address: 青森県南津軽郡藤崎町榊和田２０−１
   lat: 40.6726
   lng: 140.53006
   visits:
     - videoId: rZ9LZmXmzpY
       menu: [{name: ポークカツセット}]
-  address: 青森県南津軽郡藤崎町榊和田２０−１
 - id: 87e308f4
   name: 中華そば おのむら
   pref: 青森県
@@ -6525,36 +6525,36 @@
   pref: 青森県
   city: 黒石市
   genre: ご当地グルメ
+  address: 青森県黒石市大字元町６６
   lat: 40.64613
   lng: 140.5833
   visits:
     - videoId: AYa5arnDc9M
       menu: [{name: つゆやきそば}]
-  address: 青森県黒石市大字元町６６
 - id: d279e69b
   name: 鯖石ドライブイン
   pref: 青森県
   city: 大鰐町
   genre: 食堂・定食
+  address: 青森県南津軽郡大鰐町鯖石広田２−１
   lat: 40.53177
   lng: 140.55459
   visits:
     - videoId: dP3BsDRxNgU
       menu: [{name: 朝ごはん}]
       note: 朝8時から営業。
-  address: 青森県南津軽郡大鰐町鯖石広田２−１
 - id: e609b7e1
   name: 鹿内食堂
   pref: 青森県
   city: 青森市
   genre: ご当地グルメ
+  address: 青森県青森市浪岡大字樽沢村元３１５−５ 浪岡大字樽沢村元３１５−５
   lat: 40.71208
   lng: 140.55687
   visits:
     - videoId: LIARkdLsWAw
       menu: [{name: 焼きそば}]
       note: 浪岡。自家製麺の焼きそば。
-  address: 青森県青森市浪岡大字樽沢村元３１５−５ 浪岡大字樽沢村元３１５−５
 - id: 5008d503
   name: 中華蕎麦 なかた屋 高田店
   pref: 青森県
@@ -6571,13 +6571,13 @@
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市土手町１８ 18番地 2F
   lat: 40.60267
   lng: 140.47152
   visits:
     - videoId: p6O98_YVexI
       menu: [{name: Aランチ}]
       note: 土手町。落ち着いた雰囲気。
-  address: 青森県弘前市土手町１８ 18番地 2F
 - id: 347b81de
   name: 築地 すし源 五所川原ELM店
   pref: 青森県
@@ -6585,22 +6585,22 @@
   genre: 海鮮
   lat: 40.80774
   lng: 140.44608
+  approx: true
   visits:
     - videoId: Z7hqlfaMM2U
       menu: [{name: 立ち寿司}]
       note: 一貫50円から。
-  approx: true
 - id: f878ee61
   name: ゆで太郎 五所川原店
   pref: 青森県
   city: 五所川原市
   genre: そば・うどん
+  address: 青森県五所川原市中央1丁目147
   lat: 40.80097
   lng: 140.45028
   visits:
     - videoId: dXNXpJxjIBg
       menu: [{name: 朝ラー}]
-  address: 青森県五所川原市中央1丁目147
 - id: b0fe4dc4
   name: 満月 五所川原ELM店
   pref: 青森県
@@ -6608,22 +6608,22 @@
   genre: ラーメン
   lat: 40.80774
   lng: 140.44608
+  approx: true
   visits:
     - videoId: Joo0BsGxI-Q
       menu: [{name: ワンタンめん}]
-  approx: true
 - id: 0175b6e0
   name: 洋食堂 セントレイ
   pref: 青森県
   city: 田舎館村
   genre: 洋食
+  address: 青森県南津軽郡田舎館村田舎舘前川２５６−４
   lat: 40.62871
   lng: 140.54799
   visits:
     - videoId: H1vDRIhaGOU
       menu: [{name: 特製ランチ}]
       note: 大人な雰囲気の店内。
-  address: 青森県南津軽郡田舎館村田舎舘前川２５６−４
 - id: 0a8eee84
   name: りんごの家（弘前市りんご公園）
   pref: 青森県
@@ -6639,24 +6639,24 @@
   pref: 青森県
   city: 五所川原市
   genre: 和食
+  address: 青森県五所川原市七ツ館虫流９１−２
   lat: 40.77716
   lng: 140.47741
   visits:
     - videoId: lQRDiwc1gC4
       menu: [{name: 寿司ランチ}]
-  address: 青森県五所川原市七ツ館虫流９１−２
 - id: 771f31a0
   name: つねた食堂
   pref: 青森県
   city: 青森市
   genre: 食堂・定食
+  address: 青森県青森市浪岡大字北中野天王１−１
   lat: 40.71107
   lng: 140.59923
   visits:
     - videoId: LsltNksKy50
       menu: [{name: ラーメン}]
       note: 浪岡。私が食べた中で一番美味いラーメン。
-  address: 青森県青森市浪岡大字北中野天王１−１
 - id: df2864ae
   name: レストラン フォレスト（ろっかぽっか）
   pref: 青森県
@@ -6684,23 +6684,23 @@
   pref: 青森県
   city: 青森市
   genre: 海鮮
+  address: 青森県青森市大野山下１４６−４０
   lat: 40.80784
   lng: 140.73649
   visits:
     - videoId: 9HrSh5Ccy5Q
       note: 開店前から行列ができる人気店。
-  address: 青森県青森市大野山下１４６−４０
 - id: 1a5a302d
   name: 森山食堂
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市桜ケ丘４丁目１−２
   lat: 40.57456
   lng: 140.45118
   visits:
     - videoId: A-ZFQ9CwWLU
       menu: [{name: 中華そば, price: 400}]
-  address: 青森県弘前市桜ケ丘４丁目１−２
 - id: 408da3da
   name: 吉野家 102号線弘前高田店
   pref: 青森県
@@ -6728,12 +6728,12 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市城東北１丁目２−３
   lat: 40.60285
   lng: 140.49194
   visits:
     - videoId: LaKhgDdP7ig
       menu: [{name: 淡麗鶏醤油}]
-  address: 青森県弘前市城東北１丁目２−３
 - id: c8d59c34
   name: 福士豆腐食堂
   pref: 青森県
@@ -6750,70 +6750,70 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市神田３丁目2−４
   lat: 40.62623
   lng: 140.48727
   visits:
     - videoId: 6djB2P3B0uc
       menu: [{name: 朝ラー, price: 510}]
       note: 梅ペースト付き。
-  address: 青森県弘前市神田３丁目2−４
 - id: 2ad820ad
   name: 麺や 藤山
   pref: 青森県
   city: 平川市
   genre: ラーメン
+  address: 青森県平川市柏木町藤山３０−１３
   lat: 40.58478
   lng: 140.56336
   visits:
     - videoId: qoKSqI1y36U
       menu: [{name: 味噌ラーメン}]
-  address: 青森県平川市柏木町藤山３０−１３
 - id: '08445307'
   name: とんかつ 萬福
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市福村１丁目１−６
   lat: 40.60729
   lng: 140.51349
   visits:
     - videoId: bLhriYdRHjE
       menu: [{name: 本日のおすすめ定食, price: 1000}]
       note: 食後にアイス付き。視聴者さんおすすめ。
-  address: 青森県弘前市福村１丁目１−６
 - id: 26f8bd55
   name: そば処 案山子
   pref: 青森県
   city: つがる市
   genre: そば・うどん
+  address: 青森県つがる市森田町床舞稚桜４−１
   lat: 40.78436
   lng: 140.32276
   visits:
     - videoId: L4IOEB7XP2w
       menu: [{name: 日替わり定食}]
       note: 道の駅もりたアーストップ内の古民家。
-  address: 青森県つがる市森田町床舞稚桜４−１
 - id: 3c0b773f
   name: 中華そば 文四郎 つがる店
   pref: 青森県
   city: つがる市
   genre: ラーメン
+  address: 青森県つがる市柏稲盛幾世１７４−１
   lat: 40.80526
   lng: 140.41994
   visits:
     - videoId: V0spgk2F5iw
       note: 朝6時から開店。
-  address: 青森県つがる市柏稲盛幾世１７４−１
 - id: cc6fc3fc
   name: ガスト 弘前城東店
   pref: 青森県
   city: 弘前市
   genre: ファミレス・チェーン
+  address: ４丁目-５-１３ 城東北 弘前市 青森県 036-8092
   lat: 40.6098
   lng: 140.49857
   visits:
     - videoId: pnFk6GNxUHs
       menu: [{name: モーニング, price: 330}]
-  address: ４丁目-５-１３ 城東北 弘前市 青森県 036-8092
 - id: 1243fc0d
   name: 唐揚げ専門店 こばしょく 弘前城東店
   pref: 青森県
@@ -6841,37 +6841,37 @@
   pref: 青森県
   city: 青森市
   genre: 食堂・定食
+  address: 青森県青森市後潟平野５５−２
   lat: 40.94517
   lng: 140.66006
   visits:
     - videoId: LjNOswnx1tA
       menu: [{name: 刺身定食, price: 700}]
       note: 後潟。
-  address: 青森県青森市後潟平野５５−２
 - id: 2a35cd4e
   name: さんくまむ
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市大字青山２丁目１−１
   lat: 40.62137
   lng: 140.48134
   visits:
     - videoId: NOTREqy4Wi4
       menu: [{name: 味噌ラーメン}]
       note: 弘前市青山。具沢山。
-  address: 青森県弘前市大字青山２丁目１−１
 - id: 1d3976f3
   name: スパイス食堂 問屋町カリー
   pref: 青森県
   city: 青森市
   genre: カレー
+  address: 青森県青森市第二問屋町２丁目８−３４
   lat: 40.79312
   lng: 140.75873
   visits:
     - videoId: Lex-3UPWkyQ
       menu: [{name: スパイスカリー2種あいがけ}]
       note: 化学調味料不使用。
-  address: 青森県青森市第二問屋町２丁目８−３４
 - id: e6285ffe
   name: 丼丸 あかり 青森店
   pref: 青森県
@@ -6899,6 +6899,7 @@
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市末広１丁目２−１
   lat: 40.60764
   lng: 140.50038
   closed: true
@@ -6906,19 +6907,18 @@
     - videoId: DEaTimnpIw8
       menu: [{name: 焼き魚定食, price: 750}]
       note: 弘果内。
-  address: 青森県弘前市末広１丁目２−１
 - id: 5d0dfb46
   name: お食事処 野のこ
   pref: 青森県
   city: つがる市
   genre: ラーメン
+  address: 青森県つがる市森田町床舞稚桜４
   lat: 40.78443
   lng: 140.32233
   visits:
     - videoId: VHZss9yQrIM
       menu: [{name: 三代目弥三郎ラーメン}]
       note: 道の駅もりた。
-  address: 青森県つがる市森田町床舞稚桜４
 - id: eecc1b73
   name: お食事処 おさない
   pref: 青森県
@@ -6936,13 +6936,13 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市三好235
   lat: 40.83261
   lng: 140.70163
   visits:
     - videoId: 9QEG9PAXyLM
       menu: [{name: あっさり醤油}]
       note: 朝ラー。
-  address: 青森県青森市三好235
 - id: d071555d
   name: 魚だしらーめん あずま
   pref: 青森県
@@ -6958,12 +6958,12 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市浪岡大字浪岡若松８８
   lat: 40.70953
   lng: 140.5927
   visits:
     - videoId: Y4iKc0HdPfU
       menu: [{name: 味噌ラーメン}]
-  address: 青森県青森市浪岡大字浪岡若松８８
 - id: e99b6512
   name: 龍亭
   pref: 青森県
@@ -6980,36 +6980,36 @@
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市大字大久保字西田1241
   lat: 40.62837
   lng: 140.48821
   visits:
     - videoId: PKD46ltwd5k
       menu: [{name: 三品盛定食}]
       note: ドリンクバー・ご飯・味噌汁・キャベツ無料。
-  address: 青森県弘前市大字大久保字西田1241
 - id: 9baa0449
   name: 海峡ラーメン
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市新城福田２７３−５
   lat: 40.83326
   lng: 140.68765
   visits:
     - videoId: DZFlINAulgM
       menu: [{name: 味噌ラーメンチャーハンセット}]
       note: 昼休みなしで営業。
-  address: 青森県青森市新城福田２７３−５
 - id: d731cf39
   name: 笑太
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市南佃２丁目３−２０
   lat: 40.81331
   lng: 140.78354
   visits:
     - videoId: HiwTSxYhZ4w
       note: 朝ラー。太麺のあっさり味。
-  address: 青森県青森市南佃２丁目３−２０
 - id: 0e9654c4
   name: 寧々家 弘前駅前店
   pref: 青森県
@@ -7037,6 +7037,7 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 B1F フードコート内
   lat: 40.59963
   lng: 140.48065
   visits:
@@ -7044,31 +7045,30 @@
       menu: [{name: あっさり醤油ラーメン, price: 500}]
     - videoId: LtuxMtOJxrw
       menu: [{name: 味噌ラーメン}]
-  address: 青森県弘前市駅前３丁目２−１ シーナシーナ弘前 B1F フードコート内
 - id: 9e3d6ed1
   name: ジョージのお店
   pref: 青森県
   city: 弘前市
   genre: 洋食
+  address: 青森県弘前市小比内５丁目１−１
   lat: 40.58613
   lng: 140.49663
   visits:
     - videoId: TUdHg1JpLSE
       menu: [{name: クリームオムライス}]
       note: 大好きなオムライス。
-  address: 青森県弘前市小比内５丁目１−１
 - id: d281ae25
   name: めえ処 さんじゃらっと
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市浪岡福田１丁目１３−９
   lat: 40.71934
   lng: 140.58553
   visits:
     - videoId: j9M4-DtUP44
       menu: [{name: 味噌ラーメン}]
       note: 浪岡。
-  address: 青森県青森市浪岡福田１丁目１３−９
 - id: c1fe5218
   name: ドーミーイン盛岡 さんさの湯
   pref: 岩手県
@@ -7085,12 +7085,12 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市宮川３丁目１７−２
   lat: 40.61401
   lng: 140.4855
   visits:
     - videoId: F7B-zpBPq3M
       menu: [{name: 味噌ラーメン}]
-  address: 青森県弘前市宮川３丁目１７−２
 - id: 41e0abc2
   name: 北海道レストラン
   pref: 青森県
@@ -7117,24 +7117,24 @@
   pref: 青森県
   city: 弘前市
   genre: 食堂・定食
+  address: 青森県弘前市境関１丁目１−９
   lat: 40.6119
   lng: 140.504
   visits:
     - videoId: fQSxk8CZDAk
       menu: [{name: 麻婆豆腐定食}]
       note: 境関。
-  address: 青森県弘前市境関１丁目１−９
 - id: ba0bcf37
   name: にぼShin. 高崎店
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市高崎２丁目１−６
   lat: 40.60847
   lng: 140.49233
   visits:
     - videoId: 5EmpBI2tuoU
       menu: [{name: つけ麺}]
-  address: 青森県弘前市高崎２丁目１−６
 - id: 73e0aadd
   name: アートホテル青森
   pref: 青森県
@@ -7151,13 +7151,13 @@
   pref: 青森県
   city: 青森市
   genre: カフェ・喫茶
+  address: 青森県青森市青葉１丁目５−２６
   lat: 40.80506
   lng: 140.74099
   visits:
     - videoId: aeiT8hfJ0Ik
       menu: [{name: ランチプレート}]
       note: 浜館。
-  address: 青森県青森市青葉１丁目５−２６
 - id: '51058921'
   name: ラーメン くまちゃん
   pref: 青森県
@@ -7386,13 +7386,13 @@
   pref: 青森県
   city: 弘前市
   genre: ラーメン
+  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
   lat: 40.59731
   lng: 140.48151
   closed: true
   visits:
     - videoId: R4yi0ZxkUAU
       menu: [{name: 中みそ}]
-  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
 - id: 78e15d2e
   name: 花輪サービスエリア
   pref: 秋田県
@@ -7454,13 +7454,13 @@
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市百沢
   lat: 40.62512
   lng: 140.33399
   visits:
     - videoId: uICZoPeSbfY
       menu: [{name: ランチ}]
       note: 百沢。
-  address: 青森県弘前市百沢
 - id: 30e3e9e4
   name: 極煮干し本舗
   pref: 青森県
@@ -7611,13 +7611,13 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
+  address: 青森県青森市浪岡大字杉沢山元３２８
   lat: 40.72146
   lng: 140.58221
   visits:
     - videoId: RRh-AtUjhOg
       menu: [{name: にぼちゅう 醤油}]
       note: 浪岡。
-  address: 青森県青森市浪岡大字杉沢山元３２８
 - id: 63c27696
   name: 麺 たんぴん
   pref: 青森県
@@ -7635,34 +7635,34 @@
   pref: 青森県
   city: 八戸市
   genre: ご当地グルメ
+  address: 青森県八戸市新湊３丁目 館鼻岸壁内
   lat: 40.52786
   lng: 141.52941
   visits:
     - videoId: cPQbjPMqnts
       note: 道の駅しちのへで車中泊の後に。
-  address: 青森県八戸市新湊３丁目 館鼻岸壁内
 - id: 4ee4ade8
   name: 喫茶店 TOP
   pref: 青森県
   city: 弘前市
   genre: カフェ・喫茶
+  address: 青森県弘前市駅前町１６−３
   lat: 40.59893
   lng: 140.48262
   visits:
     - videoId: qvuu9Ljwikw
       menu: [{name: モーニング}]
-  address: 青森県弘前市駅前町１６−３
 - id: 36eef8f1
   name: 田さ恋むらカフェ
   pref: 青森県
   city: 田舎館村
   genre: カフェ・喫茶
+  address: 青森県南津軽郡田舎館村田舎舘東田１６０−１
   lat: 40.62884
   lng: 140.55774
   visits:
     - videoId: M17myu-qM8g
       menu: [{name: トマトラーメン}, {name: いちごパフェ}]
-  address: 青森県南津軽郡田舎館村田舎舘東田１６０−１
 - id: c4fff50c
   name: 東花（藤崎イオン フードコート）
   pref: 青森県
@@ -7678,23 +7678,23 @@
   pref: 青森県
   city: 弘前市
   genre: カレー
+  address: 青森県弘前市城東北３丁目１０−１ さくら野百貨店弘前店4階
   lat: 40.60646
   lng: 140.49618
   visits:
     - videoId: 9LHrNam8Xdw
       menu: [{name: チーズナンセット}]
       note: さくら野。
-  address: 青森県弘前市城東北３丁目１０−１ さくら野百貨店弘前店4階
 - id: bf3b259b
   name: いちごカフェ
   pref: 青森県
   city: 田舎館村
   genre: スイーツ
+  address: 青森県南津軽郡田舎館村枝川
   lat: 40.64645
   lng: 140.56438
   visits:
     - videoId: ee6MVKVSGps
-  address: 青森県南津軽郡田舎館村枝川
 - id: a6d67ac6
   name: 成田専蔵珈琲店 城東店
   pref: 青森県
@@ -7724,9 +7724,9 @@
   pref: 青森県
   city: 藤崎町
   genre: ラーメン
+  address: 青森県南津軽郡藤崎町大字水木字古舘４−３
   lat: 40.68067
   lng: 140.53646
   visits:
     - videoId: N5Gclf0uofE
       menu: [{name: 味噌ラーメン}]
-  address: 青森県南津軽郡藤崎町大字水木字古舘４−３
