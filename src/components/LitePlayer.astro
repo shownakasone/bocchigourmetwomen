@@ -1,0 +1,45 @@
+---
+// YouTube の軽いプレーヤー。最初はサムネイルと再生ボタンだけを表示し、タップしたときに初めてプレーヤーを読み込む
+// （ページを軽くするため）。id を付けておくと、別のボタンから data-play="その id" で再生できる
+interface Props { videoId: string; title: string; start?: number; id?: string; duration?: string; isNew?: boolean; priority?: boolean }
+const { videoId, title, start, id, duration, isNew = false, priority = false } = Astro.props;
+---
+<button type="button" class="player" id={id} data-yt={videoId} data-start={start ?? ''} aria-label={`動画を再生：${title}`}>
+  <img src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} alt="" width="480" height="360" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />
+  <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.3.3 34 .3 34 .3s-21.3 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6c5.2 1.4 26.5 1.4 26.5 1.4s21.3 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3Z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></span>
+  {isNew && <span class="badge-new">NEW</span>}
+  {duration && <span class="badge-time">{duration}</span>}
+</button>
+<script>
+  const play = (b: HTMLElement) => {
+    if (!b.dataset.yt) return;
+    const f = document.createElement('iframe');
+    const start = b.dataset.start ? `&start=${b.dataset.start}` : '';
+    f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1${start}`;
+    f.title = b.getAttribute('aria-label') ?? '';
+    f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    const box = document.createElement('div');
+    box.className = b.className;
+    if (b.id) box.id = b.id;
+    for (const a of b.attributes) if (a.name.startsWith('data-astro-cid')) box.setAttribute(a.name, a.value); // 見た目（スタイル）を引き継ぐ
+    box.appendChild(f);
+    b.replaceWith(box);
+  };
+  document.querySelectorAll<HTMLButtonElement>('.player[data-yt]').forEach((b) => b.addEventListener('click', () => play(b), { once: true }));
+  // 別の場所（タイトルなど）から再生
+  document.querySelectorAll<HTMLElement>('[data-play]').forEach((t) => t.addEventListener('click', () => {
+    const b = document.getElementById(t.dataset.play!);
+    if (b) { play(b); b.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+  }));
+</script>
+<style>
+  .player { position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer; aspect-ratio: 16 / 9; background: #000; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .player img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .player :global(iframe) { width: 100%; height: 100%; border: 0; display: block; }
+  .yt-play { position: absolute; inset: 0; margin: auto; width: 68px; height: 48px; transition: transform .15s; filter: drop-shadow(0 4px 10px rgba(0,0,0,.3)); }
+  .player:hover .yt-play { transform: scale(1.08); }
+  .badge-new, .badge-time { position: absolute; font-family: var(--round); font-weight: 700; font-size: 12px; line-height: 1; padding: 6px 10px; border-radius: 99px; }
+  .badge-new { top: 10px; left: 10px; background: var(--shu); color: #fff; letter-spacing: .08em; }
+  .badge-time { right: 10px; bottom: 10px; background: rgba(0,0,0,.72); color: #fff; font-family: var(--sans); font-variant-numeric: tabular-nums; }
+</style>

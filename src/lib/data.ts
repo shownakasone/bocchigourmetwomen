@@ -127,3 +127,14 @@ export const GENRE_EN: Record<string, string> = {
   '海鮮': 'Seafood', '洋食': 'Yoshoku', '和食': 'Japanese', 'カレー': 'Curry', '焼肉': 'Yakiniku', 'スイーツ': 'Sweets', 'パン': 'Bakery',
   'ご当地グルメ': 'Local Food', 'ファミレス・チェーン': 'Family Dining', 'ファストフード': 'Fast Food', '居酒屋': 'Izakaya', 'アジア・エスニック': 'Ethnic',
 };
+
+// 動画の長さ（例 PT9M25S）を「9:25」に
+export const fmtDuration = (iso?: string) => {
+  const m = iso?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  if (!m) return '';
+  const [h, mi, s] = [Number(m[1] ?? 0), Number(m[2] ?? 0), Number(m[3] ?? 0)];
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return h ? `${h}:${pad(mi)}:${pad(s)}` : `${mi}:${pad(s)}`;
+};
+// 公開から n 日以内か（ビルド時点で判定。サイトは毎日作り直される）
+export const isRecent = (iso: string, days = 7) => Date.now() - new Date(iso).getTime() < days * 864e5;
