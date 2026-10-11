@@ -1,0 +1,50 @@
+---
+// 動画アーカイブの1か月分
+import Thumb from './Thumb.astro';
+import { shopsOfVideo, thumb, fmtDate, watchUrl, type Video } from '../lib/data';
+interface Props { month: string; list: Video[]; anchor?: string }
+const { month, list, anchor } = Astro.props;
+---
+<section class="month" id={anchor}>
+  <h2>{month}</h2>
+  {list.map((v) => {
+    const shops = shopsOfVideo(v.videoId);
+    return (
+      <article class="ep" id={v.videoId} data-text={(v.title + ' ' + shops.map((s) => s.name).join(' ')).toLowerCase()}>
+        <a href={watchUrl(v.videoId)} target="_blank" rel="noopener" class="ep-media"><Thumb src={thumb(v)} label={fmtDate(v.publishedAt)} /></a>
+        <div>
+          <p class="date">{fmtDate(v.publishedAt)}</p>
+          <h3><a href={watchUrl(v.videoId)} target="_blank" rel="noopener">{v.title}</a></h3>
+          {shops.length > 0 && (
+            <ul class="ep-shops">
+              {shops.map((s) => (
+                <li>
+                  <a href={`/shops/${s.id}`}>{s.name}</a>
+                  <span class="tag">{s.genre}</span>
+                  {s.closed && <span class="tag closed">閉店</span>}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </article>
+    );
+  })}
+</section>
+<style>
+  .month { margin-top: 32px; scroll-margin-top: 90px; }
+  .month[hidden], .ep[hidden] { display: none; }
+  .month h2 { font-size: 15px; letter-spacing: .2em; color: var(--ink-2); padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
+  .ep { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
+  .ep:target { background: var(--shu-soft); }
+  @media (max-width: 640px) { .ep { grid-template-columns: 120px 1fr; gap: 12px; } .ep h3 { font-size: 14px !important; } }
+  .date { font-size: 12px; color: var(--ink-2); margin: 0; }
+  h3 { font-size: 16px; margin: 2px 0 10px; }
+  h3 a:hover { color: var(--shu); }
+  .ep-shops { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+  .ep-shops li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+  .ep-shops a { border-bottom: 1px solid var(--line); }
+  .ep-shops a:hover { color: var(--shu); border-color: var(--shu); }
+  /* 画面外の月は描画を後回しにして軽くする */
+  .month { content-visibility: auto; contain-intrinsic-size: auto 1200px; }
+</style>

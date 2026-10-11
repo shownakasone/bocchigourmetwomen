@@ -1,8 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-import ShopCard from '../../components/ShopCard.astro';
+import Item from '../../components/ShopItem.astro';
 import ShopMap from '../../components/ShopMap.astro';
-import { getShops, getVideo, BUDGET_LABEL, budgetOf, countBy, isMorning, lastDate, PREF_ORDER, type Budget } from '../../lib/data';
+import { getShops, BUDGET_LABEL, countBy, PREF_ORDER, type Budget } from '../../lib/data';
 
 const shops = getShops();
 const prefs = countBy(shops, (s) => s.pref).sort((a, b) => PREF_ORDER.indexOf(a[0]) - PREF_ORDER.indexOf(b[0]));
@@ -58,17 +58,9 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
       <ShopMap shops={shops} height="min(70vh, 600px)" />
       <p class="map-note">白い点線のピンは、住所が分からず市町村の中心に置いているお店です。</p>
     </div>
-    <div id="list-pane" class="grid">
-      {shops.map((s, i) => (
-        <div class="item" data-shop={JSON.stringify({
-          id: s.id, pref: s.pref, city: s.city, genre: s.genre, budget: budgetOf(s) ?? '', closed: !!s.closed,
-          morning: isMorning(s), visits: s.visits.length, order: i,
-          text: [s.name, s.pref, s.city, s.genre, s.address ?? '', ...s.visits.flatMap((v) => [getVideo(v.videoId)?.title ?? '', v.note ?? '', ...(v.menu ?? []).map((m) => m.name)])].join(' ').toLowerCase(),
-        })}>
-          <ShopCard shop={s} />
-        </div>
-      ))}
-    </div>
+    {/* 最初の48軒だけ画面に置き、残りは <template> にしまっておく（スマホで軽くするため） */}
+    <div id="list-pane" class="grid">{shops.slice(0, 48).map((s, i) => <Item shop={s} i={i} />)}</div>
+    <template id="pool">{shops.slice(48).map((s, i) => <Item shop={s} i={i + 48} />)}</template>
     <p id="empty" class="empty" hidden>条件に合うお店が見つかりませんでした。条件をゆるめてみてください。</p>
     <div class="more-wrap"><button type="button" class="btn" id="more" hidden>もっと見る</button></div>
   </section>
@@ -80,7 +72,8 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
   const PAGE = 48;
   const form = document.getElementById('filters') as HTMLFormElement;
   const list = document.getElementById('list-pane')!;
-  const items = [...document.querySelectorAll<HTMLElement>('.item')].map((el) => ({ el, d: JSON.parse(el.dataset.shop!) as Item }));
+  const pool = (document.getElementById('pool') as HTMLTemplateElement).content;
+  const items = [...list.querySelectorAll<HTMLElement>('.item'), ...pool.querySelectorAll<HTMLElement>('.item')].map((el) => ({ el, d: JSON.parse(el.dataset.shop!) as Item }));
   const count = document.getElementById('count')!;
   const empty = document.getElementById('empty')!;
   const more = document.getElementById('more') as HTMLButtonElement;
@@ -127,9 +120,9 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
     if (get('sort') === 'visits') hits.sort((a, b) => b.d.visits - a.d.visits || a.d.order - b.d.order);
     else hits.sort((a, b) => a.d.order - b.d.order);
 
-    const shown = new Set(hits.slice(0, limit).map((h) => h.d.id));
-    for (const { el, d } of items) el.hidden = !shown.has(d.id);
-    for (const h of hits.slice(0, limit)) list.appendChild(h.el);
+    // 表示する分だけを画面に置く（残りは画面に入れないので軽い）
+    list.replaceChildren(...hits.slice(0, limit).map((h) => h.el));
+    markCards(list);
     count.textContent = `${hits.length} 軒のお店`;
     empty.hidden = hits.length > 0;
     more.hidden = hits.length <= limit;

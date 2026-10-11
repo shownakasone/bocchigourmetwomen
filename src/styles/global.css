@@ -14,7 +14,8 @@
   --shu-soft: #fbe3ef;
   --round: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
   --serif: var(--round);
-  --sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+  /* 本文は端末に入っている日本語フォントを使う（Web フォントを読み込まないので速い） */
+  --sans: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Noto Sans CJK JP', 'Yu Gothic UI', Meiryo, sans-serif;
   --script: 'Yellowtail', cursive;
   --radius: 18px;
   --shadow: 0 1px 2px rgba(46,52,66,.06), 0 6px 20px rgba(46,52,66,.07);

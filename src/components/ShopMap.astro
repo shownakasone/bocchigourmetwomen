@@ -7,16 +7,20 @@ const pins = shops.filter((s) => s.lat != null).map(({ id, name, lat, lng, genre
 ---
 <div class="shop-map" style={`height:${height}`} data-pins={JSON.stringify(pins)} data-zoom={zoom ?? ''}></div>
 <script>
-  import L from 'leaflet';
-  import 'leaflet.markercluster';
+  // 見た目（CSS）は小さいので先に読み込み、プログラム（Leaflet）は地図が画面に出たときに初めて読み込む
   import 'leaflet/dist/leaflet.css';
   import 'leaflet.markercluster/dist/MarkerCluster.css';
-
   type Pin = { id: string; name: string; lat: number; lng: number; genre: string; city: string; approx: boolean };
-  const icon = (approx: boolean) => L.divIcon({ className: approx ? 'pin approx' : 'pin', html: '<span></span>', iconSize: [18, 18], iconAnchor: [9, 9] });
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  // 地図ができる前に届いた絞り込み結果も覚えておく
+  let lastFilter: Set<string> | null = null;
+  window.addEventListener('shops:filtered', (e) => { lastFilter = new Set((e as CustomEvent<string[]>).detail); });
 
-  document.querySelectorAll<HTMLElement>('.shop-map').forEach((el) => {
+  async function init(el: HTMLElement) {
+    const { default: L } = await import('leaflet');
+    (window as any).L = L;
+    await import('leaflet.markercluster');
+    const icon = (approx: boolean) => L.divIcon({ className: approx ? 'pin approx' : 'pin', html: '<span></span>', iconSize: [18, 18], iconAnchor: [9, 9] });
     const pins: Pin[] = JSON.parse(el.dataset.pins || '[]');
     const map = L.map(el, { scrollWheelZoom: false });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -41,10 +45,15 @@ const pins = shops.filter((s) => s.lat != null).map(({ id, name, lat, lng, genre
       if (el.dataset.zoom) map.setView([shown[0].lat, shown[0].lng], shown[0].approx ? 12 : Number(el.dataset.zoom));
       else map.fitBounds(L.latLngBounds(shown.map((p) => [p.lat, p.lng] as [number, number])), { padding: [30, 30], maxZoom: 15 });
     };
-    draw(null);
+    draw(lastFilter);
     window.addEventListener('shops:filtered', (e) => draw(new Set((e as CustomEvent<string[]>).detail)));
     window.addEventListener('shops:map-shown', () => { map.invalidateSize(); });
-  });
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { io.unobserve(e.target); init(e.target as HTMLElement); }
+  }, { rootMargin: '300px' });
+  document.querySelectorAll<HTMLElement>('.shop-map').forEach((el) => io.observe(el));
 </script>
 <style is:global>
   .shop-map { width: 100%; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--paper-2); z-index: 0; }

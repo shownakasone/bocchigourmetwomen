@@ -53,10 +53,11 @@ const jsonld = {
 
     <div class="layout">
       <div class="main">
-        <div class="player">
-          <iframe src={`https://www.youtube-nocookie.com/embed/${first.videoId}${first.timestamp ? `?start=${first.timestamp}` : ''}`} title={firstVideo.title}
-            loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <!-- 最初はサムネイルだけ。タップしたときに YouTube プレーヤーを読み込む（ページを軽くするため） -->
+        <button type="button" class="player" data-yt={first.videoId} data-start={first.timestamp ?? ''} aria-label={`動画を再生：${firstVideo.title}`}>
+          <img src={`https://i.ytimg.com/vi/${first.videoId}/hqdefault.jpg`} alt="" width="480" height="360" fetchpriority="high" />
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.3.3 34 .3 34 .3s-21.3 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6c5.2 1.4 26.5 1.4 26.5 1.4s21.3 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3Z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></span>
+        </button>
 
         {note && (
           <blockquote class="memo">
@@ -129,6 +130,19 @@ const jsonld = {
 <script>
   import { markCards } from '../../lib/mylog';
   markCards();
+  document.querySelectorAll<HTMLButtonElement>('.player[data-yt]').forEach((b) => b.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    const start = b.dataset.start ? `&start=${b.dataset.start}` : '';
+    f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1${start}`;
+    f.title = b.getAttribute('aria-label') ?? '';
+    f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    const box = document.createElement('div');
+    box.className = b.className;
+    for (const a of b.attributes) if (a.name.startsWith('data-astro-cid')) box.setAttribute(a.name, a.value); // 見た目（スタイル）を引き継ぐ
+    box.appendChild(f);
+    b.replaceWith(box);
+  }, { once: true }));
 </script>
 <style>
   .crumbs { font-size: 12px; color: var(--ink-2); padding: 20px 0 0; }
@@ -146,8 +160,11 @@ const jsonld = {
   }
   .layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
   @media (max-width: 820px) { .layout { grid-template-columns: 1fr; } }
-  .player { aspect-ratio: 16 / 9; background: var(--paper-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .player iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .player { position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer; aspect-ratio: 16 / 9; background: #000; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .player img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .player :global(iframe) { width: 100%; height: 100%; border: 0; display: block; }
+  .yt-play { position: absolute; inset: 0; margin: auto; width: 68px; height: 48px; transition: transform .15s; }
+  .player:hover .yt-play { transform: scale(1.08); }
   .memo { margin: 28px 0; padding: 20px 24px; background: var(--pink-soft); border-radius: var(--radius); position: relative; }
   .memo p { font-family: var(--serif); font-size: clamp(16px, 2vw, 19px); line-height: 1.9; margin: 0; }
   .memo cite { display: block; font-style: normal; font-size: 12px; color: var(--ink-2); margin-top: 8px; }

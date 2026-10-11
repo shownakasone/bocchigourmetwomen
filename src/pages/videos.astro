@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import Thumb from '../components/Thumb.astro';
-import { getVideos, shopsOfVideo, thumb, fmtDate, watchUrl } from '../lib/data';
+import VideoMonth from '../components/VideoMonth.astro';
+import { getVideos } from '../lib/data';
 
 const videos = getVideos();
 const groups = new Map<string, typeof videos>();
@@ -11,6 +11,9 @@ for (const v of videos) {
   groups.set(key, [...(groups.get(key) ?? []), v]);
 }
 const years = [...new Set(videos.map((v) => new Date(v.publishedAt).getFullYear()))];
+const keys = [...groups.keys()];
+const months = [...groups].map(([month, list], gi) => ({ month, list, anchor: gi === 0 || !keys[gi - 1].startsWith(month.slice(0, 4)) ? `y${month.slice(0, 4)}` : undefined }));
+const FIRST = 6;
 ---
 <Base title="動画アーカイブ">
   <section class="wrap head">
@@ -23,53 +26,41 @@ const years = [...new Set(videos.map((v) => new Date(v.publishedAt).getFullYear(
     </div>
     <p id="vcount" class="vcount" aria-live="polite"></p>
   </section>
-  <div class="wrap">
-    {[...groups].map(([month, list], gi) => {
-      const y = month.slice(0, 4);
-      const firstOfYear = gi === 0 || ![...groups.keys()][gi - 1].startsWith(y);
-      return (
-        <section class="month" id={firstOfYear ? `y${y}` : undefined}>
-          <h2>{month}</h2>
-          {list.map((v) => {
-            const shops = shopsOfVideo(v.videoId);
-            return (
-              <article class="ep" id={v.videoId} data-text={(v.title + ' ' + shops.map((s) => s.name).join(' ')).toLowerCase()}>
-                <a href={watchUrl(v.videoId)} target="_blank" rel="noopener" class="ep-media"><Thumb src={thumb(v)} label={fmtDate(v.publishedAt)} /></a>
-                <div>
-                  <p class="date">{fmtDate(v.publishedAt)}</p>
-                  <h3><a href={watchUrl(v.videoId)} target="_blank" rel="noopener">{v.title}</a></h3>
-                  {shops.length > 0 && (
-                    <ul class="ep-shops">
-                      {shops.map((s) => (
-                        <li>
-                          <a href={`/shops/${s.id}`}>{s.name}</a>
-                          <span class="tag">{s.genre}</span>
-                          {s.closed && <span class="tag closed">閉店</span>}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </article>
-            );
-          })}
-        </section>
-      );
-    })}
+  {/* 最近6か月分だけを最初に表示。残りは <template> にしまっておき、必要なときに追加する（スマホで軽くするため） */}
+  <div class="wrap" id="months">
+    {months.slice(0, FIRST).map((m) => <VideoMonth {...m} />)}
   </div>
+  <template id="older">{months.slice(FIRST).map((m) => <VideoMonth {...m} />)}</template>
+  {months.length > FIRST && <div class="wrap more-wrap"><button type="button" class="btn" id="more">もっと前の動画を見る</button></div>}
 </Base>
 <script>
   const input = document.getElementById('vq') as HTMLInputElement;
-  const eps = [...document.querySelectorAll<HTMLElement>('.ep')];
-  const months = [...document.querySelectorAll<HTMLElement>('.month')];
+  const box = document.getElementById('months')!;
+  const older = (document.getElementById('older') as HTMLTemplateElement).content;
+  const more = document.getElementById('more');
   const count = document.getElementById('vcount')!;
+  // しまってある月を追加する（n を省略するとすべて）
+  const reveal = (n = Infinity) => {
+    const rest = [...older.children].slice(0, n);
+    box.append(...rest);
+    if (!older.children.length) more?.parentElement?.remove();
+  };
+  more?.addEventListener('click', () => reveal(6));
+  // 年のボタン：その年がまだ出ていなければ全部出してから移動
+  document.querySelectorAll<HTMLAnchorElement>('.years a').forEach((a) => a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href')!.slice(1);
+    if (!document.getElementById(id)) { e.preventDefault(); reveal(); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
+  }));
   input.addEventListener('input', () => {
+    reveal();
     const words = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
     let n = 0;
-    for (const el of eps) { const ok = words.every((w) => el.dataset.text!.includes(w)); el.hidden = !ok; if (ok) n++; }
-    for (const m of months) m.hidden = !m.querySelector('.ep:not([hidden])');
+    for (const el of box.querySelectorAll<HTMLElement>('.ep')) { const ok = words.every((w) => el.dataset.text!.includes(w)); el.hidden = !ok; if (ok) n++; }
+    for (const m of box.querySelectorAll<HTMLElement>('.month')) m.hidden = !m.querySelector('.ep:not([hidden])');
     count.textContent = words.length ? `${n} 本の動画` : '';
   });
+  // 動画ページへの直リンク（#videoId）で来たときも表示する
+  if (location.hash && !document.getElementById(location.hash.slice(1))) { reveal(); document.getElementById(location.hash.slice(1))?.scrollIntoView(); }
 </script>
 <style>
   .head { padding-top: 40px; }
@@ -82,17 +73,6 @@ const years = [...new Set(videos.map((v) => new Date(v.publishedAt).getFullYear(
   .years a { font-family: var(--serif); font-size: 14px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 99px; }
   .years a:hover { border-color: var(--shu); color: var(--shu); }
   .vcount { font-family: var(--serif); margin: 12px 0 0; min-height: 1em; }
-  .month { margin-top: 32px; scroll-margin-top: 90px; }
-  .month[hidden], .ep[hidden] { display: none; }
-  .month h2 { font-size: 15px; letter-spacing: .2em; color: var(--ink-2); padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
-  .ep { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
-  .ep:target { background: var(--shu-soft); }
-  @media (max-width: 640px) { .ep { grid-template-columns: 120px 1fr; gap: 12px; } .ep h3 { font-size: 14px !important; } .tools input { font-size: 16px; } .years { overflow-x: auto; flex-wrap: nowrap; } }
-  .date { font-size: 12px; color: var(--ink-2); margin: 0; }
-  h3 { font-size: 16px; margin: 2px 0 10px; }
-  h3 a:hover { color: var(--shu); }
-  .ep-shops { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
-  .ep-shops li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 14px; }
-  .ep-shops a { border-bottom: 1px solid var(--line); }
-  .ep-shops a:hover { color: var(--shu); border-color: var(--shu); }
+  .more-wrap { text-align: center; padding-top: 32px; }
+  @media (max-width: 640px) { .tools input { font-size: 16px; } .years { overflow-x: auto; flex-wrap: nowrap; } }
 </style>
