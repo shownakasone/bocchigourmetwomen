@@ -64,7 +64,7 @@ const nav = [
       </a>
       <nav>
         {nav.map((n) => (
-          <a href={n.href} data-astro-prefetch="viewport" class:list={{ active: n.href === '/' ? path === '/' : path.startsWith(n.href) }}>
+          <a href={n.href} class:list={{ active: n.href === '/' ? path === '/' : path.startsWith(n.href) }}>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d={n.icon} /></svg><span>{n.label}</span>
           </a>
         ))}
