@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import VideoMonth from '../components/VideoMonth.astro';
-import { getVideos } from '../lib/data';
+import { getVideos, shopsOfVideo, fmtDate } from '../lib/data';
 
 const videos = getVideos();
 const groups = new Map<string, typeof videos>();
@@ -14,6 +14,11 @@ const years = [...new Set(videos.map((v) => new Date(v.publishedAt).getFullYear(
 const keys = [...groups.keys()];
 const months = [...groups].map(([month, list], gi) => ({ month, list, anchor: gi === 0 || !keys[gi - 1].startsWith(month.slice(0, 4)) ? `y${month.slice(0, 4)}` : undefined }));
 const FIRST = 6;
+// 7か月目より前は、必要な情報だけの小さなデータにする（表示するときに最初の月を型にして組み立てる）
+const olderData = months.slice(FIRST).map(({ month, list, anchor }) => ({
+  m: month, a: anchor ?? '',
+  v: list.map((v) => [v.videoId, v.title, fmtDate(v.publishedAt), shopsOfVideo(v.videoId).map((s) => [s.id, s.name, s.genre, s.closed ? 1 : 0])]),
+}));
 ---
 <Base title="動画アーカイブ">
   <section class="wrap head">
@@ -26,24 +31,60 @@ const FIRST = 6;
     </div>
     <p id="vcount" class="vcount" aria-live="polite"></p>
   </section>
-  {/* 最近6か月分だけを最初に表示。残りは <template> にしまっておき、必要なときに追加する（スマホで軽くするため） */}
+  {/* 最近6か月分だけを HTML で表示。残りはデータから必要なときに組み立てる（スマホで軽くするため） */}
   <div class="wrap" id="months">
     {months.slice(0, FIRST).map((m) => <VideoMonth {...m} />)}
   </div>
-  <template id="older">{months.slice(FIRST).map((m) => <VideoMonth {...m} />)}</template>
+  <script type="application/json" id="older-data" set:html={JSON.stringify(olderData)} />
   {months.length > FIRST && <div class="wrap more-wrap"><button type="button" class="btn" id="more">もっと前の動画を見る</button></div>}
 </Base>
 <script>
   const input = document.getElementById('vq') as HTMLInputElement;
   const box = document.getElementById('months')!;
-  const older = (document.getElementById('older') as HTMLTemplateElement).content;
+  type Ep = [string, string, string, [string, string, string, number][]];
+  const older: { m: string; a: string; v: Ep[] }[] = JSON.parse(document.getElementById('older-data')!.textContent!);
+  // 画面にある月・動画・お店を型にして、同じ見た目で組み立てる
+  const protoMonth = box.querySelector<HTMLElement>('.month')!;
+  const protoEp = box.querySelector<HTMLElement>('.ep:has(.ep-shops)') ?? box.querySelector<HTMLElement>('.ep')!;
+  const protoLi = box.querySelector<HTMLElement>('.ep-shops li');
+  const protoClosed = (() => { const t = protoLi?.querySelector('.tag')?.cloneNode(true) as HTMLElement | undefined; if (t) { t.className = 'tag closed'; t.textContent = '閉店'; } return t; })();
+  function buildEp([id, title, date, shops]: Ep) {
+    const el = protoEp.cloneNode(true) as HTMLElement;
+    const url = `https://www.youtube.com/watch?v=${id}`;
+    el.id = id;
+    el.dataset.text = (title + ' ' + shops.map((s) => s[1]).join(' ')).toLowerCase();
+    el.querySelectorAll<HTMLAnchorElement>('a.ep-media, h3 a').forEach((a) => (a.href = url));
+    el.querySelector('img')!.src = `https://i.ytimg.com/vi/${id}/mqdefault.jpg`;
+    el.querySelector('.date')!.textContent = date;
+    el.querySelector('h3 a')!.textContent = title;
+    const ul = el.querySelector('.ep-shops');
+    if (ul && protoLi) {
+      if (!shops.length) ul.remove();
+      else ul.replaceChildren(...shops.map(([sid, name, genre, closed]) => {
+        const li = protoLi.cloneNode(true) as HTMLElement;
+        li.querySelectorAll('.tag.closed').forEach((t) => t.remove());
+        const a = li.querySelector('a')!; a.href = `/shops/${sid}`; a.textContent = name;
+        li.querySelector('.tag')!.textContent = genre;
+        if (closed && protoClosed) li.append(protoClosed.cloneNode(true));
+        return li;
+      }));
+    }
+    return el;
+  }
+  function buildMonth({ m, a, v }: (typeof older)[number]) {
+    const sec = protoMonth.cloneNode(false) as HTMLElement;
+    if (a) sec.id = a; else sec.removeAttribute('id');
+    sec.append(protoMonth.querySelector('h2')!.cloneNode(false));
+    sec.querySelector('h2')!.textContent = m;
+    sec.append(...v.map(buildEp));
+    return sec;
+  }
   const more = document.getElementById('more');
   const count = document.getElementById('vcount')!;
   // しまってある月を追加する（n を省略するとすべて）
   const reveal = (n = Infinity) => {
-    const rest = [...older.children].slice(0, n);
-    box.append(...rest);
-    if (!older.children.length) more?.parentElement?.remove();
+    box.append(...older.splice(0, n).map(buildMonth));
+    if (!older.length) more?.parentElement?.remove();
   };
   more?.addEventListener('click', () => reveal(6));
   // 年のボタン：その年がまだ出ていなければ全部出してから移動

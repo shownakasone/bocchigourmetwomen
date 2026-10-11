@@ -2,13 +2,23 @@
 import Base from '../../layouts/Base.astro';
 import Item from '../../components/ShopItem.astro';
 import ShopMap from '../../components/ShopMap.astro';
-import { getShops, BUDGET_LABEL, countBy, PREF_ORDER, type Budget } from '../../lib/data';
+import { getShops, latestVideo, budgetOf, isMorning, BUDGET_LABEL, countBy, PREF_ORDER, type Budget } from '../../lib/data';
 
 const shops = getShops();
 const prefs = countBy(shops, (s) => s.pref).sort((a, b) => PREF_ORDER.indexOf(a[0]) - PREF_ORDER.indexOf(b[0]));
 const cities = countBy(shops, (s) => `${s.pref}|${s.city}`).filter(([k]) => !k.endsWith('|'));
 const genres = countBy(shops, (s) => s.genre);
 const budgets = Object.keys(BUDGET_LABEL) as Budget[];
+// 全店の「絞り込み・カード表示に必要な情報」だけを小さなデータにする（カードの HTML を全部入れるより軽い）
+const rows = shops.map((s) => {
+  const b = budgetOf(s) ?? '';
+  return {
+    id: s.id, n: s.name, p: s.pref, c: s.city, g: s.genre, b, bl: b ? BUDGET_LABEL[b as Budget] : '',
+    s3: s.solo === 3 ? 1 : 0, x: s.closed ? 1 : 0, v: s.visits.length, y: latestVideo(s).videoId, m: isMorning(s) ? 1 : 0,
+    // 地図のピン用（位置が無い店は 0）
+    la: s.lat ?? 0, lo: s.lng ?? 0, ap: s.approx ? 1 : 0,
+  };
+});
 ---
 <Base title="お店をさがす">
   <section class="wrap head">
@@ -55,12 +65,12 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
 
   <section class="wrap">
     <div id="map-pane" hidden>
-      <ShopMap shops={shops} height="min(70vh, 600px)" />
+      <ShopMap source="shop-data" height="min(70vh, 600px)" />
       <p class="map-note">白い点線のピンは、住所が分からず市町村の中心に置いているお店です。</p>
     </div>
-    {/* 最初の48軒だけ画面に置き、残りは <template> にしまっておく（スマホで軽くするため） */}
-    <div id="list-pane" class="grid">{shops.slice(0, 48).map((s, i) => <Item shop={s} i={i} />)}</div>
-    <template id="pool">{shops.slice(48).map((s, i) => <Item shop={s} i={i + 48} />)}</template>
+    {/* 最初の48軒だけ HTML で置き、残りはデータからその場でカードを作る（スマホで軽くするため） */}
+    <div id="list-pane" class="grid">{shops.slice(0, 48).map((s) => <Item shop={s} />)}</div>
+    <script type="application/json" id="shop-data" set:html={JSON.stringify(rows)} />
     <p id="empty" class="empty" hidden>条件に合うお店が見つかりませんでした。条件をゆるめてみてください。</p>
     <div class="more-wrap"><button type="button" class="btn" id="more" hidden>もっと見る</button></div>
   </section>
@@ -68,12 +78,40 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
 <script>
   import { load, markCards } from '../../lib/mylog';
 
-  type Item = { id: string; pref: string; city: string; genre: string; budget: string; closed: boolean; morning: boolean; visits: number; order: number; text: string };
+  type Row = { id: string; n: string; p: string; c: string; g: string; b: string; bl: string; s3: number; x: number; v: number; y: string; m: number };
   const PAGE = 48;
   const form = document.getElementById('filters') as HTMLFormElement;
   const list = document.getElementById('list-pane')!;
-  const pool = (document.getElementById('pool') as HTMLTemplateElement).content;
-  const items = [...list.querySelectorAll<HTMLElement>('.item'), ...pool.querySelectorAll<HTMLElement>('.item')].map((el) => ({ el, d: JSON.parse(el.dataset.shop!) as Item }));
+  const rows: Row[] = JSON.parse(document.getElementById('shop-data')!.textContent!);
+
+  // 画面にある1枚目のカードを型にして、残りのカードを同じ見た目で作る
+  const proto = list.querySelector<HTMLElement>('.item')!;
+  const cidOf = (el: Element | null) => [...(el?.attributes ?? [])].find((a) => a.name.startsWith('data-astro-cid'))?.name ?? '';
+  const cardCid = cidOf(proto.querySelector('.card'));
+  const span = (cls: string, text: string) => { const e = document.createElement('span'); e.className = cls; if (cardCid) e.setAttribute(cardCid, ''); e.textContent = text; return e; };
+  function build(r: Row): HTMLElement {
+    const el = proto.cloneNode(true) as HTMLElement;
+    const a = el.querySelector<HTMLAnchorElement>('.card')!;
+    a.href = `/shops/${r.id}`; a.dataset.shopId = r.id; a.classList.remove('is-visited');
+    el.querySelector('img')!.src = `https://i.ytimg.com/vi/${r.y}/mqdefault.jpg`;
+    el.querySelector('.revisit')?.remove();
+    if (r.v > 1) el.querySelector('.media')!.append(span('revisit', `${r.v}回訪問`));
+    const area = el.querySelector('.area')!;
+    area.firstChild!.textContent = r.c || r.p; area.lastChild!.textContent = r.g;
+    el.querySelector('h3')!.textContent = r.n;
+    el.querySelector('.tags')!.replaceChildren(...[r.bl && span('tag', r.bl), r.s3 && span('tag shu', 'ひとり歓迎'), r.x && span('tag closed', '閉店')].filter(Boolean) as HTMLElement[]);
+    return el;
+  }
+  const existing = new Map([...list.querySelectorAll<HTMLElement>('.item')].map((el) => [el.querySelector<HTMLElement>('.card')!.dataset.shopId!, el]));
+  const items = rows.map((d, order) => ({ d, order, el: existing.get(d.id) ?? null as HTMLElement | null }));
+  const elOf = (h: (typeof items)[number]) => (h.el ??= build(h.d));
+
+  // キーワード検索用の文章は、検索欄に触れたとき（または URL に検索語があるとき）に読み込む
+  let texts: Record<string, string> | null = null;
+  let loadingTexts: Promise<void> | null = null;
+  const loadTexts = () => (loadingTexts ??= fetch('/search-index.json').then((r) => r.json()).then((j) => { texts = j; }));
+  const qInput = form.elements.namedItem('q') as HTMLInputElement;
+  ['focus', 'pointerdown'].forEach((ev) => qInput.addEventListener(ev, () => loadTexts(), { once: true }));
   const count = document.getElementById('count')!;
   const empty = document.getElementById('empty')!;
   const more = document.getElementById('more') as HTMLButtonElement;
@@ -113,15 +151,15 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
     const get = (k: string) => String(fd.get(k) || '');
     const visited = new Set(load().visited);
     const hits = items.filter(({ d }) =>
-      (!q || q.split(/\s+/).every((w) => d.text.includes(w)))
-      && (!get('pref') || d.pref === get('pref')) && (!get('city') || d.city === get('city'))
-      && (!get('genre') || d.genre === get('genre')) && (!get('budget') || d.budget === get('budget'))
-      && (!fd.has('morning') || d.morning) && (!fd.has('hideClosed') || !d.closed) && (!fd.has('unvisited') || !visited.has(d.id)));
-    if (get('sort') === 'visits') hits.sort((a, b) => b.d.visits - a.d.visits || a.d.order - b.d.order);
-    else hits.sort((a, b) => a.d.order - b.d.order);
+      (!q || (texts ? q.split(/\s+/).every((w) => (texts![d.id] ?? '').includes(w)) : (d.n + d.c + d.g).toLowerCase().includes(q)))
+      && (!get('pref') || d.p === get('pref')) && (!get('city') || d.c === get('city'))
+      && (!get('genre') || d.g === get('genre')) && (!get('budget') || d.b === get('budget'))
+      && (!fd.has('morning') || d.m) && (!fd.has('hideClosed') || !d.x) && (!fd.has('unvisited') || !visited.has(d.id)));
+    if (get('sort') === 'visits') hits.sort((a, b) => b.d.v - a.d.v || a.order - b.order);
+    else hits.sort((a, b) => a.order - b.order);
 
-    // 表示する分だけを画面に置く（残りは画面に入れないので軽い）
-    list.replaceChildren(...hits.slice(0, limit).map((h) => h.el));
+    // 表示する分だけを画面に置く（カードは必要になったときに初めて作る）
+    list.replaceChildren(...hits.slice(0, limit).map(elOf));
     markCards(list);
     count.textContent = `${hits.length} 軒のお店`;
     empty.hidden = hits.length > 0;
@@ -136,7 +174,11 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
     history.replaceState(null, '', url);
   }
 
-  form.addEventListener('input', () => apply());
+  form.addEventListener('input', () => {
+    apply();
+    // 文章がまだ届いていなければ、届いたところでもう一度絞り込む
+    if (qInput.value.trim() && !texts) loadTexts().then(() => apply(false));
+  });
   // スマホ: 条件エリアの開閉と、選んでいる条件の数の表示
   const toggle = document.getElementById('toggle')!;
   const filters = document.getElementById('more-filters')!;
@@ -165,6 +207,7 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
 
   markCards();
   apply();
+  if (qInput.value.trim()) loadTexts().then(() => apply(false));
   countFilters();
 </script>
 <style>

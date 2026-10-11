@@ -47,9 +47,8 @@ const nav = [
   {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
   <meta name="theme-color" content="#f5b82e" />
   <link rel="icon" href="/favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet" />
+  {/* フォントはサイトで使う文字だけを抜き出した自前のファイル（scripts/subset-font.mjs がビルド後に作る） */}
+  <link rel="preload" href="/fonts/zenmaru-700.woff2" as="font" type="font/woff2" crossorigin />
   <slot name="head" />
 </head>
 <body>
@@ -57,7 +56,7 @@ const nav = [
   <header class="site-header">
     <div class="wrap bar">
       <a href="/" class="logo" aria-label="ぼっちグルメ手帖 トップへ">
-        <img src="/brand/logo.jpg" alt="" width="48" height="46" />
+        <img src="/brand/logo.webp" alt="" width="48" height="46" />
         <span class="logo-text">
           <span class="logo-main">ぼっちグルメ手帖</span>
           <span class="logo-sub">Bocchi Gourmet Archive</span>
@@ -65,7 +64,7 @@ const nav = [
       </a>
       <nav>
         {nav.map((n) => (
-          <a href={n.href} class:list={{ active: n.href === '/' ? path === '/' : path.startsWith(n.href) }}>
+          <a href={n.href} data-astro-prefetch="viewport" class:list={{ active: n.href === '/' ? path === '/' : path.startsWith(n.href) }}>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d={n.icon} /></svg><span>{n.label}</span>
           </a>
         ))}
@@ -75,7 +74,7 @@ const nav = [
   <main><slot /></main>
   <footer class="site-footer">
     <div class="wrap foot">
-      <img class="chara" src="/brand/character.jpg" alt="ぼっちグルメウーマン" width="120" height="120" loading="lazy" />
+      <img class="chara" src="/brand/character.webp" alt="ぼっちグルメウーマン" width="120" height="120" loading="lazy" />
       <div>
         <p class="f-logo">ぼっちグルメ手帖</p>
         <p>YouTube「<a href={CHANNEL_URL} target="_blank" rel="noopener">ぼっちグルメウーマン</a>」公式アーカイブ</p>

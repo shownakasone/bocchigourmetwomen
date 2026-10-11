@@ -1,3 +1,7 @@
+/* 自前の Web フォント（ファイル名はビルド後にハッシュ付きへ書き換わる） */
+@font-face { font-family: 'Zen Maru Gothic'; src: url('/fonts/zenmaru-700.woff2') format('woff2'); font-weight: 500 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Yellowtail'; src: url('/fonts/yellowtail.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+
 /* ぼっちグルメウーマンのロゴ（ネイビーのお皿の輪 × マスタードイエロー）とバナー（ピンク）に合わせた配色 */
 :root {
   --paper: #fbf7ef;        /* 生成り。お皿のまわりのテーブルクロス */

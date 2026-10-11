@@ -1,14 +1,8 @@
 ---
-// 「さがす」一覧の1件分。絞り込み用のデータを data-shop に持たせる
+// 「さがす」一覧の1件分（最初に表示する48軒は HTML で出す。残りはブラウザ側でこれを型に作る）
 import ShopCard from './ShopCard.astro';
-import { budgetOf, getVideo, isMorning, type Shop } from '../lib/data';
-interface Props { shop: Shop; i: number }
-const { shop: s, i } = Astro.props;
-const text = [s.name, s.pref, s.city, s.genre, s.address ?? '', ...s.visits.flatMap((v) => [getVideo(v.videoId)?.title ?? '', v.note ?? '', ...(v.menu ?? []).map((m) => m.name)])].join(' ').toLowerCase();
+import type { Shop } from '../lib/data';
+interface Props { shop: Shop }
+const { shop } = Astro.props;
 ---
-<div class="item" data-shop={JSON.stringify({
-  id: s.id, pref: s.pref, city: s.city, genre: s.genre, budget: budgetOf(s) ?? '', closed: !!s.closed,
-  morning: isMorning(s), visits: s.visits.length, order: i, text,
-})}>
-  <ShopCard shop={s} />
-</div>
+<div class="item"><ShopCard shop={shop} /></div>

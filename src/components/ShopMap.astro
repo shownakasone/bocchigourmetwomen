@@ -1,11 +1,12 @@
 ---
 // 地図。たくさんのピンはまとめて表示（クラスタ）。絞り込み時は window イベントで更新
 import type { Shop } from '../lib/data';
-interface Props { shops: Shop[]; height?: string; zoom?: number }
-const { shops, height = '420px', zoom } = Astro.props;
-const pins = shops.filter((s) => s.lat != null).map(({ id, name, lat, lng, genre, city, approx }) => ({ id, name, lat, lng, genre, city, approx: !!approx }));
+// source を渡すと、ページ内の JSON（「さがす」のお店データ）からピンを作る（同じデータを二重に持たない）
+interface Props { shops?: Shop[]; source?: string; height?: string; zoom?: number }
+const { shops = [], source, height = '420px', zoom } = Astro.props;
+const pins = source ? [] : shops.filter((s) => s.lat != null).map(({ id, name, lat, lng, genre, city, approx }) => ({ id, name, lat, lng, genre, city, approx: !!approx }));
 ---
-<div class="shop-map" style={`height:${height}`} data-pins={JSON.stringify(pins)} data-zoom={zoom ?? ''}></div>
+<div class="shop-map" style={`height:${height}`} data-pins={source ? undefined : JSON.stringify(pins)} data-source={source} data-zoom={zoom ?? ''}></div>
 <script>
   // 見た目（CSS）は小さいので先に読み込み、プログラム（Leaflet）は地図が画面に出たときに初めて読み込む
   import 'leaflet/dist/leaflet.css';
@@ -21,7 +22,9 @@ const pins = shops.filter((s) => s.lat != null).map(({ id, name, lat, lng, genre
     (window as any).L = L;
     await import('leaflet.markercluster');
     const icon = (approx: boolean) => L.divIcon({ className: approx ? 'pin approx' : 'pin', html: '<span></span>', iconSize: [18, 18], iconAnchor: [9, 9] });
-    const pins: Pin[] = JSON.parse(el.dataset.pins || '[]');
+    const pins: Pin[] = el.dataset.source
+      ? JSON.parse(document.getElementById(el.dataset.source)!.textContent!).filter((r: any) => r.la).map((r: any) => ({ id: r.id, name: r.n, lat: r.la, lng: r.lo, genre: r.g, city: r.c || r.p, approx: !!r.ap }))
+      : JSON.parse(el.dataset.pins || '[]');
     const map = L.map(el, { scrollWheelZoom: false });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19,

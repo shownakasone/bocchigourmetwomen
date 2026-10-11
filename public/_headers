@@ -1,0 +1,12 @@
+# ブラウザに覚えさせる期間
+# ファイル名に中身のハッシュが付いているもの（CSS・JS・フォント）は1年
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+# ロゴなどの画像は1週間
+/brand/*
+  Cache-Control: public, max-age=604800
+/favicon.png
+  Cache-Control: public, max-age=604800
+# HTML はこれまでどおり毎回確認（更新がすぐ反映されるように）
