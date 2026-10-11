@@ -1,0 +1,9 @@
+// Cloudflare（Workers の静的アセット配信）用の設定。dist/ をそのまま公開する
+{
+  "name": "bocchigourmetwomen",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

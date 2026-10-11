@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="ページが見つかりません">
+  <section class="wrap nf">
+    <p class="eyebrow">Not Found</p>
+    <h1>お探しのページが見つかりませんでした</h1>
+    <p>お店のページが移動したか、URL が間違っているかもしれません。</p>
+    <a class="btn primary" href="/shops">お店をさがす</a>
+  </section>
+</Base>
+<style>
+  .nf { padding-top: 64px; padding-bottom: 32px; text-align: center; }
+  .nf h1 { font-size: clamp(22px, 4vw, 30px); margin: 8px 0 12px; }
+  .nf p { color: var(--ink-2); }
+</style>
