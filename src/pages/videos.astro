@@ -87,7 +87,7 @@ const years = [...new Set(videos.map((v) => new Date(v.publishedAt).getFullYear(
   .month h2 { font-size: 15px; letter-spacing: .2em; color: var(--ink-2); padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
   .ep { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
   .ep:target { background: var(--shu-soft); }
-  @media (max-width: 640px) { .ep { grid-template-columns: 120px 1fr; gap: 12px; } .ep h3 { font-size: 14px !important; } }
+  @media (max-width: 640px) { .ep { grid-template-columns: 120px 1fr; gap: 12px; } .ep h3 { font-size: 14px !important; } .tools input { font-size: 16px; } .years { overflow-x: auto; flex-wrap: nowrap; } }
   .date { font-size: 12px; color: var(--ink-2); margin: 0; }
   h3 { font-size: 16px; margin: 2px 0 10px; }
   h3 a:hover { color: var(--shu); }

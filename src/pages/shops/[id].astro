@@ -36,6 +36,10 @@ const where = [shop.pref, shop.city].filter(Boolean).join(' ');
         {shop.visits.length > 1 && <span class="tag">{shop.visits.length}回訪問</span>}
         {shop.closed && <span class="tag closed">閉店しました</span>}
       </div>
+      <div class="quick">
+        <a class="btn primary" href={mapsUrl(shop)} target="_blank" rel="noopener">📍 地図アプリで開く</a>
+        <a class="btn" href={watchUrl(first.videoId, first.timestamp)} target="_blank" rel="noopener">▶ 動画を見る</a>
+      </div>
     </header>
 
     <div class="layout">
@@ -124,6 +128,13 @@ const where = [shop.pref, shop.city].filter(Boolean).join(' ');
   .head h1 { font-size: clamp(28px, 4.8vw, 44px); font-weight: 900; margin: 6px 0 14px; }
   .where { margin: 0; font-size: 13px; font-weight: 500; color: var(--ink-2); }
   .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .quick { display: none; }
+  @media (max-width: 820px) {
+    .quick { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+    .quick .btn { padding: 11px 8px; font-size: 13px; }
+    .menu { margin-left: 0; width: 100%; }
+    .vnote { margin-left: 0; }
+  }
   .layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
   @media (max-width: 820px) { .layout { grid-template-columns: 1fr; } }
   .player { aspect-ratio: 16 / 9; background: var(--paper-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }

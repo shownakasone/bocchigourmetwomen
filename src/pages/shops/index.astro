@@ -18,7 +18,11 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
   </section>
 
   <form class="wrap filters" id="filters" onsubmit="return false">
-    <input type="search" name="q" placeholder="店名・メニュー・まちで検索（例：味噌ラーメン、浪岡）" aria-label="キーワード" />
+    <div class="qrow">
+      <input type="search" name="q" placeholder="例：味噌ラーメン、浪岡" aria-label="店名・メニュー・まちで検索" />
+      <button type="button" class="toggle" id="toggle" aria-expanded="false" aria-controls="more-filters">絞り込み<span id="nfilter"></span></button>
+    </div>
+    <div class="more-filters" id="more-filters">
     <div class="selects">
       <select name="pref" aria-label="県"><option value="">県</option>{prefs.map(([p, n]) => <option value={p}>{p}（{n}）</option>)}</select>
       <select name="city" aria-label="市町村">
@@ -37,6 +41,7 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
         <option value="visits">訪問回数が多い順</option>
       </select>
       <button type="button" class="reset" id="reset">条件をクリア</button>
+    </div>
     </div>
   </form>
 
@@ -139,6 +144,20 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
   }
 
   form.addEventListener('input', () => apply());
+  // スマホ: 条件エリアの開閉と、選んでいる条件の数の表示
+  const toggle = document.getElementById('toggle')!;
+  const filters = document.getElementById('more-filters')!;
+  toggle.addEventListener('click', () => {
+    const open = !filters.classList.contains('open');
+    filters.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  const countFilters = () => {
+    const fd = new FormData(form);
+    const n = ['pref', 'city', 'genre', 'budget'].filter((k) => fd.get(k)).length + (fd.has('morning') ? 1 : 0) + (fd.has('unvisited') ? 1 : 0);
+    document.getElementById('nfilter')!.textContent = n ? ` ${n}` : '';
+  };
+  form.addEventListener('input', countFilters);
   more.addEventListener('click', () => { limit += PAGE; apply(false); });
   document.getElementById('reset')!.addEventListener('click', () => { form.reset(); apply(); });
 
@@ -153,12 +172,30 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
 
   markCards();
   apply();
+  countFilters();
 </script>
 <style>
   .head { padding-top: 40px; }
   .head h1 { font-size: clamp(26px, 4vw, 34px); margin-top: 4px; }
   .lead { color: var(--ink-2); margin: 8px 0 24px; }
   .filters { display: grid; gap: 12px; }
+  .qrow { display: flex; gap: 8px; }
+  .qrow input { flex: 1; min-width: 0; }
+  .toggle { display: none; }
+  .more-filters { display: grid; gap: 12px; }
+  @media (max-width: 720px) {
+    .head { padding-top: 24px; }
+    .head h1 { font-size: 24px; }
+    .lead { font-size: 13px; margin-bottom: 14px; }
+    .toggle { display: inline-flex; align-items: center; gap: 4px; flex: none; font: inherit; font-size: 14px; font-weight: 700; padding: 0 16px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+    .toggle[aria-expanded="true"] { background: var(--yellow); border-color: var(--yellow); color: #2e3442; }
+    .toggle span { display: inline-grid; place-items: center; min-width: 18px; height: 18px; border-radius: 9px; background: var(--shu); color: #fff; font-size: 11px; }
+    .toggle span:empty { display: none; }
+    .more-filters { display: none; }
+    .more-filters.open { display: grid; }
+    input[type="search"], select { font-size: 16px; }
+    .toolbar { margin-top: 18px; }
+  }
   input[type="search"], select {
     font: inherit; font-size: 14px; width: 100%; padding: 10px 14px; color: var(--ink);
     background: var(--card); border: 1.5px solid var(--line); border-radius: 12px; appearance: none;

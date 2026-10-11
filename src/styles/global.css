@@ -76,3 +76,16 @@ h1, h2, h3 { font-family: var(--round); font-weight: 700; line-height: 1.45; mar
   .grid h3 { font-size: 14px !important; }
   .eyebrow { font-size: 19px; }
 }
+
+/* スマホでは特集を横スワイプで見せる */
+@media (max-width: 720px) {
+  .grid.scroller {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    margin: 0 calc(-1 * var(--gutter)); padding: 4px var(--gutter) 16px; scrollbar-width: none;
+  }
+  .grid.scroller::-webkit-scrollbar { display: none; }
+  .grid.scroller > * { flex: 0 0 68%; max-width: 260px; scroll-snap-align: start; }
+  .section-head { flex-wrap: wrap; }
+  .section-head .lead { font-size: 12px; }
+  .section { padding-top: 44px; padding-bottom: 12px; }
+}
