@@ -871,17 +871,19 @@
     - videoId: vh159UXDk4A
   address: 青森県五所川原市大町１
 - id: 2bf0b16f
-  name: ひらこ屋
+  name: 中華そば ひらこ屋
   pref: 青森県
   city: 青森市
   genre: ラーメン
-  lat: 40.83291
-  lng: 140.66956
+  lat: 40.83222
+  lng: 140.66751
   visits:
     - videoId: dvkOrC-4PlQ
       menu: [{name: せあぶら中華}]
     - videoId: H9SDOwKExsY
       note: 朝ラー開始。青森煮干しラーメンの名店。
+    - videoId: d9Er52PYgpQ
+  address: 青森県青森市新城山田588-16
 - id: 99cc8c72
   name: サッソネロ
   pref: 青森県
@@ -1687,9 +1689,8 @@
   pref: 青森県
   city: 青森市
   genre: ラーメン
-  lat: 40.82264
-  lng: 140.74696
-  approx: true
+  lat: 40.81818
+  lng: 140.79108
   visits:
     - videoId: n4bbuu2Lc7M
       note: お得に朝ラー。
@@ -1697,6 +1698,7 @@
       note: 朝ラー。
     - videoId: uTqlLxmZD_g
       note: 朝ラー。
+  address: 青森県青森市小柳5丁目19-5
 - id: e9b363bc
   name: 池内食堂
   pref: 秋田県
@@ -4625,16 +4627,6 @@
   visits:
     - videoId: Y1fVtQnNTqk
       menu: [{name: トルコライス}]
-- id: a94814e9
-  name: 中華そば ひらこ屋
-  pref: 青森県
-  city: 青森市
-  genre: ラーメン
-  lat: 40.82264
-  lng: 140.74696
-  approx: true
-  visits:
-    - videoId: d9Er52PYgpQ
 - id: '30258929'
   name: 立ち食いそば処 道草庵
   pref: 青森県
@@ -4708,11 +4700,12 @@
   pref: 青森県
   city: 弘前市
   genre: ファミレス・チェーン
-  lat: 40.59736
-  lng: 140.48182
+  lat: 40.59737
+  lng: 140.48166
   visits:
     - videoId: 8VZJiVONQv8
       note: 2023年9月21日オープン。
+  address: 青森県弘前市駅前町9-20 ヒロロ1F
 - id: 99fda545
   name: うの食堂
   pref: 青森県
