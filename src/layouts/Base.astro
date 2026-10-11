@@ -46,7 +46,10 @@ const nav = [
   <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
   {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
   <meta name="theme-color" content="#f5b82e" />
-  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   {/* フォントはサイトで使う文字だけを抜き出した自前のファイル（scripts/subset-font.mjs がビルド後に作る） */}
   <link rel="preload" href="/fonts/zenmaru-700.woff2" as="font" type="font/woff2" crossorigin />
   <slot name="head" />

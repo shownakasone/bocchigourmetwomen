@@ -7,6 +7,10 @@
 # ロゴなどの画像は1週間
 /brand/*
   Cache-Control: public, max-age=604800
-/favicon.png
+/favicon.*
+  Cache-Control: public, max-age=604800
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+/icon-*.png
   Cache-Control: public, max-age=604800
 # HTML はこれまでどおり毎回確認（更新がすぐ反映されるように）
