@@ -1,2 +1,3 @@
 import { defineConfig } from 'astro/config';
-export default defineConfig({});
+// 公開URL。独自ドメインにしたらここを書き換える（サイトマップ・検索エンジン向け情報に使われる）
+export default defineConfig({ site: 'https://bocchigourmetwomen.aomori.workers.dev' });

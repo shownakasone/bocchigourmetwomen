@@ -1,9 +1,20 @@
 ---
 import '../styles/global.css';
 import { getShops, getVideos, CHANNEL_URL, INSTAGRAM_URL } from '../lib/data';
-interface Props { title?: string; description?: string }
-const { title, description = 'YouTube「ぼっちグルメウーマン」で訪れた青森・岩手・秋田のお店を、まち・ジャンル・予算から探せる公式アーカイブ。' } = Astro.props;
-const fullTitle = title ? `${title}｜ぼっちグルメ手帖` : 'ぼっちグルメ手帖｜ぼっちグルメウーマン公式アーカイブ';
+interface Props { title?: string; description?: string; jsonld?: object }
+const { title, description = 'YouTubeチャンネル「ぼっちグルメウーマン」公式サイト。青森・岩手・秋田でひとり食べ歩いたお店を、まち・ジャンル・予算から探せるアーカイブです。', jsonld } = Astro.props;
+const fullTitle = title ? `${title}｜ぼっちグルメウーマン公式` : 'ぼっちグルメウーマン公式サイト｜ぼっちグルメ手帖（青森・岩手・秋田のひとりごはん）';
+const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site).href;
+const ogImage = new URL('/brand/avatar.jpg', Astro.site).href;
+// 「このサイトは YouTube チャンネル ぼっちグルメウーマン の公式サイト」と検索エンジンに伝える
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': `${Astro.site}#org`, name: 'ぼっちグルメウーマン', alternateName: ['Bocchi Gourmet Women', 'ぼっちグルメ手帖'], url: Astro.site?.href, logo: ogImage, sameAs: [CHANNEL_URL, INSTAGRAM_URL].filter(Boolean) },
+    { '@type': 'WebSite', '@id': `${Astro.site}#site`, name: 'ぼっちグルメ手帖', alternateName: 'ぼっちグルメウーマン公式サイト', url: Astro.site?.href, inLanguage: 'ja', publisher: { '@id': `${Astro.site}#org` },
+      potentialAction: { '@type': 'SearchAction', target: `${Astro.site}shops/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
+  ],
+};
 const isSample = getVideos().some((v) => v.sample) || getShops().some((s) => s.sample);
 const path = Astro.url.pathname;
 const nav = [
@@ -21,9 +32,18 @@ const nav = [
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <meta property="og:type" content={path === '/' ? 'website' : 'article'} />
+  <meta property="og:site_name" content="ぼっちグルメウーマン公式｜ぼっちグルメ手帖" />
+  <meta property="og:url" content={canonical} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content="/brand/avatar.jpg" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+  {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
   <meta name="theme-color" content="#f5b82e" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

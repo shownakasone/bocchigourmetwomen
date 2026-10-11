@@ -18,8 +18,17 @@ const sameEpisode = all.filter((s) => s.id !== shop.id && s.visits.some((v) => s
 const nearby = all.filter((s) => s.id !== shop.id && !s.closed && s.city && s.city === shop.city && !sameEpisode.includes(s)).slice(0, 4);
 const sameGenreNear = nearby.length < 4 ? all.filter((s) => s.id !== shop.id && !s.closed && s.pref === shop.pref && s.genre === shop.genre && !nearby.includes(s) && !sameEpisode.includes(s)).slice(0, 4 - nearby.length) : [];
 const where = [shop.pref, shop.city].filter(Boolean).join(' ');
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': shop.genre === 'カフェ・喫茶' ? 'CafeOrCoffeeShop' : shop.genre === 'スイーツ' || shop.genre === 'パン' ? 'Bakery' : 'Restaurant',
+  name: shop.name,
+  servesCuisine: shop.genre,
+  address: { '@type': 'PostalAddress', addressCountry: 'JP', addressRegion: shop.pref, addressLocality: shop.city || undefined, streetAddress: shop.address || undefined },
+  geo: shop.lat != null && !shop.approx ? { '@type': 'GeoCoordinates', latitude: shop.lat, longitude: shop.lng } : undefined,
+  subjectOf: shop.visits.map((v) => ({ '@type': 'VideoObject', name: getVideo(v.videoId)?.title, url: watchUrl(v.videoId), uploadDate: getVideo(v.videoId)?.publishedAt, thumbnailUrl: `https://i.ytimg.com/vi/${v.videoId}/hqdefault.jpg`, embedUrl: `https://www.youtube.com/embed/${v.videoId}` })),
+};
 ---
-<Base title={shop.name} description={`${where}・${shop.genre}「${shop.name}」。${note ?? ''}`}>
+<Base title={`${shop.name}（${shop.city || shop.pref}・${shop.genre}）`} description={`ぼっちグルメウーマンが訪れた${where}の${shop.genre}「${shop.name}」。${note ?? ''}`} jsonld={jsonld}>
   <article class="wrap">
     <nav class="crumbs">
       <a href="/shops">さがす</a> / <a href={`/shops?pref=${encodeURIComponent(shop.pref)}`}>{shop.pref}</a>

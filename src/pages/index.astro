@@ -27,6 +27,7 @@ const sections = [
       <div class="wrap hero-grid">
         <div class="hero-text">
           <p class="eyebrow">Today's Plate</p>
+          <p class="kicker">YouTube「ぼっちグルメウーマン」公式サイト</p>
           <h1>ひとりで、<br />気ままに、<br /><span class="mark">おいしいもの。</span></h1>
           <p class="hero-lead">青森・岩手・秋田を中心に、ぼっちグルメウーマンが食べ歩いた<b>{shops.length}軒</b>のお店を集めました。</p>
           <form action="/shops" class="hero-search" role="search">
@@ -125,6 +126,7 @@ const sections = [
   .hero::before { content: ''; position: absolute; right: -10%; top: -30%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: var(--pink-soft); z-index: -1; }
   .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
   .hero-text h1 { font-size: clamp(30px, 4.6vw, 52px); font-weight: 900; line-height: 1.35; margin: 8px 0 18px; }
+  .kicker { margin: 6px 0 0; font-size: 13px; font-weight: 700; color: var(--ink-2); letter-spacing: .04em; }
   .mark { background: linear-gradient(transparent 62%, var(--yellow) 62%); padding: 0 4px; }
   .hero-lead { color: var(--ink-2); margin: 0 0 22px; }
   .hero-lead b { color: var(--ink); }
