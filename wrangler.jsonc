@@ -1,6 +1,6 @@
 // Cloudflare（Workers の静的アセット配信）用の設定。dist/ をそのまま公開する
 {
-  "name": "bocchi",
+  "name": "bocchigourmetwomen",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./dist",
