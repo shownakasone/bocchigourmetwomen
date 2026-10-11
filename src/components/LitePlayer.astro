@@ -1,6 +1,9 @@
 ---
-// YouTube の軽いプレーヤー。最初はサムネイルと再生ボタンだけを表示し、タップしたときに初めてプレーヤーを読み込む
-// （ページを軽くするため）。id を付けておくと、別のボタンから data-play="その id" で再生できる
+// YouTube の軽いプレーヤー
+// - PC：最初はサムネイルと再生ボタンだけ。クリックしたときにプレーヤーを読み込んで自動再生
+// - スマホ：サイト側のタップは YouTube に伝わらず「もう一度タップ」が必要になるため、
+//   枠が画面に入り、ページの表示が落ち着いたところで本物のプレーヤーに差し替える（1回のタップで再生できる）
+// id を付けておくと、別のボタンから data-play="その id" で再生できる
 interface Props { videoId: string; title: string; start?: number; id?: string; duration?: string; isNew?: boolean; priority?: boolean }
 const { videoId, title, start, id, duration, isNew = false, priority = false } = Astro.props;
 ---
@@ -11,11 +14,13 @@ const { videoId, title, start, id, duration, isNew = false, priority = false } =
   {duration && <span class="badge-time">{duration}</span>}
 </button>
 <script>
-  const play = (b: HTMLElement) => {
+  const touch = matchMedia('(hover: none) and (pointer: coarse)').matches;
+  // autoplay：PC でクリックしたとき。スマホの先読みでは自動再生しない（タップで再生）
+  const swap = (b: HTMLElement, autoplay: boolean) => {
     if (!b.dataset.yt) return;
     const f = document.createElement('iframe');
     const start = b.dataset.start ? `&start=${b.dataset.start}` : '';
-    f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1${start}`;
+    f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?playsinline=1&rel=0${autoplay ? '&autoplay=1' : ''}${start}`;
     f.title = b.getAttribute('aria-label') ?? '';
     f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
     f.allowFullscreen = true;
@@ -26,7 +31,19 @@ const { videoId, title, start, id, duration, isNew = false, priority = false } =
     box.appendChild(f);
     b.replaceWith(box);
   };
-  document.querySelectorAll<HTMLButtonElement>('.player[data-yt]').forEach((b) => b.addEventListener('click', () => play(b), { once: true }));
+  const play = (b: HTMLElement) => swap(b, true);
+  const players = document.querySelectorAll<HTMLButtonElement>('.player[data-yt]');
+  if (touch) {
+    // スマホ：枠が画面に近づいたら、ページの読み込みが終わってから本物のプレーヤーに差し替える
+    const idle = (fn: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 1500 }) : setTimeout(fn, 300));
+    const ready = document.readyState === 'complete' ? Promise.resolve() : new Promise((r) => addEventListener('load', r, { once: true }));
+    const io = new IntersectionObserver((es) => {
+      for (const e of es) if (e.isIntersecting) { io.unobserve(e.target); ready.then(() => idle(() => swap(e.target as HTMLElement, false))); }
+    }, { rootMargin: '200px' });
+    players.forEach((b) => { io.observe(b); b.addEventListener('click', () => play(b), { once: true }); });
+  } else {
+    players.forEach((b) => b.addEventListener('click', () => play(b), { once: true }));
+  }
   // 別の場所（タイトルなど）から再生
   document.querySelectorAll<HTMLElement>('[data-play]').forEach((t) => t.addEventListener('click', () => {
     const b = document.getElementById(t.dataset.play!);
@@ -39,7 +56,7 @@ const { videoId, title, start, id, duration, isNew = false, priority = false } =
   .player :global(iframe) { width: 100%; height: 100%; border: 0; display: block; }
   .yt-play { position: absolute; inset: 0; margin: auto; width: 68px; height: 48px; transition: transform .15s; filter: drop-shadow(0 4px 10px rgba(0,0,0,.3)); }
   .player:hover .yt-play { transform: scale(1.08); }
-  .badge-new, .badge-time { position: absolute; font-family: var(--round); font-weight: 700; font-size: 12px; line-height: 1; padding: 6px 10px; border-radius: 99px; }
+  .badge-new, .badge-time { pointer-events: none; position: absolute; font-family: var(--round); font-weight: 700; font-size: 12px; line-height: 1; padding: 6px 10px; border-radius: 99px; }
   .badge-new { top: 10px; left: 10px; background: var(--shu); color: #fff; letter-spacing: .08em; }
   .badge-time { right: 10px; bottom: 10px; background: rgba(0,0,0,.72); color: #fff; font-family: var(--sans); font-variant-numeric: tabular-nums; }
 </style>

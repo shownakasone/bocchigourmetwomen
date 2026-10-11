@@ -73,7 +73,7 @@ const sections = [
                 </ul>
               </>
             )}
-            <a class="latest-yt" href={watchUrl(latest.videoId)} target="_blank" rel="noopener">YouTubeで開く ↗</a>
+            <a class="latest-yt" href={watchUrl(latest.videoId)} target="_blank" rel="noopener"><span class="pc">YouTubeで開く</span><span class="sp">YouTubeアプリで見る</span> ↗</a>
           </div>
         </article>
       </div>
@@ -185,6 +185,8 @@ const sections = [
   .ls-arrow { margin-left: auto; color: var(--ink-2); font-size: 16px; }
   .latest-yt { align-self: flex-end; font-size: 13px; color: var(--ink-2); padding: 6px 2px; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
   .latest-yt:hover { color: var(--shu); }
+  .latest-yt .sp { display: none; }
+  @media (hover: none) and (pointer: coarse) { .latest-yt .sp { display: inline; } .latest-yt .pc { display: none; } }
   @media (max-width: 820px) {
     .hero-grid { grid-template-columns: 1fr; }
     .plate { display: none; }
