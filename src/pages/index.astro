@@ -30,7 +30,7 @@ const sections = [
           <h1>ひとりで、<br />気ままに、<br /><span class="mark">おいしいもの。</span></h1>
           <p class="hero-lead">青森・岩手・秋田を中心に、ぼっちグルメウーマンが食べ歩いた<b>{shops.length}軒</b>のお店を集めました。</p>
           <form action="/shops" class="hero-search" role="search">
-            <input type="search" name="q" placeholder="お店・メニュー・まち" aria-label="お店を探す" />
+            <input type="search" name="q" placeholder="お店やメニューを検索" aria-label="お店を探す" />
             <button class="btn primary" type="submit">さがす</button>
           </form>
           <p class="schedule"><span>NEW</span>毎週 火曜日・金曜日 18時更新</p>
@@ -129,7 +129,9 @@ const sections = [
   .hero-lead { color: var(--ink-2); margin: 0 0 22px; }
   .hero-lead b { color: var(--ink); }
   .hero-search { display: flex; gap: 8px; background: var(--card); padding: 6px; border-radius: 99px; box-shadow: var(--shadow); max-width: 460px; }
-  .hero-search input { flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 15px; padding: 0 16px; color: var(--ink); outline: none; }
+  .hero-search input { flex: 1 1 0; width: 0; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 15px; padding: 0 16px; color: var(--ink); outline: none; -webkit-appearance: none; appearance: none; border-radius: 0; }
+  .hero-search input::-webkit-search-decoration, .hero-search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+  .hero-search .btn { flex: none; white-space: nowrap; }
   .schedule { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 0; font-size: 13px; font-weight: 500; color: var(--ink-2); }
   .schedule span { background: var(--shu); color: #fff; font-size: 10px; font-weight: 700; padding: 1px 8px; border-radius: 99px; letter-spacing: .1em; }
   .plate { position: relative; display: block; width: min(100%, 440px); aspect-ratio: 1; margin: 0 auto; border-radius: 50%; background: #fff; box-shadow: 0 24px 60px rgba(46,52,66,.16); overflow: hidden; transition: transform .4s ease; }
@@ -149,11 +151,12 @@ const sections = [
   @media (max-width: 820px) {
     .hero-grid { grid-template-columns: 1fr; }
     .plate { width: min(46vw, 190px); grid-row: 1; box-shadow: 0 12px 30px rgba(46,52,66,.14); }
-    .hero-text h1 { font-size: 30px; margin: 4px 0 12px; }
+    .hero-text h1 { font-size: clamp(24px, 8vw, 30px); margin: 4px 0 12px; word-break: keep-all; overflow-wrap: anywhere; }
     .hero-text h1 br:first-of-type { display: none; }
     .hero-lead { font-size: 14px; margin-bottom: 16px; }
-    .hero-search input { font-size: 16px; padding: 0 12px; }
-    .hero-search .btn { padding: 10px 18px; }
+    .hero-search { max-width: none; }
+    .hero-search input { font-size: 16px; padding: 0 10px 0 14px; }
+    .hero-search .btn { padding: 10px 16px; font-size: 14px; }
     .hero-grid { gap: 16px; text-align: left; }
     .hero { padding-top: 20px; }
     .latest { margin-top: 24px; }

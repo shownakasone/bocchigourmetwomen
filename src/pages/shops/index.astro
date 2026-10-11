@@ -180,7 +180,8 @@ const budgets = Object.keys(BUDGET_LABEL) as Budget[];
   .lead { color: var(--ink-2); margin: 8px 0 24px; }
   .filters { display: grid; gap: 12px; }
   .qrow { display: flex; gap: 8px; }
-  .qrow input { flex: 1; min-width: 0; }
+  .qrow input { flex: 1 1 0; width: 0; min-width: 0; -webkit-appearance: none; }
+  .qrow input::-webkit-search-decoration { -webkit-appearance: none; }
   .toggle { display: none; }
   .more-filters { display: grid; gap: 12px; }
   @media (max-width: 720px) {
