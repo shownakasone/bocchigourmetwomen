@@ -60,7 +60,7 @@ const sections = [
   <section class="stats wrap">
     <div><b>{videos.length}</b><span>本の動画</span></div>
     <div><b>{shops.length}</b><span>軒のお店</span></div>
-    <div><b>{countBy(shops, (s) => s.city).length}</b><span>の市町村</span></div>
+    <div><b>{countBy(shops.filter((s) => s.city), (s) => s.city).length}</b><span>の市町村</span></div>
   </section>
 
   {sections.map((sec) => sec.shops.length > 0 && (
