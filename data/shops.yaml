@@ -1992,7 +1992,7 @@
   pref: 青森県
   city: 弘前市
   genre: ファミレス・チェーン
-  address: ２丁目-９-６ 樋の口 弘前市 青森県 036-8278
+  address: 〒036-8278 青森県弘前市樋の口2丁目9-6
   lat: 40.60255
   lng: 140.44427
   visits:
@@ -4479,17 +4479,6 @@
       menu: [{name: 贅沢丼}]
       note: 創業100年の老舗魚屋。
   nomap: true
-- id: fbfc2ad6
-  name: 中みそ
-  pref: 青森県
-  city: 弘前市
-  genre: ラーメン
-  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
-  lat: 40.59731
-  lng: 140.48151
-  visits:
-    - videoId: lcWcmouR6lA
-      menu: [{name: 辛みそラーメン}]
 - id: ee8cf45d
   name: 海老そば 金行
   pref: 青森県
@@ -6086,7 +6075,7 @@
 - id: 93fe0886
   name: 純喫茶 みらぼお
   pref: 青森県
-  city: 弘前市
+  city: 黒石市
   genre: カフェ・喫茶
   address: 青森県黒石市市ノ町１８
   lat: 40.64234
@@ -6967,7 +6956,7 @@
   pref: 青森県
   city: 弘前市
   genre: ファミレス・チェーン
-  address: ４丁目-５-１３ 城東北 弘前市 青森県 036-8092
+  address: 〒036-8092 青森県弘前市城東北4丁目5-13
   lat: 40.6098
   lng: 140.49857
   visits:
@@ -7547,17 +7536,19 @@
     - videoId: kHyhbBGuAbU
       menu: [{name: モーニング}]
 - id: 5855e9b7
-  name: 中みそ（中三）
+  name: 中みそ（中三弘前店）
   pref: 青森県
   city: 弘前市
   genre: ラーメン
-  address: 青森県弘前市駅前町９−２０ ヒロロ 4F ヒロロキッチン内
-  lat: 40.59731
-  lng: 140.48151
+  address: 青森県弘前市土手町49-1 中三弘前店
+  lat: 40.60193
+  lng: 140.47287
   closed: true
   visits:
     - videoId: R4yi0ZxkUAU
       menu: [{name: 中みそ}]
+    - videoId: lcWcmouR6lA
+      menu: [{name: 辛みそラーメン}]
 - id: 78e15d2e
   name: 花輪サービスエリア
   pref: 秋田県

@@ -13,9 +13,10 @@ const latestShops = latest ? shopsOfVideo(latest.videoId) : [];
 const morning = open.filter(isMorning).slice(0, 8);
 const coin = open.filter((s) => { const n = spend(s); return n != null && n <= 600; }).slice(0, 8);
 const favorites = open.filter((s) => s.visits.length >= 3).sort((a, b) => b.visits.length - a.visits.length).slice(0, 8);
-const cities = countBy(open, (s) => s.city).filter(([c]) => c).slice(0, 14);
-const genres = countBy(open, (s) => s.genre);
-const prefs = countBy(open, (s) => s.pref);
+// 件数は「さがす」の絞り込み結果と同じになるよう、閉店したお店も含めて数える
+const cities = countBy(shops, (s) => s.city).filter(([c]) => c).slice(0, 14);
+const genres = countBy(shops, (s) => s.genre);
+const prefs = countBy(shops, (s) => s.pref);
 const sections = [
   { eyebrow: 'Morning', title: '朝ラー・モーニング', lead: '朝からやっているお店。早起きした日のごほうびに。', shops: morning, href: '/shops?morning=1' },
   { eyebrow: 'One Coin', title: 'ワンコインで満足', lead: '600円以下でお腹いっぱいになれたお店。', shops: coin, href: '/shops?budget=~500' },

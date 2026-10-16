@@ -9,7 +9,8 @@
     "fetch": "node scripts/fetch-videos.mjs",
     "extract": "node scripts/extract-shops.mjs",
     "geocode": "node scripts/geocode.mjs",
-    "update": "npm run fetch && npm run extract && npm run geocode"
+    "update": "npm run fetch && npm run extract && npm run geocode",
+    "check": "node scripts/check-data.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
