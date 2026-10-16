@@ -9,6 +9,30 @@
 #   draft    … true の店はサイトに出ません
 # 自動抽出のため、店名・ジャンル・閉店情報に誤りがあれば直接直してください。
 
+- id: 185d6385
+  name: 食事処 おだ
+  pref: 青森県
+  city: 黒石市
+  genre: 食堂・定食
+  address: 青森県黒石市ぐみの木2丁目155
+  lat: 40.65164
+  lng: 140.59735
+  visits:
+    - videoId: 2E3bPHlPBKg
+      menu: [{name: 日替わり丼（カツ丼風）, price: 600}, {name: カツカレー, price: 750}]
+      note: サクサクのカツが絶品の日替わり丼が600円、地元で愛されるアットホームな神コスパ食堂
+- id: 00f9e94a
+  name: PastaYa（パスタヤ）
+  pref: 青森県
+  city: 弘前市
+  genre: 洋食
+  address: 青森県弘前市駅前町15-6
+  lat: 40.59935
+  lng: 140.48212
+  visits:
+    - videoId: 0YZ9I8IM7sw
+      menu: [{name: 1日10食限定 パスタセット, price: 1298}]
+      note: 本格パスタに主役級キッシュやチキンソテー、スープとドリンク付きで1298円の満足感
 - id: b77fc540
   name: つじ製麺所
   pref: 青森県
