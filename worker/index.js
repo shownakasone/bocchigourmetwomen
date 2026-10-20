@@ -11,6 +11,7 @@ export default {
       headers: { authorization: `Bearer ${env.GITHUB_TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'bocchi-cron' },
       body: JSON.stringify({ ref: 'main' }),
     });
+    console.log(`GitHub の更新を呼び出し: ${r.status}`);
     if (!r.ok) throw new Error(`GitHub の更新を動かせませんでした: ${r.status} ${await r.text()}`);
   },
   fetch(request, env) {

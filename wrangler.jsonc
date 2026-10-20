@@ -3,6 +3,8 @@
   "name": "bocchigourmetwomen",
   "compatibility_date": "2026-10-01",
   "main": "worker/index.js",
+  // タイマーの成功・失敗をダッシュボード（Observability）で見られるようにする
+  "observability": { "enabled": true },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
