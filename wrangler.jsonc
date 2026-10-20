@@ -1,9 +1,20 @@
-// Cloudflare（Workers の静的アセット配信）用の設定。dist/ をそのまま公開する
+// Cloudflare（Workers）用の設定。dist/ をそのまま公開し、worker/index.js で定時に GitHub の更新を動かす
 {
   "name": "bocchigourmetwomen",
   "compatibility_date": "2026-10-01",
+  "main": "worker/index.js",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page"
+  },
+  // 時刻は UTC（日本時間 = UTC + 9時間）
+  "triggers": {
+    "crons": [
+      "*/15 9-11 * * TUE,FRI",  // 火・金 18:00〜20:45 15分ごと … 18時の新作をすぐ反映
+      "30 12-14 * * TUE,FRI",   // 火・金 21:30・22:30・23:30
+      "30 9-14 * * SUN,MON,WED,THU,SAT", // ほかの日 18:30〜23:30 毎時（臨時の投稿用）
+      "30 23 * * *"             // 毎朝 8:30
+    ]
   }
 }
