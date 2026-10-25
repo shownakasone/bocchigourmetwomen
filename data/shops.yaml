@@ -2693,6 +2693,9 @@
   lat: 40.65336
   lng: 140.50832
   visits:
+    - videoId: PNDuVolbhTI
+      menu: [{name: 新中華蕎麦（あっさり）中（180g）, price: 1100}]
+      note: 鶏だしベースに一新、キリッと醤油と青森県産小麦の極太自家製麺が楽しめる一杯
     - videoId: ctpJoseTYEY
       menu: [{name: 味噌ラーメン（期間限定）}]
     - videoId: kvwCCvy8EFI
