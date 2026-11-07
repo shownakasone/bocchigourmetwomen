@@ -98,7 +98,14 @@ for (let i = 0; i < todo.length; i += 6) {
 }
 if (todo.length) process.stdout.write('\n');
 
-const videos = ids.map((id) => have.get(id)).filter(Boolean);
+// 一覧が途中までしか取れないことがある（GitHub のサーバーで起きた）。
+// そのため、一覧に出てこなかった動画も消さずに残す（取得済みの動画は減らない）
+const listedIds = new Set(ids);
+const missing = old.filter((v) => v.title && v.publishedAt && !listedIds.has(v.videoId));
+if (missing.length) console.warn(`一覧に出てこなかった ${missing.length} 本は前回のまま残します`);
+const videos = [...ids.map((id) => have.get(id)).filter(Boolean), ...missing.filter((v) => !have.has(v.videoId) || !listedIds.has(v.videoId))];
+const seen = new Set();
+for (let i = videos.length - 1; i >= 0; i--) if (seen.has(videos[i].videoId)) videos.splice(i, 1); else seen.add(videos[i].videoId);
 videos.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 fs.writeFileSync(OUT, JSON.stringify(videos, null, 2) + '\n');
 console.log(`${videos.length} 本を ${OUT} に保存しました（新規 ${todo.length} 本）`);
