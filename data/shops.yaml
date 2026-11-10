@@ -9,6 +9,18 @@
 #   draft    … true の店はサイトに出ません
 # 自動抽出のため、店名・ジャンル・閉店情報に誤りがあれば直接直してください。
 
+- id: 0de5feb2
+  name: 食事処タマちゃん
+  pref: 青森県
+  city: 弘前市
+  genre: ラーメン
+  address: 〒036-8191 青森県弘前市親方町４７ ハイネス親方
+  lat: 40.60214
+  lng: 140.47044
+  visits:
+    - videoId: qJiVBKtvueQ
+      menu: [{name: 中華そば, price: 800}]
+      note: 大きなチャーシューに煮干しとガラの旨みたっぷり、夜の〆に最高の中華そば
 - id: 75a4c12d
   name: カフェモンキー
   pref: 青森県
