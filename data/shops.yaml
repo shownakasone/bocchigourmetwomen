@@ -5554,6 +5554,9 @@
   lat: 40.59761
   lng: 140.50734
   visits:
+    - videoId: 0vaLoVDozUI
+      menu: [{name: 味噌ラーメン, price: 850}]
+      note: 熱々で甘くて野菜たっぷりの味噌ラーメンがボリューム満点で850円とコスパ最高
     - videoId: HeqjJCNz2lc
       note: 麺大盛り無料。
 - id: a478f193
