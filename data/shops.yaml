@@ -9,6 +9,18 @@
 #   draft    … true の店はサイトに出ません
 # 自動抽出のため、店名・ジャンル・閉店情報に誤りがあれば直接直してください。
 
+- id: 841a6696
+  name: 幸楽苑 弘前堅田店
+  pref: 青森県
+  city: 弘前市
+  genre: ラーメン
+  address: 青森県弘前市堅田神田
+  lat: 40.63058
+  lng: 140.48859
+  visits:
+    - videoId: -RQwhWV2r2I
+      menu: [{name: 中華そば, price: 490}, {name: セットチャーハン, price: 300}]
+      note: チェーン店でぶっちぎりの安さ、490円の神コスパ中華そばが味わえ深夜0時まで営業
 - id: 0de5feb2
   name: 食事処タマちゃん
   pref: 青森県
