@@ -7,18 +7,36 @@ const HANDLE = '@bocchi-g-women';
 const OUT = 'data/videos.json';
 const ctx = { client: { clientName: 'WEB', clientVersion: '2.20251001.00.00', hl: 'ja', gl: 'JP' } };
 
-const yt = (endpoint, body) =>
-  fetch(`https://www.youtube.com/youtubei/v1/${endpoint}?prettyPrint=false`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ context: ctx, ...body }),
-  }).then((r) => {
-    if (!r.ok) throw new Error(`${endpoint}: ${r.status}`);
-    return r.json();
-  });
+// YouTube は GitHub のサーバーからのアクセスを一時的に断る（403 など）ことがあるので、少し待ってやり直す
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+async function yt(endpoint, body) {
+  for (let i = 0; ; i++) {
+    try {
+      const r = await fetch(`https://www.youtube.com/youtubei/v1/${endpoint}?prettyPrint=false`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ context: ctx, ...body }),
+      });
+      if (r.ok) return await r.json();
+      const err = new Error(`${endpoint}: ${r.status}`);
+      if (!(r.status === 403 || r.status === 429 || r.status >= 500)) throw Object.assign(err, { fatal: true });
+      throw err;
+    } catch (e) {
+      if (e.fatal || i >= 2) throw e;
+      console.warn(`  ${e.message} … ${i ? 15 : 5}秒待ってやり直します`);
+      await sleep(i ? 15000 : 5000);
+    }
+  }
+}
+
+// 一覧の最初から取れないとき：今回は見送る（失敗扱いにせず、次の更新でやり直す）
+const skip = (e) => {
+  console.log(`::warning::YouTube から動画一覧が取れなかったので、今回の更新は見送ります（${e.message}）`);
+  process.exit(0);
+};
 
 // 1. ハンドル → チャンネルID
-const resolved = await yt('navigation/resolve_url', { url: `https://www.youtube.com/${HANDLE}` });
+const resolved = await yt('navigation/resolve_url', { url: `https://www.youtube.com/${HANDLE}` }).catch(skip);
 const channelId = resolved.endpoint?.browseEndpoint?.browseId;
 if (!channelId) throw new Error(`チャンネルが見つかりません: ${HANDLE}`);
 
@@ -34,12 +52,14 @@ const grab = (items) =>
   });
 const nextToken = (items) => items.at(-1)?.continuationItemRenderer?.continuationEndpoint?.continuationCommand?.token;
 
-const first = await yt('browse', { browseId: channelId, params: 'EgZ2aWRlb3PyBgQKAjoA' });
+const first = await yt('browse', { browseId: channelId, params: 'EgZ2aWRlb3PyBgQKAjoA' }).catch(skip);
 const tab = first.contents.twoColumnBrowseResultsRenderer.tabs.find((t) => t.tabRenderer?.content?.richGridRenderer);
 let items = tab.tabRenderer.content.richGridRenderer.contents;
 const ids = grab(items);
 for (let tok = nextToken(items); tok; tok = nextToken(items)) {
-  const r = await yt('browse', { continuation: tok });
+  // 2ページ目以降で断られたら、そこまでで続ける（新作は1ページ目にある。取得済みの動画は下で残す）
+  const r = await yt('browse', { continuation: tok }).catch((e) => console.warn(`一覧の続きが取れませんでした（${e.message}）。${ids.length} 本までで続けます`));
+  if (!r) break;
   items = r.onResponseReceivedActions?.[0]?.appendContinuationItemsAction?.continuationItems ?? [];
   ids.push(...grab(items));
 }
